@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct LaunchScreenView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+
+       var body: some View {
+           ZStack {
+               // Appliquer un dégradé comme masque sur le texte
+            
+
+               Color.gradientGreen
+                   .mask(Text("Hello").font(.title)) // Utilisation du texte comme masque pour le dégradé
+           }
+       }
 }
 
 struct LaunchScreenView_Previews: PreviewProvider {

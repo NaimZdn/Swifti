@@ -16,6 +16,7 @@
 		08FDF3862A6C3F6D00BB8987 /* SwiftiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FDF3852A6C3F6D00BB8987 /* SwiftiUITests.swift */; };
 		08FDF3882A6C3F6D00BB8987 /* SwiftiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FDF3872A6C3F6D00BB8987 /* SwiftiUITestsLaunchTests.swift */; };
 		08FDF39C2A6C412900BB8987 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FDF39B2A6C412900BB8987 /* LaunchScreenView.swift */; };
+		08FDF39E2A6C4B3C00BB8987 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FDF39D2A6C4B3C00BB8987 /* Style.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		08FDF3852A6C3F6D00BB8987 /* SwiftiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftiUITests.swift; sourceTree = "<group>"; };
 		08FDF3872A6C3F6D00BB8987 /* SwiftiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		08FDF39B2A6C412900BB8987 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		08FDF39D2A6C4B3C00BB8987 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,8 +155,8 @@
 		08FDF3962A6C406300BB8987 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				08FDF3652A6C3F6800BB8987 /* SwiftiApp.swift */,
 				08FDF3692A6C3F6C00BB8987 /* Assets.xcassets */,
+				08FDF3652A6C3F6800BB8987 /* SwiftiApp.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -169,6 +171,7 @@
 		08FDF3982A6C40BB00BB8987 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				08FDF39D2A6C4B3C00BB8987 /* Style.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				08FDF3722A6C3F6C00BB8987 /* SwiftiDataModel.xcdatamodeld in Sources */,
 				08FDF3662A6C3F6800BB8987 /* SwiftiApp.swift in Sources */,
 				08FDF39C2A6C412900BB8987 /* LaunchScreenView.swift in Sources */,
+				08FDF39E2A6C4B3C00BB8987 /* Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
