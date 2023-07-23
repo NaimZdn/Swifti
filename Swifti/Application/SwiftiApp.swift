@@ -10,10 +10,20 @@ import SwiftUI
 @main
 struct SwiftiApp: App {
     let persistenceController = PersistenceController.shared
+    @State var isShowingLaunchingScreen = true
 
     var body: some Scene {
         WindowGroup {
-            LaunchScreenView()
+            if isShowingLaunchingScreen {
+                LaunchScreenView()
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            self.isShowingLaunchingScreen = false
+                        }
+                    }
+            } else {
+                
+            }
         }
     }
 }

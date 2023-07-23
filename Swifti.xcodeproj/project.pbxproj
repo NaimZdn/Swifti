@@ -12,6 +12,7 @@
 		0874AFE12A6C8D0400879D8F /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0874AFDC2A6C8D0300879D8F /* Poppins-Regular.ttf */; };
 		0874AFE22A6C8D0400879D8F /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0874AFDD2A6C8D0400879D8F /* Poppins-Bold.ttf */; };
 		0874AFE32A6C8D0400879D8F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0874AFDE2A6C8D0400879D8F /* Poppins-SemiBold.ttf */; };
+		0874AFE82A6D37B700879D8F /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFE72A6D37B700879D8F /* WelcomeView.swift */; };
 		08FDF3662A6C3F6800BB8987 /* SwiftiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FDF3652A6C3F6800BB8987 /* SwiftiApp.swift */; };
 		08FDF36A2A6C3F6C00BB8987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08FDF3692A6C3F6C00BB8987 /* Assets.xcassets */; };
 		08FDF36D2A6C3F6C00BB8987 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08FDF36C2A6C3F6C00BB8987 /* Preview Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		0874AFDD2A6C8D0400879D8F /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		0874AFDE2A6C8D0400879D8F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		0874AFE42A6C8E1E00879D8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0874AFE72A6D37B700879D8F /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		08FDF3622A6C3F6800BB8987 /* Swifti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swifti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08FDF3652A6C3F6800BB8987 /* SwiftiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftiApp.swift; sourceTree = "<group>"; };
 		08FDF3692A6C3F6C00BB8987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +100,22 @@
 				0874AFDD2A6C8D0400879D8F /* Poppins-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0874AFE52A6D379300879D8F /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				0874AFE62A6D37A000879D8F /* View */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		0874AFE62A6D37A000879D8F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0874AFE72A6D37B700879D8F /* WelcomeView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		08FDF3592A6C3F6800BB8987 = {
@@ -162,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				08FDF3992A6C411300BB8987 /* LaunchScreen */,
+				0874AFE52A6D379300879D8F /* Welcome */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -353,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08FDF36F2A6C3F6C00BB8987 /* Persistence.swift in Sources */,
+				0874AFE82A6D37B700879D8F /* WelcomeView.swift in Sources */,
 				08FDF3722A6C3F6C00BB8987 /* SwiftiDataModel.xcdatamodeld in Sources */,
 				08FDF3662A6C3F6800BB8987 /* SwiftiApp.swift in Sources */,
 				08FDF39C2A6C412900BB8987 /* LaunchScreenView.swift in Sources */,
@@ -518,7 +538,7 @@
 				DEVELOPMENT_TEAM = MC9L8ULM7A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Swifti/Info.plist;
+				INFOPLIST_FILE = Swifti/Application/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -548,7 +568,7 @@
 				DEVELOPMENT_TEAM = MC9L8ULM7A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Swifti/Info.plist;
+				INFOPLIST_FILE = Swifti/Application/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

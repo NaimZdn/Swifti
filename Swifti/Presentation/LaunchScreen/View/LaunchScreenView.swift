@@ -10,13 +10,17 @@ import SwiftUI
 struct LaunchScreenView: View {
 
        var body: some View {
-           ZStack {
-               // Appliquer un dégradé comme masque sur le texte
-            
-
-               Color.gradientGreen
-                   .mask(Text("Hello").font(.title)) // Utilisation du texte comme masque pour le dégradé
+           VStack {
+               Spacer()
+               Image("logo")
+                   .foregroundColor(.primaryColor)
+               
+               Spacer()
+               
            }
+           .frame(maxWidth: .infinity)
+           .background(Color.background)
+           
        }
 }
 
