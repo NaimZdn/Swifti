@@ -13,6 +13,7 @@
 		0874AFE22A6C8D0400879D8F /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0874AFDD2A6C8D0400879D8F /* Poppins-Bold.ttf */; };
 		0874AFE32A6C8D0400879D8F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0874AFDE2A6C8D0400879D8F /* Poppins-SemiBold.ttf */; };
 		0874AFE82A6D37B700879D8F /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFE72A6D37B700879D8F /* WelcomeView.swift */; };
+		0874AFEB2A6D3E3500879D8F /* ValidateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFEA2A6D3E3500879D8F /* ValidateButton.swift */; };
 		08FDF3662A6C3F6800BB8987 /* SwiftiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FDF3652A6C3F6800BB8987 /* SwiftiApp.swift */; };
 		08FDF36A2A6C3F6C00BB8987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08FDF3692A6C3F6C00BB8987 /* Assets.xcassets */; };
 		08FDF36D2A6C3F6C00BB8987 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08FDF36C2A6C3F6C00BB8987 /* Preview Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		0874AFDE2A6C8D0400879D8F /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		0874AFE42A6C8E1E00879D8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0874AFE72A6D37B700879D8F /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		0874AFEA2A6D3E3500879D8F /* ValidateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateButton.swift; sourceTree = "<group>"; };
 		08FDF3622A6C3F6800BB8987 /* Swifti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swifti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08FDF3652A6C3F6800BB8987 /* SwiftiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftiApp.swift; sourceTree = "<group>"; };
 		08FDF3692A6C3F6C00BB8987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,6 +120,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		0874AFE92A6D3E1600879D8F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0874AFEA2A6D3E3500879D8F /* ValidateButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		08FDF3592A6C3F6800BB8987 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +154,7 @@
 				08FDF3972A6C40B300BB8987 /* Domain */,
 				08FDF3962A6C406300BB8987 /* Application */,
 				08FDF3942A6C404500BB8987 /* Presentation */,
+				0874AFE92A6D3E1600879D8F /* Components */,
 				08FDF3952A6C405600BB8987 /* Data */,
 				08FDF3982A6C40BB00BB8987 /* Extensions */,
 				08FDF36B2A6C3F6C00BB8987 /* Preview Content */,
@@ -372,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08FDF36F2A6C3F6C00BB8987 /* Persistence.swift in Sources */,
+				0874AFEB2A6D3E3500879D8F /* ValidateButton.swift in Sources */,
 				0874AFE82A6D37B700879D8F /* WelcomeView.swift in Sources */,
 				08FDF3722A6C3F6C00BB8987 /* SwiftiDataModel.xcdatamodeld in Sources */,
 				08FDF3662A6C3F6800BB8987 /* SwiftiApp.swift in Sources */,
