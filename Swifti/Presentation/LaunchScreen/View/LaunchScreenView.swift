@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct LaunchScreenView: View {
-
        var body: some View {
            VStack {
                Spacer()
