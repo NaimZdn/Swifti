@@ -14,10 +14,13 @@
 		0874AFE32A6C8D0400879D8F /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0874AFDE2A6C8D0400879D8F /* Poppins-SemiBold.ttf */; };
 		0874AFE82A6D37B700879D8F /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFE72A6D37B700879D8F /* WelcomeView.swift */; };
 		0874AFEB2A6D3E3500879D8F /* ValidateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFEA2A6D3E3500879D8F /* ValidateButton.swift */; };
+		0874AFED2A6D468500879D8F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFEC2A6D468500879D8F /* DataController.swift */; };
+		0874AFF22A6D5E8100879D8F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFF12A6D5E8100879D8F /* HomeView.swift */; };
+		0874AFF52A6D5F0300879D8F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFF42A6D5F0300879D8F /* HomeViewModel.swift */; };
+		0874AFF82A6D65E900879D8F /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFF72A6D65E900879D8F /* WelcomeViewModel.swift */; };
 		08FDF3662A6C3F6800BB8987 /* SwiftiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FDF3652A6C3F6800BB8987 /* SwiftiApp.swift */; };
 		08FDF36A2A6C3F6C00BB8987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08FDF3692A6C3F6C00BB8987 /* Assets.xcassets */; };
 		08FDF36D2A6C3F6C00BB8987 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08FDF36C2A6C3F6C00BB8987 /* Preview Assets.xcassets */; };
-		08FDF36F2A6C3F6C00BB8987 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FDF36E2A6C3F6C00BB8987 /* Persistence.swift */; };
 		08FDF3722A6C3F6C00BB8987 /* SwiftiDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08FDF3702A6C3F6C00BB8987 /* SwiftiDataModel.xcdatamodeld */; };
 		08FDF37C2A6C3F6D00BB8987 /* SwiftiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FDF37B2A6C3F6D00BB8987 /* SwiftiTests.swift */; };
 		08FDF3862A6C3F6D00BB8987 /* SwiftiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FDF3852A6C3F6D00BB8987 /* SwiftiUITests.swift */; };
@@ -52,11 +55,14 @@
 		0874AFE42A6C8E1E00879D8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0874AFE72A6D37B700879D8F /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		0874AFEA2A6D3E3500879D8F /* ValidateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateButton.swift; sourceTree = "<group>"; };
+		0874AFEC2A6D468500879D8F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		0874AFF12A6D5E8100879D8F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0874AFF42A6D5F0300879D8F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		0874AFF72A6D65E900879D8F /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		08FDF3622A6C3F6800BB8987 /* Swifti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swifti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08FDF3652A6C3F6800BB8987 /* SwiftiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftiApp.swift; sourceTree = "<group>"; };
 		08FDF3692A6C3F6C00BB8987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08FDF36C2A6C3F6C00BB8987 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		08FDF36E2A6C3F6C00BB8987 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		08FDF3712A6C3F6C00BB8987 /* Swifti.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Swifti.xcdatamodel; sourceTree = "<group>"; };
 		08FDF3772A6C3F6D00BB8987 /* SwiftiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08FDF37B2A6C3F6D00BB8987 /* SwiftiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftiTests.swift; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				0874AFE62A6D37A000879D8F /* View */,
+				0874AFF62A6D65D400879D8F /* ViewModel */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -126,6 +133,39 @@
 				0874AFEA2A6D3E3500879D8F /* ValidateButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		0874AFEF2A6D5E5500879D8F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0874AFF02A6D5E7000879D8F /* View */,
+				0874AFF32A6D5ECC00879D8F /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0874AFF02A6D5E7000879D8F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0874AFF12A6D5E8100879D8F /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0874AFF32A6D5ECC00879D8F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0874AFF42A6D5F0300879D8F /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0874AFF62A6D65D400879D8F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0874AFF72A6D65E900879D8F /* WelcomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		08FDF3592A6C3F6800BB8987 = {
@@ -192,6 +232,7 @@
 			children = (
 				08FDF3992A6C411300BB8987 /* LaunchScreen */,
 				0874AFE52A6D379300879D8F /* Welcome */,
+				0874AFEF2A6D5E5500879D8F /* Home */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -200,7 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				08FDF3702A6C3F6C00BB8987 /* SwiftiDataModel.xcdatamodeld */,
-				08FDF36E2A6C3F6C00BB8987 /* Persistence.swift */,
+				0874AFEC2A6D468500879D8F /* DataController.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -382,11 +423,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08FDF36F2A6C3F6C00BB8987 /* Persistence.swift in Sources */,
 				0874AFEB2A6D3E3500879D8F /* ValidateButton.swift in Sources */,
+				0874AFF82A6D65E900879D8F /* WelcomeViewModel.swift in Sources */,
+				0874AFF52A6D5F0300879D8F /* HomeViewModel.swift in Sources */,
 				0874AFE82A6D37B700879D8F /* WelcomeView.swift in Sources */,
 				08FDF3722A6C3F6C00BB8987 /* SwiftiDataModel.xcdatamodeld in Sources */,
 				08FDF3662A6C3F6800BB8987 /* SwiftiApp.swift in Sources */,
+				0874AFED2A6D468500879D8F /* DataController.swift in Sources */,
+				0874AFF22A6D5E8100879D8F /* HomeView.swift in Sources */,
 				08FDF39C2A6C412900BB8987 /* LaunchScreenView.swift in Sources */,
 				08FDF39E2A6C4B3C00BB8987 /* Style.swift in Sources */,
 			);
