@@ -66,14 +66,14 @@ extension Font {
     static var defaultBody = fontRegular(17)
     static var defaultButtonCaption = fontSemiBold(17)
     static var defaultTitle3 = fontSemiBold(20)
-    static var defaultTitle2 = fontSemiBold(24)
+    static var defaultTitle2 = fontSemiBold(26)
     static var defaultTitle = fontSemiBold(30)
     
     // MARK: - Course Label
     
     static var courseLabelCounter = fontBold(10)
-    static var courseLabelCaption = fontLight(11)
-    static var courseLabelTitle = fontMedium(15)
+    static var courseLabelCaption = fontLight(13)
+    static var courseLabelTitle = fontMedium(17)
     
     // MARK: - Articles Label
     
