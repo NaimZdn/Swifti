@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 
+
 class HomeViewModel: ObservableObject {
     private var dataController: DataController
     private var context: NSManagedObjectContext
@@ -23,6 +24,15 @@ class HomeViewModel: ObservableObject {
     private func transformData() {
         userName = dataController.getUserName() ?? ""
         print(userName)
+        
+    }
+    
+    func getCurrentDate() -> String {
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "fr_FR")
+        dateFormatter.setLocalizedDateFormatFromTemplate("EEEE d MMMM")
+        return dateFormatter.string(from: currentDate).replacingOccurrences(of: dateFormatter.weekdaySymbols[0], with: dateFormatter.weekdaySymbols[0].capitalized)
         
     }
 }

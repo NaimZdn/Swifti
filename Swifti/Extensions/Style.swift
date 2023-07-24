@@ -27,6 +27,7 @@ extension Color {
     static let labelBackground = Color("labelBackground")
     static let labelIconBackground = Color("labelIconBackground")
     static let optionsBackground = Color("optionsBackground")
+    static let optionsIcon = Color("optionsIcon")
     
     static let gradientBlue = LinearGradient(colors: [Color(hex: 0x62D9FF), Color(hex: 0xA4F4FF), Color(hex: 0x62D9FF)], startPoint: .bottomLeading, endPoint: .topTrailing)
     static let gradientYellow = LinearGradient(colors: [Color(hex: 0xFFD748), Color(hex: 0xFFE895), Color(hex: 0xFFD748)], startPoint: .bottomLeading, endPoint: .topTrailing)
