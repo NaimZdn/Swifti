@@ -33,8 +33,6 @@ enum Label: String, CaseIterable {
 enum Techno: String, CaseIterable {
     case swift = "Swift"
     case swiftUi = "Swift UI"
-    //case combine = "Combine"
-    //case alamofire = "Alamofire"
     case coreData = "Core Data"
     case figma = "Figma"
 }
@@ -77,16 +75,16 @@ enum Term: String, CaseIterable {
 enum PrivacyPolicy: String, CaseIterable {
     case dataSecurity = "Information Collection and Use"
     case sharingInformation = "Partage des informations"
-    case link = "Information Sharing"
-    case changes = "Changes to this Privacy Policy"
+    case link = "Liens externes"
+    case changes = "Modifications de la politique de confidentialité"
     case consent = "Your Consent"
     
     var content: String {
         switch self {
-        case .sharingInformation:
-            return "NNous ne partagerons pas vos informations personnelles avec des tiers sans votre consentement explicite, sauf dans les cas prévus par la loi."
         case .dataSecurity:
             return "Nous prenons la sécurité de vos informations personnelles au sérieux et mettons en place des mesures techniques et organisationnelles pour protéger vos données contre toute utilisation abusive, perte, accès non autorisé, divulgation ou altération."
+        case .sharingInformation:
+            return "NNous ne partagerons pas vos informations personnelles avec des tiers sans votre consentement explicite, sauf dans les cas prévus par la loi."
         case .link:
             return "Notre application peut contenir des liens vers des sites tiers. Nous ne sommes pas responsables des pratiques de confidentialité de ces sites et vous encourageons à consulter les politiques de confidentialité de ces sites tiers avant de fournir vos informations personnelles."
         case .changes:
