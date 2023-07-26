@@ -50,9 +50,7 @@ struct TermsOfServiceView: View {
         }).padding(.top, 25))
         .padding(.horizontal, 20)
         .padding(.vertical, 30)
-        .background(Color.background)
-        
-        
+        .background(Color.background)   
     }
 }
 

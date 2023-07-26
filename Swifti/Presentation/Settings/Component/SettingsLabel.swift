@@ -24,13 +24,9 @@ struct SettingsLabel: View {
         self.icon = icon
         self.isNavigation = isNavigation
         self.isLink = isLink
-        
         self.notificationToggle = notificationToggle
-        
         self._viewModel = StateObject(wrappedValue: SettingsViewModel(appSettings: appSettings))
-        
     }
-    
     
     var body: some View {
         HStack(spacing: 15) {

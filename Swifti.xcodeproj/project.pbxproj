@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		084F17F62A6FEF1F00BC25CC /* TechnosLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F17F52A6FEF1F00BC25CC /* TechnosLabel.swift */; };
+		084F17F92A6FEFF400BC25CC /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F17F82A6FEFF400BC25CC /* LinkButton.swift */; };
+		084F17FB2A6FF02F00BC25CC /* SafariRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F17FA2A6FF02F00BC25CC /* SafariRepresentable.swift */; };
+		084F18002A7001C800BC25CC /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 084F17FF2A7001C800BC25CC /* WrappingHStack */; };
+		084F18022A70022B00BC25CC /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F18012A70022B00BC25CC /* OptionButton.swift */; };
+		084F18072A7154BC00BC25CC /* TermsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F18062A7154BC00BC25CC /* TermsSection.swift */; };
+		084F180A2A71552100BC25CC /* TermsOfService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F18092A71552100BC25CC /* TermsOfService.swift */; };
+		084F180E2A71569F00BC25CC /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F180D2A71569F00BC25CC /* PrivacyPolicyView.swift */; };
 		0874AFDF2A6C8D0400879D8F /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0874AFDA2A6C8D0300879D8F /* Poppins-Light.ttf */; };
 		0874AFE02A6C8D0400879D8F /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0874AFDB2A6C8D0300879D8F /* Poppins-Medium.ttf */; };
 		0874AFE12A6C8D0400879D8F /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0874AFDC2A6C8D0300879D8F /* Poppins-Regular.ttf */; };
@@ -23,6 +31,12 @@
 		0874AFFF2A6E91EE00879D8F /* CourseIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFFE2A6E91EE00879D8F /* CourseIcon.swift */; };
 		0874B0012A6EB13E00879D8F /* CourseLabelSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874B0002A6EB13E00879D8F /* CourseLabelSquare.swift */; };
 		0874B0052A6EE25000879D8F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874B0042A6EE25000879D8F /* Settings.swift */; };
+		0874B0092A6EEE0000879D8F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874B0082A6EEE0000879D8F /* SettingsView.swift */; };
+		0874B00C2A6EF63500879D8F /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874B00B2A6EF63500879D8F /* SettingsViewModel.swift */; };
+		0874B00F2A6EF68900879D8F /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874B00E2A6EF68900879D8F /* AppSettings.swift */; };
+		0874B0112A6EF6BF00879D8F /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874B0102A6EF6BF00879D8F /* Notification.swift */; };
+		0874B0152A6EF90600879D8F /* SettingsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874B0142A6EF90600879D8F /* SettingsLabel.swift */; };
+		0874B0182A6FEAAD00879D8F /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874B0172A6FEAAC00879D8F /* AboutUsView.swift */; };
 		08FDF3662A6C3F6800BB8987 /* SwiftiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FDF3652A6C3F6800BB8987 /* SwiftiApp.swift */; };
 		08FDF36A2A6C3F6C00BB8987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08FDF3692A6C3F6C00BB8987 /* Assets.xcassets */; };
 		08FDF36D2A6C3F6C00BB8987 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08FDF36C2A6C3F6C00BB8987 /* Preview Assets.xcassets */; };
@@ -52,6 +66,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		084F17F52A6FEF1F00BC25CC /* TechnosLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnosLabel.swift; sourceTree = "<group>"; };
+		084F17F82A6FEFF400BC25CC /* LinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
+		084F17FA2A6FF02F00BC25CC /* SafariRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariRepresentable.swift; sourceTree = "<group>"; };
+		084F18012A70022B00BC25CC /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
+		084F18062A7154BC00BC25CC /* TermsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsSection.swift; sourceTree = "<group>"; };
+		084F18092A71552100BC25CC /* TermsOfService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfService.swift; sourceTree = "<group>"; };
+		084F180D2A71569F00BC25CC /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		0874AFDA2A6C8D0300879D8F /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		0874AFDB2A6C8D0300879D8F /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		0874AFDC2A6C8D0300879D8F /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
@@ -69,6 +90,12 @@
 		0874AFFE2A6E91EE00879D8F /* CourseIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseIcon.swift; sourceTree = "<group>"; };
 		0874B0002A6EB13E00879D8F /* CourseLabelSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseLabelSquare.swift; sourceTree = "<group>"; };
 		0874B0042A6EE25000879D8F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		0874B0082A6EEE0000879D8F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0874B00B2A6EF63500879D8F /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		0874B00E2A6EF68900879D8F /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		0874B0102A6EF6BF00879D8F /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		0874B0142A6EF90600879D8F /* SettingsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabel.swift; sourceTree = "<group>"; };
+		0874B0172A6FEAAC00879D8F /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		08FDF3622A6C3F6800BB8987 /* Swifti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swifti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08FDF3652A6C3F6800BB8987 /* SwiftiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftiApp.swift; sourceTree = "<group>"; };
 		08FDF3692A6C3F6C00BB8987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				084F18002A7001C800BC25CC /* WrappingHStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +136,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		084F17F42A6FEEBB00BC25CC /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				084F17F52A6FEF1F00BC25CC /* TechnosLabel.swift */,
+				084F17F82A6FEFF400BC25CC /* LinkButton.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		084F18032A71546600BC25CC /* TermsOfService */ = {
+			isa = PBXGroup;
+			children = (
+				084F18042A71548C00BC25CC /* View */,
+				084F18052A7154A000BC25CC /* Component */,
+			);
+			path = TermsOfService;
+			sourceTree = "<group>";
+		};
+		084F18042A71548C00BC25CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				084F18092A71552100BC25CC /* TermsOfService.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		084F18052A7154A000BC25CC /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				084F18062A7154BC00BC25CC /* TermsSection.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		084F180B2A71567800BC25CC /* PrivacyPolicy */ = {
+			isa = PBXGroup;
+			children = (
+				084F180C2A71569400BC25CC /* View */,
+			);
+			path = PrivacyPolicy;
+			sourceTree = "<group>";
+		};
+		084F180C2A71569400BC25CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				084F180D2A71569F00BC25CC /* PrivacyPolicyView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0874AFD92A6C8C6B00879D8F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,13 +215,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		0874AFE92A6D3E1600879D8F /* Components */ = {
+		0874AFE92A6D3E1600879D8F /* Component */ = {
 			isa = PBXGroup;
 			children = (
 				0874AFEA2A6D3E3500879D8F /* ValidateButton.swift */,
+				084F17FA2A6FF02F00BC25CC /* SafariRepresentable.swift */,
 				0874AFF92A6DD97B00879D8F /* SearchBar.swift */,
+				084F18012A70022B00BC25CC /* OptionButton.swift */,
 			);
-			path = Components;
+			path = Component;
 			sourceTree = "<group>";
 		};
 		0874AFEF2A6D5E5500879D8F /* Home */ = {
@@ -193,6 +273,9 @@
 		0874B0022A6EE12D00879D8F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				0874B0062A6EEDE400879D8F /* View */,
+				0874B0072A6EEDEB00879D8F /* ViewModel */,
+				0874B00A2A6EF58A00879D8F /* Component */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -201,8 +284,61 @@
 			isa = PBXGroup;
 			children = (
 				0874B0042A6EE25000879D8F /* Settings.swift */,
+				0874B0102A6EF6BF00879D8F /* Notification.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		0874B0062A6EEDE400879D8F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0874B0082A6EEE0000879D8F /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0874B0072A6EEDEB00879D8F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0874B00B2A6EF63500879D8F /* SettingsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0874B00A2A6EF58A00879D8F /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				084F180B2A71567800BC25CC /* PrivacyPolicy */,
+				0874B0162A6F1A1800879D8F /* AboutUs */,
+				084F18032A71546600BC25CC /* TermsOfService */,
+				0874B0142A6EF90600879D8F /* SettingsLabel.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		0874B00D2A6EF67B00879D8F /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				0874B00E2A6EF68900879D8F /* AppSettings.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		0874B0162A6F1A1800879D8F /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				0874B0192A6FEAB300879D8F /* View */,
+				084F17F42A6FEEBB00BC25CC /* Component */,
+			);
+			path = AboutUs;
+			sourceTree = "<group>";
+		};
+		0874B0192A6FEAB300879D8F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0874B0172A6FEAAC00879D8F /* AboutUsView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		08FDF3592A6C3F6800BB8987 = {
@@ -231,7 +367,7 @@
 				08FDF3972A6C40B300BB8987 /* Domain */,
 				08FDF3962A6C406300BB8987 /* Application */,
 				08FDF3942A6C404500BB8987 /* Presentation */,
-				0874AFE92A6D3E1600879D8F /* Components */,
+				0874AFE92A6D3E1600879D8F /* Component */,
 				08FDF3952A6C405600BB8987 /* Data */,
 				08FDF3982A6C40BB00BB8987 /* Extensions */,
 				08FDF36B2A6C3F6C00BB8987 /* Preview Content */,
@@ -278,6 +414,7 @@
 		08FDF3952A6C405600BB8987 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0874B00D2A6EF67B00879D8F /* Repositories */,
 				08FDF3702A6C3F6C00BB8987 /* SwiftiDataModel.xcdatamodeld */,
 				0874AFEC2A6D468500879D8F /* DataController.swift */,
 			);
@@ -343,6 +480,9 @@
 			dependencies = (
 			);
 			name = Swifti;
+			packageProductDependencies = (
+				084F17FF2A7001C800BC25CC /* WrappingHStack */,
+			);
 			productName = Swifti;
 			productReference = 08FDF3622A6C3F6800BB8987 /* Swifti.app */;
 			productType = "com.apple.product-type.application";
@@ -415,6 +555,9 @@
 				Base,
 			);
 			mainGroup = 08FDF3592A6C3F6800BB8987;
+			packageReferences = (
+				084F17FE2A7001C800BC25CC /* XCRemoteSwiftPackageReference "WrappingHStack" */,
+			);
 			productRefGroup = 08FDF3632A6C3F6800BB8987 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -463,19 +606,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				0874AFFF2A6E91EE00879D8F /* CourseIcon.swift in Sources */,
+				084F17F62A6FEF1F00BC25CC /* TechnosLabel.swift in Sources */,
 				0874AFEB2A6D3E3500879D8F /* ValidateButton.swift in Sources */,
 				0874AFF82A6D65E900879D8F /* WelcomeViewModel.swift in Sources */,
+				0874B0152A6EF90600879D8F /* SettingsLabel.swift in Sources */,
 				0874AFF52A6D5F0300879D8F /* HomeViewModel.swift in Sources */,
+				084F180A2A71552100BC25CC /* TermsOfService.swift in Sources */,
 				0874AFFD2A6E91BF00879D8F /* CourseLabelRectangle.swift in Sources */,
 				0874AFE82A6D37B700879D8F /* WelcomeView.swift in Sources */,
 				08FDF3722A6C3F6C00BB8987 /* SwiftiDataModel.xcdatamodeld in Sources */,
 				08FDF3662A6C3F6800BB8987 /* SwiftiApp.swift in Sources */,
+				0874B00C2A6EF63500879D8F /* SettingsViewModel.swift in Sources */,
+				084F18022A70022B00BC25CC /* OptionButton.swift in Sources */,
 				0874B0012A6EB13E00879D8F /* CourseLabelSquare.swift in Sources */,
+				084F18072A7154BC00BC25CC /* TermsSection.swift in Sources */,
+				084F180E2A71569F00BC25CC /* PrivacyPolicyView.swift in Sources */,
+				0874B0092A6EEE0000879D8F /* SettingsView.swift in Sources */,
 				0874B0052A6EE25000879D8F /* Settings.swift in Sources */,
+				0874B0182A6FEAAD00879D8F /* AboutUsView.swift in Sources */,
+				0874B0112A6EF6BF00879D8F /* Notification.swift in Sources */,
 				0874AFED2A6D468500879D8F /* DataController.swift in Sources */,
 				0874AFF22A6D5E8100879D8F /* HomeView.swift in Sources */,
+				084F17F92A6FEFF400BC25CC /* LinkButton.swift in Sources */,
+				0874B00F2A6EF68900879D8F /* AppSettings.swift in Sources */,
 				08FDF39C2A6C412900BB8987 /* LaunchScreenView.swift in Sources */,
 				0874AFFA2A6DD97B00879D8F /* SearchBar.swift in Sources */,
+				084F17FB2A6FF02F00BC25CC /* SafariRepresentable.swift in Sources */,
 				08FDF39E2A6C4B3C00BB8987 /* Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,6 +799,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -673,6 +830,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -803,6 +961,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		084F17FE2A7001C800BC25CC /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dkk/WrappingHStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		084F17FF2A7001C800BC25CC /* WrappingHStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 084F17FE2A7001C800BC25CC /* XCRemoteSwiftPackageReference "WrappingHStack" */;
+			productName = WrappingHStack;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		08FDF3702A6C3F6C00BB8987 /* SwiftiDataModel.xcdatamodeld */ = {
