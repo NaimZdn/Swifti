@@ -3,14 +3,14 @@
         {
             "title" : "Introduction au langage",
             "icon" : "swift",
-            "difficulty" : "Facile"
+            "difficulty" : "Facile",
             "techno" : "Swift",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus ligula, facilisis molestie scelerisque ut, fringilla sit amet tortor. Maecenas commodo tincidunt dui, eu mollis sapien suscipit eget."
         },
         {
             "title" : "Les propriétés",
             "icon" : "swift",
-            "difficulty" : "Facile"
+            "difficulty" : "Facile",
             "techno" : "Swift",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tellus ligula, facilisis molestie scelerisque ut, fringilla sit amet tortor. Maecenas commodo tincidunt dui, eu mollis sapien suscipit eget."
         }
