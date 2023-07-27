@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeView: View {
     @ObservedObject private var viewModel = HomeViewModel()
     
+    @State private var searchText = ""
+    
     var body: some View {
         
         ZStack(alignment: .topTrailing) {
@@ -34,7 +36,7 @@ struct HomeView: View {
                 .padding(.top, 20)
                 .padding(.bottom, 25)
                 
-                SearchBar()
+                SearchBar(searchText: $searchText, placeholder: "Recherchez un cours")
                     .padding(.horizontal, 20)
                     .padding(.bottom, 25)
                 
