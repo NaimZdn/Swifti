@@ -8,16 +8,20 @@
 import SwiftUI
 
 struct CourseLabelRectangle: View {
+    var icon: String
+    var techno: String
+    var title: String
+    
     var body: some View {
         HStack(spacing: 20) {
-            CourseIcon(icon: "swift")
+            CourseIcon(icon: icon)
             
             VStack(alignment: .leading, spacing: -3) {
-                Text("Swift")
+                Text(techno)
                     .font(.courseLabelTitle)
                     .foregroundColor(.white)
                 Spacer()
-                Text("Introduction au langage")
+                Text(title)
                     .font(.courseLabelCaption)
                     .foregroundColor(.white)
             }
@@ -30,6 +34,6 @@ struct CourseLabelRectangle: View {
 
 struct CourseLabelRectangle_Previews: PreviewProvider {
     static var previews: some View {
-        CourseLabelRectangle()
+        CourseLabelRectangle(icon: "swift", techno: "Swift", title: "Introduction au langage")
     }
 }
