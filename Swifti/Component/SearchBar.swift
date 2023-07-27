@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct SearchBar: View {
-    @State private var searchText = ""
+    @Binding var searchText: String
+    var placeholder: String
     
     var body: some View {
         HStack(spacing: 20) {
             Image("search")
                 .foregroundColor(.optionsIcon)
 
-            TextField("", text: $searchText, prompt: Text("Recherchez un cours").foregroundColor(.placeholder).font(.defaultPlaceholder))
+            TextField("", text: $searchText, prompt: Text(placeholder).foregroundColor(.placeholder).font(.defaultPlaceholder))
                 .font(.defaultBody)
                 .foregroundColor(.white)
             
@@ -36,7 +37,7 @@ struct SearchBar: View {
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar()
+        SearchBar(searchText: .constant(""), placeholder: "Recherchez un cours")
             .padding(20)
             .background(Color.background)
         
