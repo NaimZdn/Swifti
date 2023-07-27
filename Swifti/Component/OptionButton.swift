@@ -16,18 +16,19 @@ struct OptionButton: View {
             action()
         } label: {
             Image(icon)
+                .resizable()
                 .foregroundColor(.white)
-                .frame(maxWidth: 40, maxHeight: 40)
-                .background(Color.optionsBackground, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .frame(width: 25, height: 25)
                 
         }
-        .frame(minWidth: 37, minHeight: 37)
+        .frame(minWidth: 40, minHeight: 40)
+        .background(Color.optionsBackground, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
         .buttonStyle(PlainButtonStyle())
     }
 }
 
 struct OptionButton_Previews: PreviewProvider {
     static var previews: some View {
-        OptionButton(icon: "carret-left", action: {})
+        OptionButton(icon: "filter", action: {})
     }
 }
