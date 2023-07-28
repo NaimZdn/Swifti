@@ -6,9 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
 
 class CourseViewModel: ObservableObject {
     @Published var courses: [CourseContent] = []
+    
+    private var gradients = GradientCourse.allCases
     
     init() {
         loadJSONData()
@@ -25,5 +28,9 @@ class CourseViewModel: ObservableObject {
                 print("Erreur lors du chargement du fichier JSON : \(error)")
             }
         }
+    }
+    
+    func getLabelColor(subject: String) -> LinearGradient {
+        gradients.first { $0.rawValue == subject }?.gradient ?? Color.gradientBlue
     }
 }

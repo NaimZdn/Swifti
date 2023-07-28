@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum Gradient: String, CaseIterable  {
+enum GradientArticle: String, CaseIterable  {
     case tips = "Astuces"
     case news = "News"
     case newest = "Nouveautés"
@@ -30,3 +30,22 @@ enum Gradient: String, CaseIterable  {
         }
     }
 }
+
+enum GradientCourse: String, CaseIterable  {
+    case easy = "Facile"
+    case medium = "Moyen"
+    case hard = "Difficile"
+    
+    var gradient: LinearGradient {
+        switch self {
+        case .easy:
+            return Color.gradientBlue
+        case .medium:
+            return Color.gradientYellow
+        case .hard:
+            return Color.gradientOrange
+
+        }
+    }
+}
+
