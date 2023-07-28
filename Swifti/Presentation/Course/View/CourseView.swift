@@ -12,42 +12,46 @@ struct CourseView: View {
     @State private var searchText = ""
     
     var body: some View {
-        ZStack(alignment: .topTrailing) {
-            Image("blobs")
-                .resizable()
-                .frame(width: 350, height: 400)
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack(alignment: .leading) {
-                VStack(alignment: .leading, spacing: 25) {
-                    HStack {
-                        Text("Course")
-                            .font(.defaultTitle)
-                            .foregroundColor(.white)
-                    }
-                    
-                    SearchBar(searchText: $searchText, placeholder: "Rechercher un cours")
-                    
-                }
-                .padding(.bottom, 10)
+        NavigationView {
+            ZStack(alignment: .topTrailing) {
+                Image("blobs")
+                    .resizable()
+                    .frame(width: 350, height: 400)
+                    .edgesIgnoringSafeArea(.all)
                 
-                ScrollView {
-                    ForEach(Array(viewModel.courses.enumerated().filter { searchText.isEmpty || $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}), id: \.element) { (index, course) in
+                VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 25) {
+                        HStack {
+                            Text("Course")
+                                .font(.defaultTitle)
+                                .foregroundColor(.white)
+                        }
                         
-                        CourseLabelRectangle(icon: course.icon, techno: course.techno, title: course.title)
+                        SearchBar(searchText: $searchText, placeholder: "Rechercher un cours")
+                        
                     }
-                    .padding(.top, 10)
+                    .padding(.bottom, 10)
+                    
+                    ScrollView {
+                        ForEach(Array(viewModel.courses.enumerated().filter { searchText.isEmpty || $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}), id: \.element) { (index, course) in
+                            
+                            NavigationLink(destination: NavigationToCourse(title: course.title, difficulty: course.difficulty, update: course.update, content: course.content, gradient: viewModel.getLabelColor(subject: course.difficulty))) {
+                                CourseLabelRectangle(icon: course.icon, techno: course.techno, title: course.title)
+
+                            }
+                        }
+                        .padding(.top, 10)
+                    }
+                    Spacer()
+                    
                 }
-               
-                Spacer()
+                .padding(20)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 
             }
-            .padding(20)
-            .frame(maxWidth: .infinity, alignment: .leading)
             
+            .background(Color.background)
         }
-        
-        .background(Color.background)
     }
 }
 

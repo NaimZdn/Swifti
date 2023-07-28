@@ -14,5 +14,5 @@ struct Course: Codable {
 
 // MARK: - Course
 struct CourseContent: Codable, Hashable {
-    let title, icon, difficulty, techno, content: String
+    let title, icon, difficulty, update, techno, content: String
 }
