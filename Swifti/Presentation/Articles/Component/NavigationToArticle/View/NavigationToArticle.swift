@@ -55,6 +55,11 @@ struct NavigationToArticle: View {
                         .foregroundColor(.white)
                     
                     ArticlesSubjectLabel(subject: viewModel.articles[index].subject, gradient: viewModel.getLabelColor(subject: viewModel.articles[index].subject))
+                        .padding(.leading, 0.5)
+                    
+                    Text("Date de publication : \(viewModel.articles[index].published)")
+                        .font(.defaultPlaceholder)
+                        .foregroundColor(.placeholder)
                 }
                 
                 Text(viewModel.articles[index].content)
@@ -65,7 +70,7 @@ struct NavigationToArticle: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: OptionButton(icon: "carret-left", action: {
             self.presentationMode.wrappedValue.dismiss()
-        }).padding(.top, 25))
+        }).padding(.top, 5))
         .padding(20)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color.background)

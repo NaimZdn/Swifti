@@ -14,6 +14,6 @@ struct Article: Codable {
 
 // MARK: - Article
 struct ArticleContent: Codable, Hashable {
-    let title, cover, subject, content: String
+    let title, cover, subject, published, content: String
     
 }

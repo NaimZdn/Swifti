@@ -11,7 +11,7 @@ import SwiftUI
 class ArticlesViewModel: ObservableObject {
     @Published var articles: [ArticleContent] = []
     
-    private var gradients = Gradient.allCases
+    private var gradients = GradientArticle.allCases
     
     init() {
         loadJSONData()
