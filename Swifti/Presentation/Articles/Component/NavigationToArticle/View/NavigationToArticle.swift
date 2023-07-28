@@ -54,7 +54,7 @@ struct NavigationToArticle: View {
                         .font(.defaultTitle2)
                         .foregroundColor(.white)
                     
-                    ArticlesSubjectLabel(subject: viewModel.articles[index].subject, gradient: viewModel.getLabelColor(subject: viewModel.articles[index].subject))
+                    InformationLabel(subject: viewModel.articles[index].subject, gradient: viewModel.getLabelColor(subject: viewModel.articles[index].subject))
                         .padding(.leading, 0.5)
                     
                     Text("Date de publication : \(viewModel.articles[index].published)")

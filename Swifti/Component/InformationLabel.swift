@@ -1,5 +1,5 @@
 //
-//  ArticlesSubject.swift
+//  InformationLabel.swift
 //  Swifti
 //
 //  Created by Zidouni on 26/07/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ArticlesSubjectLabel: View {
+struct InformationLabel: View {
     var subject: String
     var gradient: LinearGradient
     
@@ -39,8 +39,8 @@ struct ArticlesSubjectLabel: View {
     }
 }
 
-struct ArticlesSubjectLabel_Previews: PreviewProvider {
+struct InformationLabel_Previews: PreviewProvider {
     static var previews: some View {
-        ArticlesSubjectLabel(subject: "Astuces", gradient: Color.gradientBlue)
+        InformationLabel(subject: "Astuces", gradient: Color.gradientBlue)
     }
 }

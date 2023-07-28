@@ -26,7 +26,7 @@ struct NavigationToCourse: View {
                         .font(.defaultTitle2)
                         .foregroundColor(.white)
                     
-                    ArticlesSubjectLabel(subject: difficulty, gradient: gradient)
+                    InformationLabel(subject: difficulty, gradient: gradient)
                         .padding(.leading, 0.5)
                         .padding(.bottom, 10)
                     

@@ -31,7 +31,7 @@ struct ArticlesLabel: View {
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)
                         
-                    ArticlesSubjectLabel(subject: subject, gradient: gradient)
+                    InformationLabel(subject: subject, gradient: gradient)
                 }
                 .padding(.top, 2)
                 Spacer()
