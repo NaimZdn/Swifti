@@ -52,6 +52,10 @@ extension Font {
         Font.custom("Poppins-Medium", size: size)
     }
     
+    static func fontItalic(_ size: CGFloat) -> Font {
+        Font.custom("Poppins-Italic", size: size)
+    }
+    
     static func fontSemiBold(_ size: CGFloat) -> Font {
         Font.custom("Poppins-SemiBold", size: size)
     }
@@ -65,6 +69,7 @@ extension Font {
     static var defaultPlaceholder = fontLight(14)
     static var defaultLabelCaption = fontRegular(15)
     static var defaultBody = fontRegular(17)
+    static var defaultItalic = fontItalic(17)
     static var defaultButtonCaption = fontSemiBold(17)
     static var defaultTitle3 = fontSemiBold(20)
     static var defaultTitle2 = fontSemiBold(26)
@@ -86,5 +91,3 @@ extension Font {
     static var settingsLabelText = fontLight(14)
     
 }
-
-
