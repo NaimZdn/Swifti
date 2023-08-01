@@ -12,7 +12,7 @@ struct ArticlesLabel: View {
     var title: String
     var subject: String
     var gradient: LinearGradient
-    var content: String
+    var intro: String
     
     var body: some View {
         HStack(spacing: 15) {
@@ -35,13 +35,12 @@ struct ArticlesLabel: View {
                 }
                 .padding(.top, 2)
                 Spacer()
-               
-                Text(content)
-                    .font(.articlesLabelCaption)
-                    .foregroundColor(.white)
-                    .lineLimit(2)
-                    .multilineTextAlignment(.leading)
-    
+                
+                Text(intro)
+                        .font(.articlesLabelCaption)
+                        .foregroundColor(.white)
+                        .lineLimit(2)
+                        .multilineTextAlignment(.leading)
             }
             .frame(maxWidth: .infinity, maxHeight: 90, alignment: .leading)
         }
@@ -53,6 +52,6 @@ struct ArticlesLabel: View {
 
 struct ArticlesLabel_Previews: PreviewProvider {
     static var previews: some View {
-        ArticlesLabel(cover: "https://mcdn.wallpapersafari.com/medium/37/54/u6EoIC.png", title: "Mettre en place une veille efficace", subject: "Actuces", gradient: Color.gradientYellow, content: "Lorem ipsum")
+        ArticlesLabel(cover: "https://mcdn.wallpapersafari.com/medium/37/54/u6EoIC.png", title: "Mettre en place une veille efficace", subject: "Actuces", gradient: Color.gradientYellow, intro: "La veille technologique consiste a")
     }
 }

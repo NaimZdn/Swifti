@@ -47,7 +47,7 @@ struct ArticlesView: View {
                             let isVisible = visibleIndices.contains(index)
                             
                             NavigationLink(destination: NavigationToArticle(viewModel: viewModel, index: index)) {
-                                ArticlesLabel(cover: article.cover, title: article.title, subject: article.subject, gradient: viewModel.getLabelColor(subject: article.subject), content: article.content)
+                                ArticlesLabel(cover: article.cover, title: article.title, subject: article.subject, gradient: viewModel.getLabelColor(subject: article.subject), intro: article.intro)
                                     .opacity(isVisible ? 1 : 0)
                                     .padding(.top, isVisible ? 0 : 20)
                                     .onAppear {
