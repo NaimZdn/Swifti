@@ -61,8 +61,8 @@ struct HomeView: View {
                         }
                         
                         VStack(spacing: 10) {
-                            CourseLabelRectangle()
-                            CourseLabelRectangle()
+                            CourseLabelRectangle(icon: "swift", techno: "Swift", title: "Introduction au langage")
+                            CourseLabelRectangle(icon: "swift", techno: "Swift", title: "Les propriétés")
                         }
                     }
                     .padding(.horizontal, 20)
