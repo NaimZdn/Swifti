@@ -7,13 +7,24 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - Article
 struct Article: Codable {
     let articles: [ArticleContent]
 }
 
-// MARK: - Article
+// MARK: - ArticleElement
 struct ArticleContent: Codable, Hashable {
-    let title, cover, subject, published, content: String
-    
+    let title: String
+    let cover: String
+    let subject, published: String
+    let intro: String
+    let sections: [Section]
+    let outro: String
+}
+
+// MARK: - Section
+struct Section: Codable, Hashable {
+    let title, text: String
+    let isCode: Bool?
+    let code: String?
 }
