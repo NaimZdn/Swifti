@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Markdown
 
 struct NavigationToArticle: View {
     @Environment(\.presentationMode) var presentationMode
@@ -13,9 +14,19 @@ struct NavigationToArticle: View {
     @ObservedObject var viewModel: ArticlesViewModel
     @State private var index: Int
     
+    var text: String = "**Hello** *World*"
+ 
+    var keyText: LocalizedStringKey = "**Hello** *World*"
+    
     init(viewModel: ArticlesViewModel, index: Int) {
         self.viewModel = viewModel
         self._index = State(initialValue: index)
+    }
+    
+    var paragraphStyle: NSParagraphStyle {
+      let style = NSMutableParagraphStyle()
+      style.alignment = .justified
+      return style
     }
     
     var body: some View {
@@ -62,9 +73,41 @@ struct NavigationToArticle: View {
                         .foregroundColor(.placeholder)
                 }
                 
-                Text(viewModel.articles[index].content)
+                Text(try! AttributedString(markdown: viewModel.articles[index].intro, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
+                    .tint(Color.primaryColor)
                     .font(.defaultBody)
                     .foregroundColor(.white)
+                    .padding(.bottom, 30)
+                
+                ForEach(viewModel.articles[index].sections, id: \.self) { section in
+                    VStack(alignment: .leading, spacing: 15) {
+                        Text(try! AttributedString(markdown: section.title, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
+                            .font(.defaultTitle3)
+                            .foregroundColor(.white)
+                        
+                        Text(try! AttributedString(markdown: section.text, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
+                            .tint(Color.primaryColor)
+                            .font(.defaultBody)
+                            .foregroundColor(.white)
+                        
+                        if section.isCode == true {
+                            let parserResult: ParserResult = {
+                                let document = Document(parsing: section.code!)
+                                var parser = MarkdownAttributedStringParser()
+                                return parser.parserResults(from: document)[0]
+                            }()
+                            CodeBlockView(parserResult: parserResult)
+                        }
+                    }
+                    .padding(.bottom, 30)
+                    
+                }
+                
+                Text(try! AttributedString(markdown: viewModel.articles[index].outro, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
+                    .tint(Color.primaryColor)
+                    .font(.defaultBody)
+                    .foregroundColor(.white)
+                
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -82,3 +125,4 @@ struct NavigationToArticle_Previews: PreviewProvider {
         NavigationToArticle(viewModel: ArticlesViewModel(), index: 0)
     }
 }
+
