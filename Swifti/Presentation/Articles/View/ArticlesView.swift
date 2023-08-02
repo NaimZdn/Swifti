@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct ArticlesView: View {
+struct ArticlesView: View {    
     @StateObject private var viewModel = ArticlesViewModel()
     
+    @State private var isFilterViewPresented = false
     @State private var searchText = ""
     @State private var visibleIndices: [Int] = []
-
+    
     var body: some View {
         
         NavigationView {
@@ -32,7 +33,12 @@ struct ArticlesView: View {
                             Spacer()
                             
                             OptionButton(icon: "filter") {
-                                
+                                isFilterViewPresented = true
+                            }
+                            .sheet(isPresented: $isFilterViewPresented) {
+                                FiltersView(articlesViewModel: viewModel, filters: FiltersArticles.allCases)
+                                    .presentationDetents([.medium])
+                                    .presentationDragIndicator(.visible)
                             }
                         }     
                         SearchBar(searchText: $searchText, placeholder: "Recherchez un article ")
@@ -42,7 +48,7 @@ struct ArticlesView: View {
                     .padding(.horizontal, 20)
                     
                     ScrollView(showsIndicators: false) {
-                        ForEach(Array(viewModel.articles.enumerated().filter { searchText.isEmpty ||  $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}), id: \.element) { (index, article) in
+                        ForEach(Array(viewModel.getFilteredArticles().enumerated().filter { searchText.isEmpty ||  $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}), id: \.element) { (index, article) in
                             
                             let isVisible = visibleIndices.contains(index)
                             
