@@ -26,7 +26,6 @@ struct CourseView: View {
                                 .font(.defaultTitle)
                                 .foregroundColor(.white)
                         }
-                        
                         SearchBar(searchText: $searchText, placeholder: "Rechercher un cours")
                         
                     }
