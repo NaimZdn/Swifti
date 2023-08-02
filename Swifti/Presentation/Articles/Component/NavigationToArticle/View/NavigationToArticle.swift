@@ -12,25 +12,15 @@ struct NavigationToArticle: View {
     @Environment(\.presentationMode) var presentationMode
     
     @ObservedObject var viewModel: ArticlesViewModel
-    @State private var index: Int
     
-    var text: String = "**Hello** *World*"
- 
-    var keyText: LocalizedStringKey = "**Hello** *World*"
+    @State private var index: Int
     
     init(viewModel: ArticlesViewModel, index: Int) {
         self.viewModel = viewModel
         self._index = State(initialValue: index)
     }
-    
-    var paragraphStyle: NSParagraphStyle {
-      let style = NSMutableParagraphStyle()
-      style.alignment = .justified
-      return style
-    }
-    
+
     var body: some View {
-        
         ScrollView {
             VStack(alignment: .leading, spacing: 15) {
                 ImageView(imageURL: URL(string: viewModel.articles[index].cover)!)
@@ -98,9 +88,31 @@ struct NavigationToArticle: View {
                             }()
                             CodeBlockView(parserResult: parserResult)
                         }
+                        
+                        if section.isSecondText == true {
+                            Text(try! AttributedString(markdown: section.secondText!, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
+                                .tint(Color.primaryColor)
+                                .font(.defaultBody)
+                                .foregroundColor(.white)
+                        }
+                        
+                        if section.isSecondCode == true {
+                            let parserResult: ParserResult = {
+                                let document = Document(parsing: section.secondCode!)
+                                var parser = MarkdownAttributedStringParser()
+                                return parser.parserResults(from: document)[0]
+                            }()
+                            CodeBlockView(parserResult: parserResult)
+                        }
+                        
+                        if section.isThirdText == true {
+                            Text(try! AttributedString(markdown: section.thirdText!, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
+                                .tint(Color.primaryColor)
+                                .font(.defaultBody)
+                                .foregroundColor(.white)
+                        }
                     }
-                    .padding(.bottom, 30)
-                    
+                    .padding(.bottom, 30)   
                 }
                 
                 Text(try! AttributedString(markdown: viewModel.articles[index].outro, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
