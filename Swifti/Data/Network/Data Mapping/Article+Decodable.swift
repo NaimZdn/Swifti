@@ -27,4 +27,10 @@ struct Section: Codable, Hashable {
     let title, text: String
     let isCode: Bool?
     let code: String?
+    let isSecondText: Bool?
+    let secondText: String?
+    let isSecondCode: Bool?
+    let secondCode: String?
+    let isThirdText: Bool?
+    let thirdText: String?
 }
