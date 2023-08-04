@@ -72,7 +72,8 @@ extension Font {
     static var defaultBody = fontRegular(17)
     static var defaultItalic = fontItalic(17)
     static var defaultButtonCaption = fontSemiBold(17)
-    static var defaultTitle3 = fontSemiBold(20)
+    static var defaultTitle4 = fontSemiBold(20)
+    static var defaultTitle3 = fontSemiBold(23)
     static var defaultTitle2 = fontSemiBold(26)
     static var defaultTitle = fontSemiBold(30)
     
