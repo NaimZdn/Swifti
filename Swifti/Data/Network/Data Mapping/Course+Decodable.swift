@@ -7,12 +7,39 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - Course
 struct Course: Codable {
     let courses: [CourseContent]
 }
 
-// MARK: - Course
+// MARK: - CourseContent
 struct CourseContent: Codable, Hashable {
-    let title, icon, difficulty, update, techno, content: String
+    let title : String
+    let icon : String
+    let techno : String
+    let difficulty : String
+    let update : String
+    let intro : String
+    let sections: [CourseSection]
+    let outro: String?
+}
+
+// MARK: - CourseSection
+struct CourseSection : Codable, Hashable {
+    let title : String
+    let firstText: String?
+    let firstCode: String?
+    let subsections : [CourseSubsection]?
+    let secondText : String?
+    let secondCode : String?
+    let firstTextBox : String?
+}
+
+struct CourseSubsection: Codable, Hashable {
+    let subtitle: String
+    let firstText: String
+    let firstCode: String?
+    let secondText: String?
+    let secondCode: String?
+    let thirdText : String?
 }
