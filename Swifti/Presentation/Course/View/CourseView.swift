@@ -32,11 +32,10 @@ struct CourseView: View {
                     .padding(.bottom, 10)
                     
                     ScrollView {
-                        ForEach(Array(viewModel.courses.enumerated().filter { searchText.isEmpty || $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}), id: \.element) { (index, course) in
-                            
-                            NavigationLink(destination: NavigationToCourse(title: course.title, difficulty: course.difficulty, update: course.update, content: course.content, gradient: viewModel.getLabelColor(subject: course.difficulty))) {
+                        ForEach(Array(viewModel.courses.enumerated()), id: \.element) { (index, course) in
+                            NavigationLink(destination: NavigationToCourse(viewModel: viewModel, index: index)) {
                                 CourseLabelRectangle(icon: course.icon, techno: course.techno, title: course.title)
-
+                                
                             }
                         }
                         .padding(.top, 10)
@@ -48,7 +47,6 @@ struct CourseView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
             }
-            
             .background(Color.background)
         }
     }

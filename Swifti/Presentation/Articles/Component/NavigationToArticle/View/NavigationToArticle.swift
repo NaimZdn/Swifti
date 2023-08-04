@@ -137,4 +137,3 @@ struct NavigationToArticle_Previews: PreviewProvider {
         NavigationToArticle(viewModel: ArticlesViewModel(), index: 0)
     }
 }
-
