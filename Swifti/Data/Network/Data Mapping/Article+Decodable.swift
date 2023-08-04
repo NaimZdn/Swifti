@@ -18,12 +18,12 @@ struct ArticleContent: Codable, Hashable {
     let cover: String
     let subject, published: String
     let intro: String
-    let sections: [Section]
+    let sections: [ArticleSection]
     let outro: String
 }
 
 // MARK: - Section
-struct Section: Codable, Hashable {
+struct ArticleSection: Codable, Hashable {
     let title, text: String
     let isCode: Bool?
     let code: String?
