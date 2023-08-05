@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum FiltersEnum: Hashable {
+    case articles([FiltersArticles])
+    case courses([FiltersCourses])
+}
+
 enum FiltersArticles: String, CaseIterable, Hashable {
     case code = "Code"
     case tips = "Astuces"

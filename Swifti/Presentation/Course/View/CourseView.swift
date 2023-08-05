@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct CourseView: View {
-    @StateObject private var viewModel = CourseViewModel()
+    @ObservedObject private var courseViewModel = CourseViewModel()
+    @ObservedObject private var filtersViewModel = FiltersViewModel()
+    
+    
+    @State private var isFilterViewPresented = false
     @State private var searchText = ""
     
     var body: some View {
@@ -25,15 +29,26 @@ struct CourseView: View {
                             Text("Course")
                                 .font(.defaultTitle)
                                 .foregroundColor(.white)
+                            
+                            Spacer()
+                            
+                            OptionButton(icon: "filter") {
+                                isFilterViewPresented = true
+                            }
                         }
                         SearchBar(searchText: $searchText, placeholder: "Rechercher un cours")
                         
+                        .sheet(isPresented: $isFilterViewPresented) {
+                            FiltersView(viewModel: filtersViewModel, filtersArticles: [], filtersCourses: FiltersCourses.allCases)
+                                .presentationDetents([.medium])
+                                .presentationDragIndicator(.visible)
+                        }
                     }
                     .padding(.bottom, 10)
                     
                     ScrollView {
-                        ForEach(Array(viewModel.courses.enumerated()), id: \.element) { (index, course) in
-                            NavigationLink(destination: NavigationToCourse(viewModel: viewModel, index: index)) {
+                        ForEach(Array(filtersViewModel.getFilteredCourses(courses: courseViewModel.courses).enumerated().filter { searchText.isEmpty ||  $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}), id: \.element) { (index, course) in
+                            NavigationLink(destination: NavigationToCourse(viewModel: courseViewModel, index: index)) {
                                 CourseLabelRectangle(icon: course.icon, techno: course.techno, title: course.title)
                                 
                             }

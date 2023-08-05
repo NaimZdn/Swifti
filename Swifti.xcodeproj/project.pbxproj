@@ -47,6 +47,8 @@
 		0874B0112A6EF6BF00879D8F /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874B0102A6EF6BF00879D8F /* Notification.swift */; };
 		0874B0152A6EF90600879D8F /* SettingsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874B0142A6EF90600879D8F /* SettingsLabel.swift */; };
 		0874B0182A6FEAAD00879D8F /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874B0172A6FEAAC00879D8F /* AboutUsView.swift */; };
+		08A9027E2A7D61C500EAEF09 /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = 08A9027D2A7D61C500EAEF09 /* Markdown */; };
+		08B759942A7DAB800035FF9C /* FiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B759932A7DAB7F0035FF9C /* FiltersViewModel.swift */; };
 		08CD22D62A77C4ED007A0334 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08CD22D52A77C4ED007A0334 /* Poppins-Italic.ttf */; };
 		08CD22D82A77C4F8007A0334 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08CD22D72A77C4F8007A0334 /* Poppins-Medium.ttf */; };
 		08CD22DA2A77C500007A0334 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08CD22D92A77C500007A0334 /* Poppins-Light.ttf */; };
@@ -54,11 +56,14 @@
 		08CD22DE2A77C51C007A0334 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08CD22DD2A77C51B007A0334 /* Poppins-SemiBold.ttf */; };
 		08CD22E02A77C527007A0334 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08CD22DF2A77C527007A0334 /* Poppins-Bold.ttf */; };
 		08CD22E22A77C6DA007A0334 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08CD22E12A77C6DA007A0334 /* Poppins-BoldItalic.ttf */; };
-		08CD22F22A794849007A0334 /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = 08CD22F12A794849007A0334 /* Markdown */; };
 		08CD22F52A794890007A0334 /* Highlightr in Frameworks */ = {isa = PBXBuildFile; productRef = 08CD22F42A794890007A0334 /* Highlightr */; };
 		08CD22FB2A79497F007A0334 /* MarkdownAttributedStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CD22FA2A79497F007A0334 /* MarkdownAttributedStringParser.swift */; };
 		08CD22FD2A794B83007A0334 /* ParserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CD22FC2A794B83007A0334 /* ParserResult.swift */; };
 		08CD22FF2A794E7E007A0334 /* CodeBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CD22FE2A794E7E007A0334 /* CodeBlockView.swift */; };
+		08CD23052A798C2D007A0334 /* FiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CD23042A798C2D007A0334 /* FiltersView.swift */; };
+		08CD23092A798C53007A0334 /* FiltersLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CD23082A798C53007A0334 /* FiltersLabel.swift */; };
+		08CD230B2A798DE8007A0334 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CD230A2A798DE8007A0334 /* Filters.swift */; };
+		08CD230D2A7A5525007A0334 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CD230C2A7A5525007A0334 /* DeleteButton.swift */; };
 		08FDF3662A6C3F6800BB8987 /* SwiftiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FDF3652A6C3F6800BB8987 /* SwiftiApp.swift */; };
 		08FDF36A2A6C3F6C00BB8987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08FDF3692A6C3F6C00BB8987 /* Assets.xcassets */; };
 		08FDF36D2A6C3F6C00BB8987 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08FDF36C2A6C3F6C00BB8987 /* Preview Assets.xcassets */; };
@@ -128,6 +133,7 @@
 		0874B0102A6EF6BF00879D8F /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		0874B0142A6EF90600879D8F /* SettingsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabel.swift; sourceTree = "<group>"; };
 		0874B0172A6FEAAC00879D8F /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
+		08B759932A7DAB7F0035FF9C /* FiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModel.swift; sourceTree = "<group>"; };
 		08CD22D52A77C4ED007A0334 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
 		08CD22D72A77C4F8007A0334 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		08CD22D92A77C500007A0334 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
@@ -138,6 +144,10 @@
 		08CD22FA2A79497F007A0334 /* MarkdownAttributedStringParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownAttributedStringParser.swift; sourceTree = "<group>"; };
 		08CD22FC2A794B83007A0334 /* ParserResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserResult.swift; sourceTree = "<group>"; };
 		08CD22FE2A794E7E007A0334 /* CodeBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBlockView.swift; sourceTree = "<group>"; };
+		08CD23042A798C2D007A0334 /* FiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersView.swift; sourceTree = "<group>"; };
+		08CD23082A798C53007A0334 /* FiltersLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersLabel.swift; sourceTree = "<group>"; };
+		08CD230A2A798DE8007A0334 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		08CD230C2A7A5525007A0334 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 		08FDF3622A6C3F6800BB8987 /* Swifti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swifti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08FDF3652A6C3F6800BB8987 /* SwiftiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftiApp.swift; sourceTree = "<group>"; };
 		08FDF3692A6C3F6C00BB8987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,9 +167,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A9027E2A7D61C500EAEF09 /* Markdown in Frameworks */,
 				084F18002A7001C800BC25CC /* WrappingHStack in Frameworks */,
 				08CD22F52A794890007A0334 /* Highlightr in Frameworks */,
-				08CD22F22A794849007A0334 /* Markdown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				08CD22FE2A794E7E007A0334 /* CodeBlockView.swift */,
+				08CD230C2A7A5525007A0334 /* DeleteButton.swift */,
 				084F181D2A716C7600BC25CC /* InformationLabel.swift */,
 				0874AFEA2A6D3E3500879D8F /* ValidateButton.swift */,
 				084F18212A7182D800BC25CC /* ImageView.swift */,
@@ -474,6 +485,7 @@
 				084F18232A71A10800BC25CC /* Gradient.swift */,
 				08CD22FA2A79497F007A0334 /* MarkdownAttributedStringParser.swift */,
 				08CD22FC2A794B83007A0334 /* ParserResult.swift */,
+				08CD230A2A798DE8007A0334 /* Filters.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -526,6 +538,40 @@
 			isa = PBXGroup;
 			children = (
 				0874B0172A6FEAAC00879D8F /* AboutUsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		08B759922A7DAB690035FF9C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				08B759932A7DAB7F0035FF9C /* FiltersViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		08CD23002A798BFD007A0334 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				08B759922A7DAB690035FF9C /* ViewModel */,
+				08CD23032A798C1F007A0334 /* View */,
+				08CD23012A798C10007A0334 /* Component */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		08CD23012A798C10007A0334 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				08CD23082A798C53007A0334 /* FiltersLabel.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		08CD23032A798C1F007A0334 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08CD23042A798C2D007A0334 /* FiltersView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -592,6 +638,7 @@
 		08FDF3942A6C404500BB8987 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				08CD23002A798BFD007A0334 /* Filters */,
 				08FDF3992A6C411300BB8987 /* LaunchScreen */,
 				0874AFE52A6D379300879D8F /* Welcome */,
 				0874AFEF2A6D5E5500879D8F /* Home */,
@@ -674,8 +721,8 @@
 			name = Swifti;
 			packageProductDependencies = (
 				084F17FF2A7001C800BC25CC /* WrappingHStack */,
-				08CD22F12A794849007A0334 /* Markdown */,
 				08CD22F42A794890007A0334 /* Highlightr */,
+				08A9027D2A7D61C500EAEF09 /* Markdown */,
 			);
 			productName = Swifti;
 			productReference = 08FDF3622A6C3F6800BB8987 /* Swifti.app */;
@@ -751,8 +798,8 @@
 			mainGroup = 08FDF3592A6C3F6800BB8987;
 			packageReferences = (
 				084F17FE2A7001C800BC25CC /* XCRemoteSwiftPackageReference "WrappingHStack" */,
-				08CD22F02A794849007A0334 /* XCRemoteSwiftPackageReference "swift-markdown" */,
 				08CD22F32A794890007A0334 /* XCRemoteSwiftPackageReference "Highlightr" */,
+				08A9027C2A7D61C500EAEF09 /* XCRemoteSwiftPackageReference "swift-markdown" */,
 			);
 			productRefGroup = 08FDF3632A6C3F6800BB8987 /* Products */;
 			projectDirPath = "";
@@ -809,6 +856,7 @@
 				084F18282A728BF900BC25CC /* NavigationToArticleButton.swift in Sources */,
 				084F17F62A6FEF1F00BC25CC /* TechnosLabel.swift in Sources */,
 				0874AFEB2A6D3E3500879D8F /* ValidateButton.swift in Sources */,
+				08CD23052A798C2D007A0334 /* FiltersView.swift in Sources */,
 				0874AFF82A6D65E900879D8F /* WelcomeViewModel.swift in Sources */,
 				0874B0152A6EF90600879D8F /* SettingsLabel.swift in Sources */,
 				08CD22FF2A794E7E007A0334 /* CodeBlockView.swift in Sources */,
@@ -821,12 +869,14 @@
 				084F18242A71A10800BC25CC /* Gradient.swift in Sources */,
 				08CD22FD2A794B83007A0334 /* ParserResult.swift in Sources */,
 				084F181A2A71660D00BC25CC /* Article+Decodable.swift in Sources */,
+				08CD230D2A7A5525007A0334 /* DeleteButton.swift in Sources */,
 				084F18312A72B5DC00BC25CC /* CourseView.swift in Sources */,
 				08FDF3662A6C3F6800BB8987 /* SwiftiApp.swift in Sources */,
 				0874B00C2A6EF63500879D8F /* SettingsViewModel.swift in Sources */,
 				084F18022A70022B00BC25CC /* OptionButton.swift in Sources */,
 				0874B0012A6EB13E00879D8F /* CourseLabelSquare.swift in Sources */,
 				084F181C2A71663A00BC25CC /* ArticlesViewModel.swift in Sources */,
+				08CD23092A798C53007A0334 /* FiltersLabel.swift in Sources */,
 				084F18072A7154BC00BC25CC /* TermsSection.swift in Sources */,
 				084F180E2A71569F00BC25CC /* PrivacyPolicyView.swift in Sources */,
 				0874B0092A6EEE0000879D8F /* SettingsView.swift in Sources */,
@@ -835,6 +885,7 @@
 				0874B0182A6FEAAD00879D8F /* AboutUsView.swift in Sources */,
 				084F18262A72829000BC25CC /* NavigationToArticle.swift in Sources */,
 				0874B0112A6EF6BF00879D8F /* Notification.swift in Sources */,
+				08CD230B2A798DE8007A0334 /* Filters.swift in Sources */,
 				084F18142A715F0900BC25CC /* ArticlesView.swift in Sources */,
 				084F181E2A716C7700BC25CC /* InformationLabel.swift in Sources */,
 				0874AFED2A6D468500879D8F /* DataController.swift in Sources */,
@@ -845,6 +896,7 @@
 				0874B00F2A6EF68900879D8F /* AppSettings.swift in Sources */,
 				08FDF39C2A6C412900BB8987 /* LaunchScreenView.swift in Sources */,
 				0874AFFA2A6DD97B00879D8F /* SearchBar.swift in Sources */,
+				08B759942A7DAB800035FF9C /* FiltersViewModel.swift in Sources */,
 				084F18372A72BD3800BC25CC /* CourseViewModel.swift in Sources */,
 				084F17FB2A6FF02F00BC25CC /* SafariRepresentable.swift in Sources */,
 				08CD22FB2A79497F007A0334 /* MarkdownAttributedStringParser.swift in Sources */,
@@ -1187,12 +1239,12 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		08CD22F02A794849007A0334 /* XCRemoteSwiftPackageReference "swift-markdown" */ = {
+		08A9027C2A7D61C500EAEF09 /* XCRemoteSwiftPackageReference "swift-markdown" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-markdown";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 		08CD22F32A794890007A0334 /* XCRemoteSwiftPackageReference "Highlightr" */ = {
@@ -1211,9 +1263,9 @@
 			package = 084F17FE2A7001C800BC25CC /* XCRemoteSwiftPackageReference "WrappingHStack" */;
 			productName = WrappingHStack;
 		};
-		08CD22F12A794849007A0334 /* Markdown */ = {
+		08A9027D2A7D61C500EAEF09 /* Markdown */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 08CD22F02A794849007A0334 /* XCRemoteSwiftPackageReference "swift-markdown" */;
+			package = 08A9027C2A7D61C500EAEF09 /* XCRemoteSwiftPackageReference "swift-markdown" */;
 			productName = Markdown;
 		};
 		08CD22F42A794890007A0334 /* Highlightr */ = {

@@ -11,10 +11,13 @@ import WrappingHStack
 struct FiltersView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    @ObservedObject var articlesViewModel: ArticlesViewModel
-    var filters: [FiltersArticles]
-    
-    @State private var selectedFilters: Set<FiltersArticles> = Set()
+    @ObservedObject var viewModel: FiltersViewModel
+    var filtersArticles: [FiltersArticles]
+    var filtersCourses: [FiltersCourses]
+
+    var selectedFilters: [String] {
+        return viewModel.selectedFilters.union(filtersArticles.map(\.rawValue)).union(filtersCourses.map(\.rawValue)).sorted()
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 25) {
@@ -33,16 +36,16 @@ struct FiltersView: View {
                 Text("Sujets")
                     .font(.courseLabelTitle)
                     .foregroundColor(.white)
-                WrappingHStack(filters, id: \.self, spacing: .constant(15), lineSpacing: 15) { filter in
-                    FiltersLabel(isSelected: articlesViewModel.bindingForFilters(filter.rawValue), label: filter.rawValue) {
-                        articlesViewModel.toggleFilter(filter: filter.rawValue)
+                WrappingHStack(selectedFilters, id: \.self, spacing: .constant(15), lineSpacing: 15) { filter in
+                    FiltersLabel(isSelected: viewModel.bindingForFilters(filter), label: filter) {
+                        viewModel.toggleFilter(filter: filter)
                     }
                 }
             }            
             Spacer()
             
             DeleteButton(caption: "Annuler les changements") {
-                articlesViewModel.selectedFilters.removeAll()
+                viewModel.selectedFilters.removeAll()
                 presentationMode.wrappedValue.dismiss()
             }
         }
@@ -55,6 +58,6 @@ struct FiltersView: View {
 
 struct FiltersView_Previews: PreviewProvider {
     static var previews: some View {
-        FiltersView(articlesViewModel: ArticlesViewModel(), filters: FiltersArticles.allCases)
+        FiltersView(viewModel: FiltersViewModel(), filtersArticles: FiltersArticles.allCases, filtersCourses: FiltersCourses.allCases)
     }
 }

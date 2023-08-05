@@ -34,35 +34,4 @@ class ArticlesViewModel: ObservableObject {
     func getLabelColor(subject: String) -> LinearGradient {
         gradients.first { $0.rawValue == subject }?.gradient ?? Color.gradientBlue
     }
-    
-    func getFilteredArticles() -> [ArticleContent] {
-        if selectedFilters.isEmpty {
-            return articles
-        } else {
-            return articles.filter { article in
-                selectedFilters.contains(article.subject)
-            }
-        }
-    }
-    
-    func bindingForFilters(_ filter: String) -> Binding<Bool> {
-        Binding<Bool>(
-            get: { self.selectedFilters.contains(filter) },
-            set: { newValue in
-                if newValue {
-                    self.selectedFilters.insert(filter)
-                } else {
-                    self.selectedFilters.remove(filter)
-                }
-            }
-        )
-    }
-    
-    func toggleFilter(filter: String) {
-        if selectedFilters.contains(filter) {
-            selectedFilters.remove(filter)
-        } else {
-            selectedFilters.insert(filter)
-        }
-    }
 }
