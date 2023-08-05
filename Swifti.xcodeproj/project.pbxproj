@@ -320,7 +320,7 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
-		084F182C2A72B5AF00BC25CC /* Course */ = {
+		084F182C2A72B5AF00BC25CC /* Courses */ = {
 			isa = PBXGroup;
 			children = (
 				084F182F2A72B5CA00BC25CC /* View */,
@@ -328,7 +328,7 @@
 				084F182D2A72B5B800BC25CC /* Component */,
 				084F18322A72BB4A00BC25CC /* Courses.json */,
 			);
-			path = Course;
+			path = Courses;
 			sourceTree = "<group>";
 		};
 		084F182D2A72B5B800BC25CC /* Component */ = {
@@ -644,7 +644,7 @@
 				08FDF3992A6C411300BB8987 /* LaunchScreen */,
 				0874AFE52A6D379300879D8F /* Welcome */,
 				0874AFEF2A6D5E5500879D8F /* Home */,
-				084F182C2A72B5AF00BC25CC /* Course */,
+				084F182C2A72B5AF00BC25CC /* Courses */,
 				084F180F2A715DCC00BC25CC /* Articles */,
 				0874B0022A6EE12D00879D8F /* Settings */,
 			);
