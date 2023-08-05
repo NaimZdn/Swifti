@@ -49,6 +49,7 @@
 		0874B0182A6FEAAD00879D8F /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874B0172A6FEAAC00879D8F /* AboutUsView.swift */; };
 		08A9027E2A7D61C500EAEF09 /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = 08A9027D2A7D61C500EAEF09 /* Markdown */; };
 		08B759942A7DAB800035FF9C /* FiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B759932A7DAB7F0035FF9C /* FiltersViewModel.swift */; };
+		08B759992A7E8B8B0035FF9C /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 08B759982A7E8B8B0035FF9C /* Shimmer */; };
 		08CD22D62A77C4ED007A0334 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08CD22D52A77C4ED007A0334 /* Poppins-Italic.ttf */; };
 		08CD22D82A77C4F8007A0334 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08CD22D72A77C4F8007A0334 /* Poppins-Medium.ttf */; };
 		08CD22DA2A77C500007A0334 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08CD22D92A77C500007A0334 /* Poppins-Light.ttf */; };
@@ -167,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08B759992A7E8B8B0035FF9C /* Shimmer in Frameworks */,
 				08A9027E2A7D61C500EAEF09 /* Markdown in Frameworks */,
 				084F18002A7001C800BC25CC /* WrappingHStack in Frameworks */,
 				08CD22F52A794890007A0334 /* Highlightr in Frameworks */,
@@ -723,6 +725,7 @@
 				084F17FF2A7001C800BC25CC /* WrappingHStack */,
 				08CD22F42A794890007A0334 /* Highlightr */,
 				08A9027D2A7D61C500EAEF09 /* Markdown */,
+				08B759982A7E8B8B0035FF9C /* Shimmer */,
 			);
 			productName = Swifti;
 			productReference = 08FDF3622A6C3F6800BB8987 /* Swifti.app */;
@@ -800,6 +803,7 @@
 				084F17FE2A7001C800BC25CC /* XCRemoteSwiftPackageReference "WrappingHStack" */,
 				08CD22F32A794890007A0334 /* XCRemoteSwiftPackageReference "Highlightr" */,
 				08A9027C2A7D61C500EAEF09 /* XCRemoteSwiftPackageReference "swift-markdown" */,
+				08B759972A7E8B8B0035FF9C /* XCRemoteSwiftPackageReference "Shimmer" */,
 			);
 			productRefGroup = 08FDF3632A6C3F6800BB8987 /* Products */;
 			projectDirPath = "";
@@ -1247,6 +1251,14 @@
 				kind = branch;
 			};
 		};
+		08B759972A7E8B8B0035FF9C /* XCRemoteSwiftPackageReference "Shimmer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/joshuajhomann/Shimmer";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		08CD22F32A794890007A0334 /* XCRemoteSwiftPackageReference "Highlightr" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/raspu/Highlightr";
@@ -1267,6 +1279,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 08A9027C2A7D61C500EAEF09 /* XCRemoteSwiftPackageReference "swift-markdown" */;
 			productName = Markdown;
+		};
+		08B759982A7E8B8B0035FF9C /* Shimmer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08B759972A7E8B8B0035FF9C /* XCRemoteSwiftPackageReference "Shimmer" */;
+			productName = Shimmer;
 		};
 		08CD22F42A794890007A0334 /* Highlightr */ = {
 			isa = XCSwiftPackageProductDependency;

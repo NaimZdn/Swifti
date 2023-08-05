@@ -67,7 +67,14 @@ struct NavigationToArticle: View {
                     .tint(Color.primaryColor)
                     .font(.defaultBody)
                     .foregroundColor(.white)
-                    .padding(.bottom, 30)
+                
+                if let image = viewModel.articles[index].image {
+                        Image(image)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(maxWidth: .infinity, minHeight: 170)
+                            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                }
                 
                 ForEach(viewModel.articles[index].sections, id: \.self) { section in
                     VStack(alignment: .leading, spacing: 15) {
@@ -79,6 +86,17 @@ struct NavigationToArticle: View {
                             .tint(Color.primaryColor)
                             .font(.defaultBody)
                             .foregroundColor(.white)
+                        
+                        if let image = section.image {
+                                Image(image)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(maxWidth: .infinity, minHeight: 170)
+                                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                                    .padding(.top, 15)
+                        }
+                        
+                    
                         
                         if section.isCode == true {
                             let parserResult: ParserResult = {

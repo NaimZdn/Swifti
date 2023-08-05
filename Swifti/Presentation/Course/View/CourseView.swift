@@ -11,6 +11,7 @@ struct CourseView: View {
     @ObservedObject private var courseViewModel = CourseViewModel()
     @ObservedObject private var filtersViewModel = FiltersViewModel()
     
+    @State private var visibleIndices: [Int] = []
     
     @State private var isFilterViewPresented = false
     @State private var searchText = ""
@@ -48,13 +49,30 @@ struct CourseView: View {
                     
                     ScrollView {
                         ForEach(Array(filtersViewModel.getFilteredCourses(courses: courseViewModel.courses).enumerated().filter { searchText.isEmpty ||  $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}), id: \.element) { (index, course) in
+                            
+                            let isVisible = visibleIndices.contains(index)
+                            
                             NavigationLink(destination: NavigationToCourse(viewModel: courseViewModel, index: index)) {
                                 CourseLabelRectangle(icon: course.icon, techno: course.techno, title: course.title)
-                                
+                                    .opacity(isVisible ? 1 : 0)
+                                    .padding(.top, isVisible ? 0 : 40)
+                                    .onAppear {
+                                        if index < 8 {
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3 * Double(index)) {
+                                                withAnimation(.easeInOut(duration: 0.5)) {
+                                                    visibleIndices.append(index)
+                                                }
+                                            }
+                                        } else {
+                                            visibleIndices.append(index)
+                                        }
+                                    }
                             }
                         }
                         .padding(.top, 10)
                     }
+                    
+                    
                     Spacer()
                     
                 }

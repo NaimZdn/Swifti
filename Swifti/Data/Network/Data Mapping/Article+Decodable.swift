@@ -18,6 +18,7 @@ struct ArticleContent: Codable, Hashable {
     let cover: String
     let subject, published: String
     let intro: String
+    let image: String?
     let sections: [ArticleSection]
     let outro: String
 }
@@ -25,6 +26,7 @@ struct ArticleContent: Codable, Hashable {
 // MARK: - Section
 struct ArticleSection: Codable, Hashable {
     let title, text: String
+    let image: String?
     let isCode: Bool?
     let code: String?
     let isSecondText: Bool?

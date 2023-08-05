@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ArticlesView: View {    
-    @StateObject private var viewModel = ArticlesViewModel()
-    @StateObject private var filtersViewModel = FiltersViewModel()
+    @ObservedObject private var viewModel = ArticlesViewModel()
+    @ObservedObject private var filtersViewModel = FiltersViewModel()
     
     @State private var isFilterViewPresented = false
     @State private var searchText = ""
     @State private var visibleIndices: [Int] = []
+    @State var isScrollViewLoading = true
     
     var body: some View {
         
@@ -49,28 +50,39 @@ struct ArticlesView: View {
                     .padding(.horizontal, 20)
                     
                     ScrollView(showsIndicators: false) {
-                        ForEach(Array(filtersViewModel.getFilteredArticles(articles: viewModel.articles).enumerated().filter { searchText.isEmpty ||  $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}), id: \.element) { (index, article) in
-                            
-                            let isVisible = visibleIndices.contains(index)
-                            
-                            NavigationLink(destination: NavigationToArticle(viewModel: viewModel, index: index)) {
-                                ArticlesLabel(cover: article.cover, title: article.title, subject: article.subject, gradient: viewModel.getLabelColor(subject: article.subject), intro: article.intro)
-                                    .opacity(isVisible ? 1 : 0)
-                                    .padding(.top, isVisible ? 0 : 20)
-                                    .onAppear {
-                                        if index < 8 {
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2 * Double(index)) {
-                                                withAnimation(.easeInOut(duration: 0.4)) {
-                                                    visibleIndices.append(index)
+                       
+                            ForEach(Array(filtersViewModel.getFilteredArticles(articles: viewModel.articles).enumerated().filter { searchText.isEmpty ||  $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}), id: \.element) { (index, article) in
+                                
+                                let isVisible = visibleIndices.contains(index)
+                                
+                                NavigationLink(destination: NavigationToArticle(viewModel: viewModel, index: index)) {
+                                    ArticlesLabel(cover: article.cover, title: article.title, subject: article.subject, gradient: viewModel.getLabelColor(subject: article.subject), intro: article.intro)
+                                        .opacity(isVisible ? 1 : 0)
+                                        .padding(.top, isVisible ? 0 : 40)
+                                        .onAppear {
+                                            if index < 8 {
+                                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3 * Double(index)) {
+                                                    withAnimation(.easeInOut(duration: 0.5)) {
+                                                        visibleIndices.append(index)
+                                                    }
+                                                }
+                                            } else {
+                                                visibleIndices.append(index)
+                                            }
+                                        }
+                                        .redacted(reason: isScrollViewLoading ? .placeholder : .init())
+                                        .onAppear {
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
+                                                withAnimation(.easeInOut(duration: 0.5)) {
+                                                    isScrollViewLoading = false
+                                                    
                                                 }
                                             }
-                                        } else {
-                                            visibleIndices.append(index)
                                         }
-                                    }
+                                }
+                                .disabled(isScrollViewLoading ? true : false)
                             }
-                        }
-                        .padding(.top, 10)
+                            .padding(.top, 10)
                     }
                     .padding(.horizontal, 20)
                 }
