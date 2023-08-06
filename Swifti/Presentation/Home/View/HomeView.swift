@@ -106,6 +106,7 @@ struct HomeView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             
         }
+        .navigationBarBackButtonHidden()
         .background(Color.background)
         
     }

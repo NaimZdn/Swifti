@@ -15,4 +15,9 @@ class WelcomeViewModel: ObservableObject {
         DataController.shared.addUserNameToData(name: name)
         isUserRegistered = true
     }
+    
+    func containsOnlySpaces(_ input: String) -> Bool {
+        let trimmedInput = input.trimmingCharacters(in: .whitespaces)
+        return trimmedInput.isEmpty
+    }
 }
