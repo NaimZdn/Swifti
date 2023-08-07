@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject private var viewModel = HomeViewModel()
+    @ObservedObject var courseViewModel: CourseViewModel
+    @ObservedObject var articlesViewModel: ArticlesViewModel
+    @Binding var currentTab: TabBar
     
+    @ObservedObject private var viewModel = HomeViewModel()
     @State private var searchText = ""
     
     var body: some View {
@@ -43,32 +46,6 @@ struct HomeView: View {
                 VStack(alignment: .leading, spacing: 30) {
                     VStack(spacing: 20) {
                         HStack {
-                            Text("Vos derniers cours")
-                                .font(.defaultBody)
-                                .foregroundColor(.white)
-                            
-                            Spacer()
-                            
-                            Button {
-                                
-                            } label: {
-                                Text("Voir tout")
-                                    .font(.defaultLabelCaption)
-                                    .foregroundColor(.optionsIcon)
-                            }
-                            .buttonStyle(.plain)
-                            
-                        }
-                        
-                        VStack(spacing: 10) {
-                            CourseLabelRectangle(icon: "swift", techno: "Swift", title: "Introduction au langage")
-                            CourseLabelRectangle(icon: "swift", techno: "Swift", title: "Les propriétés")
-                        }
-                    }
-                    .padding(.horizontal, 20)
-                    
-                    VStack(spacing: 20) {
-                        HStack {
                             Text("Liste des cours")
                                 .font(.defaultBody)
                                 .foregroundColor(.white)
@@ -76,7 +53,38 @@ struct HomeView: View {
                             Spacer()
                             
                             Button {
-                                
+                                currentTab = .courses
+                            } label: {
+                                Text("Voir tout")
+                                    .font(.defaultLabelCaption)
+                                    .foregroundColor(.optionsIcon)
+                            }
+                            .buttonStyle(.plain)
+                        }
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 10) {
+                                ForEach(Array(courseViewModel.courses.enumerated().filter { searchText.isEmpty || $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}), id: \.element) { (index, course) in
+                                    if index <= 2 {
+                                        CourseLabelSquare(coursesViewModel: courseViewModel, index: index)
+            
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    
+                    VStack(spacing: 20) {
+                        HStack {
+                            Text("Les derniers articles")
+                                .font(.defaultBody)
+                                .foregroundColor(.white)
+                            
+                            Spacer()
+                            
+                            Button {
+                                currentTab = .articles
                             } label: {
                                 Text("Voir tout")
                                     .font(.defaultLabelCaption)
@@ -86,25 +94,19 @@ struct HomeView: View {
                         }
                         .padding(.horizontal, 20)
                         
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 10) {
-                                CourseLabelSquare()
-                                CourseLabelSquare()
-                                CourseLabelSquare()
+                        ScrollView(showsIndicators: false) {
+                            ForEach(Array(articlesViewModel.articles.enumerated()), id: \.element) { (index, article) in
+                                if index <= 1 {
+                                    ArticlesLabel(articlesViewModel: articlesViewModel, cover: article.cover, title: article.title, subject: article.subject, gradient: articlesViewModel.getLabelColor(subject: article.subject), intro: article.intro, index: index)
+                                }
                                 
                             }
                         }
-                        
                         .padding(.leading, 20)
                     }
-                    
                 }
-                
-                Spacer()
-                
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            
         }
         .navigationBarBackButtonHidden()
         .background(Color.background)
@@ -114,6 +116,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(courseViewModel: CourseViewModel(), articlesViewModel: ArticlesViewModel(), currentTab: .constant(.home))
     }
 }

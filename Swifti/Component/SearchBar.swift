@@ -11,6 +11,11 @@ struct SearchBar: View {
     @Binding var searchText: String
     var placeholder: String
     
+    func containsOnlySpaces(_ input: String) -> Bool {
+        let trimmedInput = input.trimmingCharacters(in: .whitespaces)
+        return trimmedInput.isEmpty
+    }
+    
     var body: some View {
         HStack(spacing: 20) {
             Image("search")
@@ -19,6 +24,11 @@ struct SearchBar: View {
             TextField("", text: $searchText, prompt: Text(placeholder).foregroundColor(.placeholder).font(.defaultPlaceholder))
                 .font(.defaultBody)
                 .foregroundColor(.white)
+                .onChange(of: searchText) { text in
+                    if containsOnlySpaces(text) {
+                        searchText = ""
+                    }
+                }
             
             if !searchText.isEmpty {
                 Image(systemName: "xmark")
@@ -26,7 +36,6 @@ struct SearchBar: View {
                     .onTapGesture {
                         searchText = ""
                     }
-                
             }
         }
         .frame(height: 50)
