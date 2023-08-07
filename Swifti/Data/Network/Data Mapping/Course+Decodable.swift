@@ -22,6 +22,7 @@ struct CourseContent: Codable, Hashable {
     let intro : String
     let sections: [CourseSection]
     let outro: String?
+    let questions: [CourseQuestion]
 }
 
 // MARK: - CourseSection
@@ -42,4 +43,17 @@ struct CourseSubsection: Codable, Hashable {
     let secondText: String?
     let secondCode: String?
     let thirdText : String?
+}
+
+// MARK: - Question
+struct CourseQuestion: Codable, Hashable {
+    let question: String
+    let choices: [CourseQuestionChoice]
+    let answer: Int
+}
+
+// MARK: - Choice
+struct CourseQuestionChoice: Codable, Hashable {
+    let id: Int
+    let choice, quote: String
 }
