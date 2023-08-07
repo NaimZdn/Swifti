@@ -9,6 +9,10 @@ import SwiftUI
 
 struct WelcomeView: View {
     @ObservedObject private var viewModel = WelcomeViewModel()
+    @ObservedObject var courseViewModel: CourseViewModel
+    @ObservedObject var articlesViewModel: ArticlesViewModel
+    
+    @State private var currentTab: TabBar = .home
     @State private var userName = ""
     @State private var charactersLimit = 10
     @State private var isButtonVisible = false
@@ -72,7 +76,7 @@ struct WelcomeView: View {
      
             }
             .navigationDestination(isPresented: $viewModel.isUserRegistered, destination: {
-                HomeView()
+                HomeView(courseViewModel: courseViewModel, articlesViewModel: articlesViewModel, currentTab: $currentTab)
             })
             .safeAreaInset(edge: .bottom, content: {
                 if !userName.isEmpty {
@@ -103,6 +107,6 @@ struct WelcomeView: View {
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView()
+        WelcomeView(courseViewModel: CourseViewModel(), articlesViewModel: ArticlesViewModel())
     }
 }

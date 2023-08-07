@@ -8,33 +8,43 @@
 import SwiftUI
 
 struct CourseLabelSquare: View {
+    @ObservedObject var coursesViewModel: CourseViewModel
+    var index: Int
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                CourseIcon(icon: "swift")
-                Spacer()
-                CourseIcon(icon: "swift")
-                
-            }
-
+        NavigationLink {
+            NavigationToCourse(viewModel: coursesViewModel, index: index)
+        } label: {
             VStack(alignment: .leading) {
-                Text("Swift")
-                    .font(.courseLabelTitle)
-                    .foregroundColor(.white)
-                
-                Text("Les tableaux")
-                    .font(.courseLabelCaption)
-                    .foregroundColor(.white)
+                HStack {
+                    CourseIcon(icon: coursesViewModel.courses[index].icon)
+                    Spacer()
+                    
+                }
+                VStack(alignment: .leading) {
+                    Text(coursesViewModel.courses[index].techno)
+                        .font(.courseLabelTitle)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.leading)
+                    
+                    Text(coursesViewModel.courses[index].title)
+                        .font(.courseLabelCaption)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.leading)  
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
+            .padding(15)
+            .frame(width: 150, height: 150)
+            .background(Color.labelBackground, in: RoundedRectangle(cornerRadius: 25, style: .continuous))
+            
         }
-        .padding(15)
-        .frame(width: 150, height: 150)
-        .background(Color.labelBackground, in: RoundedRectangle(cornerRadius: 25, style: .continuous))
+        
     }
 }
 
 struct CourseLabelSquare_Previews: PreviewProvider {
     static var previews: some View {
-        CourseLabelSquare()
+        CourseLabelSquare(coursesViewModel: CourseViewModel(), index: 0)
     }
 }

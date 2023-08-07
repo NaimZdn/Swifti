@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ArticlesView: View {    
-    @ObservedObject private var viewModel = ArticlesViewModel()
+    @ObservedObject var articlesViewModel : ArticlesViewModel
     @ObservedObject private var filtersViewModel = FiltersViewModel()
     
     @State private var isFilterViewPresented = false
@@ -17,8 +17,6 @@ struct ArticlesView: View {
     @State var isScrollViewLoading = true
     
     var body: some View {
-        
-        NavigationView {
             ZStack(alignment: .topTrailing) {
                 Image("blobs")
                     .resizable()
@@ -50,13 +48,11 @@ struct ArticlesView: View {
                     .padding(.horizontal, 20)
                     
                     ScrollView(showsIndicators: false) {
-                       
-                            ForEach(Array(filtersViewModel.getFilteredArticles(articles: viewModel.articles).enumerated().filter { searchText.isEmpty ||  $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}), id: \.element) { (index, article) in
+                            ForEach(Array(filtersViewModel.getFilteredArticles(articles: articlesViewModel.articles).enumerated().filter { searchText.isEmpty ||  $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}), id: \.element) { (index, article) in
                                 
                                 let isVisible = visibleIndices.contains(index)
                                 
-                                NavigationLink(destination: NavigationToArticle(viewModel: viewModel, index: index)) {
-                                    ArticlesLabel(cover: article.cover, title: article.title, subject: article.subject, gradient: viewModel.getLabelColor(subject: article.subject), intro: article.intro)
+                                ArticlesLabel(articlesViewModel: articlesViewModel, cover: article.cover, title: article.title, subject: article.subject, gradient: articlesViewModel.getLabelColor(subject: article.subject), intro: article.intro, index: index)
                                         .opacity(isVisible ? 1 : 0)
                                         .padding(.top, isVisible ? 0 : 40)
                                         .onAppear {
@@ -79,21 +75,20 @@ struct ArticlesView: View {
                                                 }
                                             }
                                         }
-                                }
                                 .disabled(isScrollViewLoading ? true : false)
                             }
                             .padding(.top, 10)
                     }
                     .padding(.horizontal, 20)
                 }
+                .padding(.top, 20)
             }
             .background(Color.background)
-        }
     }
 }
 
 struct ArticlesView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticlesView()
+        ArticlesView(articlesViewModel: ArticlesViewModel())
     }
 }

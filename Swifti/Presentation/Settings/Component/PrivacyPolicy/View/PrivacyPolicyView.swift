@@ -51,8 +51,7 @@ struct PrivacyPolicyView: View {
         .navigationBarItems(leading: OptionButton(icon: "carret-left", action: {
             self.presentationMode.wrappedValue.dismiss()
         }).padding(.top, 25))
-        .padding(.horizontal, 20)
-        .padding(.vertical, 30)
+        .padding([.top, .horizontal], 20)
         .background(Color.background)
         
     }

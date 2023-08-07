@@ -11,6 +11,10 @@ import SwiftUI
 struct SwiftiApp: App {
     @State private var isShowingLaunchingScreen = true
     @State private var isUserLoggedIn = false
+    
+    @ObservedObject private var courseViewModel = CourseViewModel()
+    @ObservedObject private var articlesViewModel = ArticlesViewModel()
+    @StateObject private var appSettings = AppSettings()
 
     let dataController = DataController.shared
 
@@ -30,12 +34,13 @@ struct SwiftiApp: App {
                         }
                     }
             } else if !isUserLoggedIn {
-                WelcomeView()
+                WelcomeView(courseViewModel: courseViewModel, articlesViewModel: articlesViewModel)
                     .environment(\.managedObjectContext, dataController.container.viewContext)
                     .preferredColorScheme(.dark)
             } else {
-                HomeView()
+                TabBarView(coursesViewModel: courseViewModel, articlesViewModel: articlesViewModel)
                     .environment(\.managedObjectContext, dataController.container.viewContext)
+                    .environmentObject(appSettings)
                     .preferredColorScheme(.dark)
             }
         }

@@ -15,7 +15,7 @@ struct SettingsView: View {
     @State private var label = Label.allCases
     
     var body: some View {
-        NavigationView {
+       
             ZStack(alignment: .topTrailing) {
                 Image("blobs")
                     .resizable()
@@ -62,7 +62,7 @@ struct SettingsView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
             .background(Color.background)
-        }
+        
     }
 }
 

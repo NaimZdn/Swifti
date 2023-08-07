@@ -81,8 +81,7 @@ struct AboutUsView: View {
         .navigationBarItems(leading: OptionButton(icon: "carret-left", action: {
             self.presentationMode.wrappedValue.dismiss()
         }).padding(.top, 25))
-        .padding(.horizontal, 20)
-        .padding(.top, 30)
+        .padding([.top, .horizontal], 20)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color.background)
     }

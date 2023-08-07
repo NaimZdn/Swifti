@@ -128,7 +128,7 @@ struct NavigationToCourse: View {
             trailing: OptionButton(icon: "carret-right", action: {
                 
             }).padding(.top, 5))
-        .padding(20)
+        .padding([.top, .horizontal], 20)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color.background)
     }

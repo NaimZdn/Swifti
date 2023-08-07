@@ -11,19 +11,19 @@ import Markdown
 struct NavigationToArticle: View {
     @Environment(\.presentationMode) var presentationMode
     
-    @ObservedObject var viewModel: ArticlesViewModel
+    @ObservedObject var articlesViewModel: ArticlesViewModel
     
     @State private var index: Int
     
-    init(viewModel: ArticlesViewModel, index: Int) {
-        self.viewModel = viewModel
+    init(articlesViewModel: ArticlesViewModel, index: Int) {
+        self.articlesViewModel = articlesViewModel
         self._index = State(initialValue: index)
     }
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 15) {
-                ImageView(imageURL: URL(string: viewModel.articles[index].cover)!)
+                ImageView(imageURL: URL(string: articlesViewModel.articles[index].cover)!)
                     .scaledToFill()
                     .frame(maxWidth: .infinity, maxHeight: 180)
                     .cornerRadius(20)
@@ -39,9 +39,9 @@ struct NavigationToArticle: View {
                             }
                             Spacer()
                             
-                            if index < viewModel.articles.count - 1 {
+                            if index < articlesViewModel.articles.count - 1 {
                                 NavigationToArticleButton(icon: "carret-right") {
-                                    if index < viewModel.articles.count - 1 {
+                                    if index < articlesViewModel.articles.count - 1 {
                                         index += 1
                                     }
                                 }
@@ -51,24 +51,24 @@ struct NavigationToArticle: View {
                     }
                 
                 VStack(alignment: .leading, spacing: 10) {
-                    Text(viewModel.articles[index].title)
+                    Text(articlesViewModel.articles[index].title)
                         .font(.defaultTitle2)
                         .foregroundColor(.white)
                     
-                    InformationLabel(subject: viewModel.articles[index].subject, gradient: viewModel.getLabelColor(subject: viewModel.articles[index].subject))
+                    InformationLabel(subject: articlesViewModel.articles[index].subject, gradient: articlesViewModel.getLabelColor(subject: articlesViewModel.articles[index].subject))
                         .padding(.leading, 0.5)
                     
-                    Text("Date de publication : \(viewModel.articles[index].published)")
+                    Text("Date de publication : \(articlesViewModel.articles[index].published)")
                         .font(.defaultPlaceholder)
                         .foregroundColor(.placeholder)
                 }
                 
-                Text(try! AttributedString(markdown: viewModel.articles[index].intro, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
+                Text(try! AttributedString(markdown: articlesViewModel.articles[index].intro, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
                     .tint(Color.primaryColor)
                     .font(.defaultBody)
                     .foregroundColor(.white)
                 
-                if let image = viewModel.articles[index].image {
+                if let image = articlesViewModel.articles[index].image {
                         Image(image)
                             .resizable()
                             .scaledToFill()
@@ -76,7 +76,7 @@ struct NavigationToArticle: View {
                             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                 }
                 
-                ForEach(viewModel.articles[index].sections, id: \.self) { section in
+                ForEach(articlesViewModel.articles[index].sections, id: \.self) { section in
                     VStack(alignment: .leading, spacing: 15) {
                         Text(try! AttributedString(markdown: section.title, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
                             .font(.defaultTitle3)
@@ -133,7 +133,7 @@ struct NavigationToArticle: View {
                     .padding(.bottom, 30)   
                 }
                 
-                Text(try! AttributedString(markdown: viewModel.articles[index].outro, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
+                Text(try! AttributedString(markdown: articlesViewModel.articles[index].outro, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
                     .tint(Color.primaryColor)
                     .font(.defaultBody)
                     .foregroundColor(.white)
@@ -144,7 +144,7 @@ struct NavigationToArticle: View {
         .navigationBarItems(leading: OptionButton(icon: "carret-left", action: {
             self.presentationMode.wrappedValue.dismiss()
         }).padding(.top, 5))
-        .padding(20)
+        .padding([.top, .horizontal], 20)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color.background)
     }
@@ -152,6 +152,6 @@ struct NavigationToArticle: View {
 
 struct NavigationToArticle_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationToArticle(viewModel: ArticlesViewModel(), index: 0)
+        NavigationToArticle(articlesViewModel: ArticlesViewModel(), index: 0)
     }
 }
