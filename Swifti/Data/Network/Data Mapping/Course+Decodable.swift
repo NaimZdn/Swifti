@@ -49,6 +49,7 @@ struct CourseSubsection: Codable, Hashable {
 struct CourseQuestion: Codable, Hashable {
     let question: String
     let choices: [CourseQuestionChoice]
+    let code: String?
     let answer: Int
 }
 
