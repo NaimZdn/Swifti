@@ -20,6 +20,22 @@ struct SwiftiApp: App {
 
     var body: some Scene {
         WindowGroup {
+//            NavigationToQuestions(questions:
+//                                    [CourseQuestion(
+//                                        question: "\n1. Ce code est-il correct ?",
+//                                        choices: [
+//                                            CourseQuestionChoice(
+//                                                id: 1,
+//                                                choice: "Oui",
+//                                                quote: "C'est exact 🎊 Le code est correct même si la convention de nommage n'est pas respectée."
+//                                            ),
+//                                            CourseQuestionChoice(
+//                                                id: 2,
+//                                                choice: "Non",
+//                                                quote: "Dommage 😕 Le code est correct même si la convention de nommage n'est pas respectée.")
+//                                        ],
+//                                        code: "```swift\nvar quote = \"I think therefore I am.\"\nlet second-quote = \"If you build it, they will come.\"",
+//                                        answer: 1)])
             if isShowingLaunchingScreen {
                 LaunchScreenView()
                     .environment(\.managedObjectContext, dataController.container.viewContext)

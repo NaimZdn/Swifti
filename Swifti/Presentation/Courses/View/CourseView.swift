@@ -49,8 +49,8 @@ struct CourseView: View {
                     ScrollView {
                         ForEach(Array(filtersViewModel.getFilteredCourses(courses: courseViewModel.courses).enumerated().filter { searchText.isEmpty ||  $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}), id: \.element) { (index, course) in
                             
-                            let isVisible = visibleIndices.contains(index)
-                             
+                            let isVisible = visibleIndices.contains(index)	
+                            
                             CourseLabelRectangle(coursesViewModel: courseViewModel, icon: course.icon, techno: course.techno, title: course.title, index: index)
                                 .opacity(isVisible ? 1 : 0)
                                 .padding(.top, isVisible ? 0 : 40)
@@ -69,8 +69,6 @@ struct CourseView: View {
                         }
                         .padding(.top, 10)
                     }
-                    
-                    
                     Spacer()
                     
                 }

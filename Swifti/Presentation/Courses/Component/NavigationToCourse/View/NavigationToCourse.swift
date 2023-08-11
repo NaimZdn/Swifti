@@ -118,6 +118,14 @@ struct NavigationToCourse: View {
                         .font(.defaultBody)
                         .foregroundColor(.white)
                 }
+                
+                
+                
+                NavigationLink(destination: NavigationToQuestions(coursesViewModel: viewModel, questions: viewModel.courses[index].questions, courseTitle: viewModel.courses[index].title)) {
+                    
+                }
+                
+                
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -125,12 +133,21 @@ struct NavigationToCourse: View {
             leading: OptionButton(icon: "carret-left", action: {
                 self.presentationMode.wrappedValue.dismiss()
             }).padding(.top, 5),
-            trailing: OptionButton(icon: "carret-right", action: {
-                
-            }).padding(.top, 5))
-        .padding([.top, .horizontal], 20)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.background)
+            trailing:  NavigationLink(destination: NavigationToQuestions(coursesViewModel: viewModel, questions: viewModel.courses[index].questions, courseTitle: viewModel.courses[index].title)) {
+                VStack {
+                    Image("carret-right")
+                        .resizable()
+                        .foregroundColor(.white)
+                        .frame(width: 25, height: 25)
+                }
+                .frame(minWidth: 40, minHeight: 40)
+                .background(Color.optionsBackground, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+            }).padding(.top, 5)
+        
+            .padding([.top, .horizontal], 20)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color.background)
+        
     }
 }
 

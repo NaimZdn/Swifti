@@ -23,8 +23,7 @@ class HomeViewModel: ObservableObject {
     
     private func transformData() {
         userName = dataController.getUserName() ?? ""
-        print(userName)
-        
+
     }
     
     func getCurrentDate() -> String {

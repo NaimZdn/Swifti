@@ -11,6 +11,7 @@ import CoreData
 class DataController: ObservableObject {
     var userEntity: UserEntity?
     var userName = ""
+    var questionsData: [CourseEntity] = []
     let container: NSPersistentContainer
     let context: NSManagedObjectContext
     
@@ -52,4 +53,44 @@ class DataController: ObservableObject {
             print("Erreur lors de l'enregistrement du nom de l'utilisateur : \(error.localizedDescription)")
         }
     }
+        
+    func addScoreToData(courseTitle: String, score: Int) {
+        let context = container.viewContext
+        let fetchRequest: NSFetchRequest<CourseEntity> = CourseEntity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "title == %@", courseTitle)
+        
+        do {
+            if let existingCourseEntity = try context.fetch(fetchRequest).first {
+                existingCourseEntity.score = Int16(score)
+            } else {
+                let newCourseEntity = CourseEntity(context: context)
+                newCourseEntity.title = courseTitle
+                newCourseEntity.score = Int16(score)
+                questionsData.append(newCourseEntity)
+            }
+            
+            try context.save()
+        } catch {
+            print("Erreur lors de l'ajout du score : \(error.localizedDescription)")
+        }
+    }
+
+
+    func getCourseData() -> [String: Int]? {
+        let fetchRequest: NSFetchRequest<CourseEntity> = CourseEntity.fetchRequest()
+        do {
+            let courseEntities = try context.fetch(fetchRequest)
+            var scoreDictionary: [String: Int] = [:]
+            
+            for courseEntity in courseEntities {
+                scoreDictionary[courseEntity.title ?? ""] = Int(courseEntity.score)
+            }
+            //print(scoreDictionary)
+            return scoreDictionary
+        } catch {
+            print("Erreur lors de la récupération des données de cours : \(error)")
+        }
+        return nil
+    }
+
 }

@@ -9,7 +9,12 @@ import SwiftUI
 import Markdown
 
 struct NavigationToQuestions: View {
+    @Environment(\.presentationMode) var presentationMode
+    
+    @ObservedObject var coursesViewModel: CourseViewModel
     var questions: [CourseQuestion]
+    var courseTitle: String
+    
     @State private var checkedChoices: [[Bool]]
     @State private var selectedQuestionIndex: Int?
     @State private var selectedChoiceID: Int?
@@ -18,8 +23,10 @@ struct NavigationToQuestions: View {
     @State private var score = 0
     @State private var currentQuestionIndex = 0
     
-    init(questions: [CourseQuestion]) {
+    init(coursesViewModel: CourseViewModel, questions: [CourseQuestion], courseTitle: String) {
+        self.coursesViewModel = coursesViewModel
         self.questions = questions
+        self.courseTitle = courseTitle
         self._checkedChoices = State(initialValue: Array(repeating: Array(repeating: false, count: questions[0].choices.count), count: questions.count))
     }
     
@@ -39,7 +46,9 @@ struct NavigationToQuestions: View {
             if currentQuestionIndex < questions.count {
                 let question = questions[currentQuestionIndex]
                 
-                Text(question.question)
+                
+                
+                Text(try! AttributedString(markdown: question.question, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
                     .font(.defaultTitle3)
                     .foregroundColor(.white)
                 
@@ -58,7 +67,7 @@ struct NavigationToQuestions: View {
                             get: { self.checkedChoices[currentQuestionIndex][choiceIndex] },
                             set: { newValue in self.toggleChoice(currentQuestionIndex, choiceIndex) }
                         )) {
-                            Text(question.choices[choiceIndex].choice)
+                            Text(try! AttributedString(markdown: question.choices[choiceIndex].choice, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
                                 .font(.defaultBody)
                                 .foregroundColor(.white)
                         }
@@ -69,7 +78,7 @@ struct NavigationToQuestions: View {
                 .padding(.bottom, 30)
                 
                 if answerValidated {
-                    Text(selectedChoiceQuote ?? "")
+                    Text(try! AttributedString(markdown: selectedChoiceQuote ?? "", options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
                         .font(.defaultItalic)
                         .foregroundColor(.white)
                 }
@@ -92,20 +101,31 @@ struct NavigationToQuestions: View {
                             answerValidated = false
                             checkedChoices = Array(repeating: Array(repeating: false, count: questions[currentQuestionIndex].choices.count), count: questions.count)
                             
+                            coursesViewModel.addScoreToData(courseTitle: courseTitle, score: score)
+                            //print(coursesViewModel.coursesScore)
                         }
                     }
                 }
             }
         }
-        .padding()
-        .background(Color.background)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(
+            leading: OptionButton(icon: "carret-left", action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }).padding(.top, 5))
+            .padding([.top, .horizontal], 20)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color.background)
+        //.padding()
+        //.background(Color.background)
+        
     }
 }
 
 
 struct NavigationToQuestions_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationToQuestions(questions:
+        NavigationToQuestions(coursesViewModel: CourseViewModel(), questions:
                                 [CourseQuestion(
                                     question: "\n1. Ce code est-il correct ?",
                                     choices: [
@@ -135,7 +155,7 @@ struct NavigationToQuestions_Previews: PreviewProvider {
                                              quote: "Cool c'est ca")
                                      ],
                                      code: "```swift\nvar quote = \"I think therefore I am.\"\nlet second-quote = \"If you build it, they will come.\"",
-                                     answer: 1)])
+                                     answer: 1)], courseTitle: "Introduction au langage Swift")
     }
 }
 
