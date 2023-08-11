@@ -47,39 +47,62 @@ struct ArticlesView: View {
                     }
                     .padding(.horizontal, 20)
                     
-                    ScrollView(showsIndicators: false) {
+                    if Array(filtersViewModel.getFilteredArticles(articles: articlesViewModel.articles).enumerated().filter { searchText.isEmpty ||  $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}).isEmpty {
+                        
+                        VStack(spacing: 20) {
+                            Spacer()
+                            Image(systemName: "newspaper")
+                                .font(.system(size: 80))
+                                .foregroundColor(Color.placeholder)
+                            
+                            
+                            Text("Aucun article n'a été trouvé")
+                                .font(.defaultTitle3)
+                                .foregroundColor(.placeholder)
+                            
+                            Spacer()
+                            
+                        }
+                        .accessibilityAddTraits(.isSummaryElement)
+                        .frame(maxWidth: .infinity)
+
+                    } else {
+                        ScrollView(showsIndicators: false) {
                             ForEach(Array(filtersViewModel.getFilteredArticles(articles: articlesViewModel.articles).enumerated().filter { searchText.isEmpty ||  $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}), id: \.element) { (index, article) in
                                 
                                 let isVisible = visibleIndices.contains(index)
                                 
                                 ArticlesLabel(articlesViewModel: articlesViewModel, cover: article.cover, title: article.title, subject: article.subject, gradient: articlesViewModel.getLabelColor(subject: article.subject), intro: article.intro, index: index)
-                                        .opacity(isVisible ? 1 : 0)
-                                        .padding(.top, isVisible ? 0 : 40)
-                                        .onAppear {
-                                            if index < 8 {
-                                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3 * Double(index)) {
-                                                    withAnimation(.easeInOut(duration: 0.5)) {
-                                                        visibleIndices.append(index)
-                                                    }
-                                                }
-                                            } else {
-                                                visibleIndices.append(index)
-                                            }
-                                        }
-                                        .redacted(reason: isScrollViewLoading ? .placeholder : .init())
-                                        .onAppear {
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
+                                    .opacity(isVisible ? 1 : 0)
+                                    .padding(.top, isVisible ? 0 : 40)
+                                    .onAppear {
+                                        if index < 8 {
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3 * Double(index)) {
                                                 withAnimation(.easeInOut(duration: 0.5)) {
-                                                    isScrollViewLoading = false
-                                                    
+                                                    visibleIndices.append(index)
                                                 }
                                             }
+                                        } else {
+                                            visibleIndices.append(index)
                                         }
-                                .disabled(isScrollViewLoading ? true : false)
+                                    }
+                                    .redacted(reason: isScrollViewLoading ? .placeholder : .init())
+                                    .onAppear {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
+                                            withAnimation(.easeInOut(duration: 0.5)) {
+                                                isScrollViewLoading = false
+                                                
+                                            }
+                                        }
+                                    }
+                                    .disabled(isScrollViewLoading ? true : false)
                             }
                             .padding(.top, 10)
+                        }
+                        .padding(.horizontal, 20)
+                        
                     }
-                    .padding(.horizontal, 20)
+                    
                 }
                 .padding(.top, 20)
             }
