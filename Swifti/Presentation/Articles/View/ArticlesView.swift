@@ -51,10 +51,10 @@ struct ArticlesView: View {
                         
                         VStack(spacing: 20) {
                             Spacer()
-                            Image(systemName: "newspaper")
-                                .font(.system(size: 80))
+                            Image("articles-outline")
+                                .resizable()
+                                .frame(width: 120, height: 120)
                                 .foregroundColor(Color.placeholder)
-                            
                             
                             Text("Aucun article n'a été trouvé")
                                 .font(.defaultTitle3)
@@ -102,7 +102,6 @@ struct ArticlesView: View {
                         .padding(.horizontal, 20)
                         
                     }
-                    
                 }
                 .padding(.top, 20)
             }
