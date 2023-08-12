@@ -26,7 +26,7 @@ struct CourseView: View {
                 VStack(alignment: .leading) {
                     VStack(alignment: .leading, spacing: 25) {
                         HStack {
-                            Text("Course")
+                            Text("Cours")
                                 .font(.defaultTitle)
                                 .foregroundColor(.white)
                             

@@ -34,7 +34,7 @@ struct HomeView: View {
                         .font(.defaultBody)
                         .foregroundColor(.white)
                     
-                    Text("Hello \(viewModel.userName)👋")
+                    Text("Hello \(viewModel.userName) 👋")
                         .font(.defaultTitle2)
                         .foregroundColor(.white)
                     
@@ -155,9 +155,7 @@ struct HomeView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .navigationBarBackButtonHidden()
         .background(Color.background)
-        
     }
 }
 
