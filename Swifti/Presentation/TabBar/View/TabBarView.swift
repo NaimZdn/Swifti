@@ -40,6 +40,7 @@ struct TabBarView: View {
                 CustomTabBar(selectedTab: $currentTab)
             }
         }
+        .navigationBarBackButtonHidden()
     }
 }
 

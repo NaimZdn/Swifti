@@ -11,6 +11,9 @@ struct WelcomeView: View {
     @ObservedObject private var viewModel = WelcomeViewModel()
     @ObservedObject var courseViewModel: CourseViewModel
     @ObservedObject var articlesViewModel: ArticlesViewModel
+    @StateObject var appSettings: AppSettings
+    
+    let dataController: DataController
     
     @State private var currentTab: TabBar = .home
     @State private var userName = ""
@@ -76,7 +79,9 @@ struct WelcomeView: View {
      
             }
             .navigationDestination(isPresented: $viewModel.isUserRegistered, destination: {
-                HomeView(courseViewModel: courseViewModel, articlesViewModel: articlesViewModel, currentTab: $currentTab)
+                    (coursesViewModel: courseViewModel, articlesViewModel: articlesViewModel)
+                    .environment(\.managedObjectContext, dataController.container.viewContext)
+                    .environmentObject(appSettings)
             })
             .safeAreaInset(edge: .bottom, content: {
                 if !userName.isEmpty {
@@ -107,6 +112,6 @@ struct WelcomeView: View {
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView(courseViewModel: CourseViewModel(), articlesViewModel: ArticlesViewModel())
+        WelcomeView(courseViewModel: CourseViewModel(), articlesViewModel: ArticlesViewModel(), appSettings: AppSettings(), dataController: DataController.shared)
     }
 }
