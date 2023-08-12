@@ -14,6 +14,10 @@ struct HomeView: View {
     
     @ObservedObject private var viewModel = HomeViewModel()
     @State private var searchText = ""
+    @State private var isArticlesLoading = true
+    @State private var visibleArticlesIndices: [Int] = []
+    @State private var visibleCoursesIndices: [Int] = []
+
     
     var body: some View {
         
@@ -62,12 +66,34 @@ struct HomeView: View {
                             .buttonStyle(.plain)
                         }
                         
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 10) {
-                                ForEach(Array(courseViewModel.courses.enumerated().filter { searchText.isEmpty || $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}), id: \.element) { (index, course) in
-                                    if index <= 2 {
-                                        CourseLabelSquare(coursesViewModel: courseViewModel, index: index)
-            
+                        if Array(courseViewModel.courses.enumerated().filter { searchText.isEmpty || $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}).isEmpty {
+                            
+                            VStack {
+                                Text("Aucun cours n'a été trouvé")
+                                    .font(.defaultTitle4)
+                                    .foregroundColor(.white)
+        
+                            }
+                            
+                        } else {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 10) {
+                                    ForEach(Array(courseViewModel.courses.enumerated().filter { searchText.isEmpty || $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}), id: \.element) { (index, course) in
+                                        
+                                        let isVisible = visibleCoursesIndices.contains(index)
+                                        
+                                        if index <= 2 {
+                                            CourseLabelSquare(coursesViewModel: courseViewModel, index: index)
+                                                .opacity(isVisible ? 1 : 0)
+                                                .padding(.leading, isVisible ? 0 : 70)
+                                                .onAppear {
+                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 * Double(index)) {
+                                                        withAnimation(.easeInOut(duration: 0.5)) {
+                                                            visibleCoursesIndices.append(index)
+                                                        }
+                                                    }
+                                                }
+                                        }
                                     }
                                 }
                             }
@@ -96,13 +122,34 @@ struct HomeView: View {
                         
                         ScrollView(showsIndicators: false) {
                             ForEach(Array(articlesViewModel.articles.enumerated()), id: \.element) { (index, article) in
+                                
+                                let isVisible = visibleArticlesIndices.contains(index)
+                                
                                 if index <= 1 {
                                     ArticlesLabel(articlesViewModel: articlesViewModel, cover: article.cover, title: article.title, subject: article.subject, gradient: articlesViewModel.getLabelColor(subject: article.subject), intro: article.intro, index: index)
+                                        .opacity(isVisible ? 1 : 0)
+                                        .padding(.top, isVisible ? 0 : 40)
+                                        .onAppear {
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3 * Double(index)) {
+                                                withAnimation(.easeInOut(duration: 0.5)) {
+                                                    visibleArticlesIndices.append(index)
+                                                }
+                                            }
+                                        }
+                                        .redacted(reason: isArticlesLoading ? .placeholder : .init())
+                                        .onAppear {
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
+                                                withAnimation(.easeInOut(duration: 0.5)) {
+                                                    isArticlesLoading = false
+                                                    
+                                                }
+                                            }
+                                        }
+                                        .disabled(isArticlesLoading ? true : false)
                                 }
-                                
                             }
                         }
-                        .padding(.leading, 20)
+                        .padding(.horizontal, 20)
                     }
                 }
             }
