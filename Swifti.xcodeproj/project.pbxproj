@@ -53,6 +53,7 @@
 		08B7599E2A7FD2B30035FF9C /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7599D2A7FD2B30035FF9C /* CustomTabBar.swift */; };
 		08B759A02A7FD2C20035FF9C /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7599F2A7FD2C20035FF9C /* TabBarView.swift */; };
 		08B759A22A7FD2CB0035FF9C /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B759A12A7FD2CB0035FF9C /* TabBar.swift */; };
+		08B759A62A8292EE0035FF9C /* NavigationToQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B759A52A8292EE0035FF9C /* NavigationToQuestions.swift */; };
 		08CD22D62A77C4ED007A0334 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08CD22D52A77C4ED007A0334 /* Poppins-Italic.ttf */; };
 		08CD22D82A77C4F8007A0334 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08CD22D72A77C4F8007A0334 /* Poppins-Medium.ttf */; };
 		08CD22DA2A77C500007A0334 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08CD22D92A77C500007A0334 /* Poppins-Light.ttf */; };
@@ -141,6 +142,7 @@
 		08B7599D2A7FD2B30035FF9C /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		08B7599F2A7FD2C20035FF9C /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		08B759A12A7FD2CB0035FF9C /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		08B759A52A8292EE0035FF9C /* NavigationToQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationToQuestions.swift; sourceTree = "<group>"; };
 		08CD22D52A77C4ED007A0334 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
 		08CD22D72A77C4F8007A0334 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		08CD22D92A77C500007A0334 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 		084F182D2A72B5B800BC25CC /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				08B759A32A8292A90035FF9C /* NavigationToQuestions */,
 				084F18382A72C07B00BC25CC /* NavigationToCourse */,
 				0874AFFC2A6E91BF00879D8F /* CourseLabelRectangle.swift */,
 				0874AFFE2A6E91EE00879D8F /* CourseIcon.swift */,
@@ -582,6 +585,22 @@
 				08B7599D2A7FD2B30035FF9C /* CustomTabBar.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		08B759A32A8292A90035FF9C /* NavigationToQuestions */ = {
+			isa = PBXGroup;
+			children = (
+				08B759A42A8292C20035FF9C /* View */,
+			);
+			path = NavigationToQuestions;
+			sourceTree = "<group>";
+		};
+		08B759A42A8292C20035FF9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08B759A52A8292EE0035FF9C /* NavigationToQuestions.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		08CD23002A798BFD007A0334 /* Filters */ = {
@@ -933,6 +952,7 @@
 				0874AFF22A6D5E8100879D8F /* HomeView.swift in Sources */,
 				084F17F92A6FEFF400BC25CC /* LinkButton.swift in Sources */,
 				0874B00F2A6EF68900879D8F /* AppSettings.swift in Sources */,
+				08B759A62A8292EE0035FF9C /* NavigationToQuestions.swift in Sources */,
 				08FDF39C2A6C412900BB8987 /* LaunchScreenView.swift in Sources */,
 				0874AFFA2A6DD97B00879D8F /* SearchBar.swift in Sources */,
 				08B759942A7DAB800035FF9C /* FiltersViewModel.swift in Sources */,
