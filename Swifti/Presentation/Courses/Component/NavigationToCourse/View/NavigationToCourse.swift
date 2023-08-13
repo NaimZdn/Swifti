@@ -64,9 +64,8 @@ struct NavigationToCourse: View {
                         }
                         
                         if let firstTextBox = section.firstTextBox {
-                            Text(try! AttributedString(markdown: firstTextBox, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
-                                .font(.defaultBody)
-                                .foregroundColor(.white)
+                           CourseTextBox(text: firstTextBox)
+                                .padding(.top, 20)
                         }
                         
                         if let subsections = section.subsections as? [CourseSubsection] {
@@ -118,14 +117,9 @@ struct NavigationToCourse: View {
                         .font(.defaultBody)
                         .foregroundColor(.white)
                 }
-                
-                
-                
                 NavigationLink(destination: NavigationToQuestions(coursesViewModel: viewModel, questions: viewModel.courses[index].questions, courseTitle: viewModel.courses[index].title)) {
                     
                 }
-                
-                
             }
         }
         .navigationBarBackButtonHidden(true)
