@@ -46,8 +46,6 @@ struct NavigationToQuestions: View {
             if currentQuestionIndex < questions.count {
                 let question = questions[currentQuestionIndex]
                 
-                
-                
                 Text(try! AttributedString(markdown: question.question, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
                     .font(.defaultTitle3)
                     .foregroundColor(.white)
@@ -63,26 +61,53 @@ struct NavigationToQuestions: View {
                 
                 VStack(alignment: .leading) {
                     ForEach(question.choices.indices, id: \.self) { choiceIndex in
-                        Toggle(isOn: Binding(
-                            get: { self.checkedChoices[currentQuestionIndex][choiceIndex] },
-                            set: { newValue in self.toggleChoice(currentQuestionIndex, choiceIndex) }
-                        )) {
-                            Text(try! AttributedString(markdown: question.choices[choiceIndex].choice, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
-                                .font(.defaultBody)
-                                .foregroundColor(.white)
+                        HStack(alignment: .top) {
+                            Toggle(isOn: Binding(
+                                get: { self.checkedChoices[currentQuestionIndex][choiceIndex] },
+                                set: { newValue in self.toggleChoice(currentQuestionIndex, choiceIndex) }
+                            )) {
+                            }
+                            .toggleStyle(CheckboxToggleStyle())
+                            .disabled(answerValidated)
+                            
+                            Group {
+                                Text(try! AttributedString(markdown: question.choices[choiceIndex].choice, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
+                                    .font(.defaultBody)
+                                    .foregroundColor(.white)
+                                    .padding(.leading, 5)
+                            }
+                            .fixedSize(horizontal: false, vertical: true)
                         }
-                        .toggleStyle(CheckboxToggleStyle())
-                        .disabled(answerValidated)
                     }
                 }
                 .padding(.bottom, 30)
                 
                 if answerValidated {
-                    Text(try! AttributedString(markdown: selectedChoiceQuote ?? "", options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
-                        .font(.defaultItalic)
-                        .foregroundColor(.white)
+                    HStack(alignment: .top, spacing: 15) {
+                        Image(systemName: selectedChoiceID == question.answer ? "checkmark.circle.fill" : "xmark.circle.fill")
+                            .font(.system(size: 20))
+                            .foregroundColor(selectedChoiceID == question.answer ? .green : .red)
+                        
+                        Text(try! AttributedString(markdown: selectedChoiceQuote ?? "", options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
+                            .font(.defaultItalic)
+                            .foregroundColor(.white)
+                        
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 15)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .fill(
+                                selectedChoiceID == question.answer
+                                    ? Color.green
+                                    : Color.red
+                            ).opacity(0.2)
+                    )
+                
                 }
                 Spacer()
+                
                 if !answerValidated {
                     ValidateButton(caption: "Valider") {
                         if let selectedChoiceID = selectedChoiceID,
@@ -102,7 +127,6 @@ struct NavigationToQuestions: View {
                             checkedChoices = Array(repeating: Array(repeating: false, count: questions[currentQuestionIndex].choices.count), count: questions.count)
                             
                             coursesViewModel.addScoreToData(courseTitle: courseTitle, score: score)
-                            //print(coursesViewModel.coursesScore)
                         }
                     }
                 }
@@ -116,12 +140,9 @@ struct NavigationToQuestions: View {
             .padding([.top, .horizontal], 20)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(Color.background)
-        //.padding()
-        //.background(Color.background)
         
     }
 }
-
 
 struct NavigationToQuestions_Previews: PreviewProvider {
     static var previews: some View {
@@ -136,7 +157,7 @@ struct NavigationToQuestions_Previews: PreviewProvider {
                                         ),
                                         CourseQuestionChoice(
                                             id: 2,
-                                            choice: "Non",
+                                            choice: "Dommage 😕 Le code est correct même si la convention de nommage n'est pas respectée.",
                                             quote: "Dommage 😕 Le code est correct même si la convention de nommage n'est pas respectée.")
                                     ],
                                     code: "```swift\nvar quote = \"I think therefore I am.\"\nlet second-quote = \"If you build it, they will come.\"",
