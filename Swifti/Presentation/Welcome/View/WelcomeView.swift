@@ -79,7 +79,7 @@ struct WelcomeView: View {
      
             }
             .navigationDestination(isPresented: $viewModel.isUserRegistered, destination: {
-                    (coursesViewModel: courseViewModel, articlesViewModel: articlesViewModel)
+                    TabBarView(coursesViewModel: courseViewModel, articlesViewModel: articlesViewModel)
                     .environment(\.managedObjectContext, dataController.container.viewContext)
                     .environmentObject(appSettings)
             })
