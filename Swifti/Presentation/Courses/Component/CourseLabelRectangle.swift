@@ -35,7 +35,7 @@ struct CourseLabelRectangle: View {
                 Spacer()
                 CircularProgressBar(progress: coursesViewModel.progressBar(score: coursesViewModel.coursesScore[title] ?? 0, numberOfQuestions: coursesViewModel.courses[index].questions.count), score: coursesViewModel.coursesScore[title] ?? 0, numberOfquestions: coursesViewModel.courses[index].questions.count)
                     .frame(width: 40, height: 40)
-    
+                
             }
             .padding(20)
             .frame(maxWidth: .infinity, maxHeight: 80, alignment: .leading)

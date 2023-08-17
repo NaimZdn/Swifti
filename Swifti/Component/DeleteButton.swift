@@ -26,7 +26,7 @@ struct DeleteButton: View {
                     Text(caption)
                         .font(.defaultLabelCaption)
                         .foregroundColor(Color.white)
-                       
+                    
                 }
                 .frame(maxWidth: .infinity, minHeight: 55)
                 .background(Color.secondaryColor, in: RoundedRectangle(cornerRadius: 10, style: .continuous))

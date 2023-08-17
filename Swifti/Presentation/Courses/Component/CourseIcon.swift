@@ -12,7 +12,7 @@ struct CourseIcon: View {
     var body: some View {
         VStack {
             Image(icon)
- 
+            
         }
         .frame(minWidth: 40, minHeight: 40)
         .background(Color.labelIconBackground, in: RoundedRectangle(cornerRadius: 10, style: .continuous))

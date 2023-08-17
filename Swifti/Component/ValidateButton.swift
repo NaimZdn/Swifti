@@ -23,7 +23,7 @@ struct ValidateButton: View {
                     .background(Color.primaryColor, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
             }
             .buttonStyle(.plain)
-
+            
         }
     }
 }

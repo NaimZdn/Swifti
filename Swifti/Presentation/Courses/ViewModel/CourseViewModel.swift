@@ -9,19 +9,12 @@ import Foundation
 import CoreData
 import SwiftUI
 
-struct Score {
-    let title: String
-    let score: Int
-}
-
 class CourseViewModel: ObservableObject {
-    private var dataController: DataController
-    private var context: NSManagedObjectContext
-    
     @Published var courses: [CourseContent] = []
-    
     @Published var coursesScore: [String: Int] = ["" : 0]
     
+    private var dataController: DataController
+    private var context: NSManagedObjectContext
     private var gradients = GradientCourse.allCases
     
     init() {
@@ -41,7 +34,6 @@ class CourseViewModel: ObservableObject {
         } catch {
             print("Une erreur est survenue lors de la récupération des scores : \(error)")
         }
-        
     }
     
     func addScoreToData(courseTitle: String, score: Int) {
@@ -78,7 +70,7 @@ class CourseViewModel: ObservableObject {
     
     func getScoreText(score: Int, totalQuestions: Int) -> String {
         let percentage = Double(score) / Double(totalQuestions) * 100
-
+        
         if percentage <= 25 {
             return "Votre score est de \(score), essayez de relire attentivement le cours pour être bien sûr de comprendre tous les concepts qui y sont présentés. Vous allez y arriver ! 😁"
         } else if percentage <= 50 {
@@ -91,5 +83,4 @@ class CourseViewModel: ObservableObject {
             return "Félicitations ! C'est un sans faute ! 🎉 Votre score est de \(score). Vous maîtrisez parfaitement le contenu du cours. Bravo ! 🥳"
         }
     }
-
 }

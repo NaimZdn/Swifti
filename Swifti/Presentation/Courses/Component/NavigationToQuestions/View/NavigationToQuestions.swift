@@ -12,6 +12,7 @@ struct NavigationToQuestions: View {
     @Environment(\.presentationMode) var presentationMode
     
     @ObservedObject var coursesViewModel: CourseViewModel
+    
     var questions: [CourseQuestion]
     var courseTitle: String
     
@@ -101,11 +102,10 @@ struct NavigationToQuestions: View {
                         RoundedRectangle(cornerRadius: 10, style: .continuous)
                             .fill(
                                 selectedChoiceID == question.answer
-                                    ? Color.green
-                                    : Color.red
+                                ? Color.green
+                                : Color.red
                             ).opacity(0.2)
                     )
-                
                 }
                 Spacer()
                 
@@ -135,28 +135,7 @@ struct NavigationToQuestions: View {
                     }
                 }
             } else {
-                    scoreReview
-//                    Spacer()
-//                    if score 1..3 {
-//                        Text("Votre score est de \(score), essayez de relire attentivement le cours pour être bien sûr de comprendre tous les concepts qui y sont présentés. Vous allez y arriver ! 😁")
-//                            .font(.defaultBody)
-//                            .foregroundColor(.white)
-//                    } else if score 4..6 {
-//                        Text("Votre score est de \(score), je vous conseil une petite relecture du cours afin de revoir tous les concepts qui y sont présentés. Vous allez y arriver ! 😁")
-//                            .font(.defaultBody)
-//                            .foregroundColor(.white)
-//                    } else if score = questions.count {
-//                        Text("Félicitations, c'est un sans faute ! 🎉 Votre score est de \(score). Vous pouvez directement passez aux autre cours. N'oubliez pas d'essayer de mettre en pratique ce que vous avez appris 😁")
-//                            .font(.defaultBody)
-//                            .foregroundColor(.white)
-//                    } else if score 7..9 {
-//                        Text("C'est un super résultat 🎉 Votre score est de \(score). Vous avez de solides bases pour passer au prochains cours, cependant, je vous conseil tout de même de relire celui-ci à tête reposé 😁")
-//                            .font(.defaultBody)
-//                            .foregroundColor(.white)
-//                    }
-//                    Spacer()
-//
-//
+                scoreReview
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -164,10 +143,9 @@ struct NavigationToQuestions: View {
             leading: OptionButton(icon: "carret-left", action: {
                 self.presentationMode.wrappedValue.dismiss()
             }).padding(.top, 5))
-            .padding([.top, .horizontal], 20)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.background)
-        
+        .padding([.top, .horizontal], 20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.background)
     }
     
     var scoreReview: some View {
@@ -177,7 +155,7 @@ struct NavigationToQuestions: View {
                                 score: score,
                                 numberOfquestions: questions.count, iconFontSize: 100, counterFont: .scoreReviewCounter, firstLineWidth: 25, secondLineWidth: 20)
             .frame(maxWidth: .infinity, maxHeight: 230)
-
+            
             Text(coursesViewModel.getScoreText(score: score, totalQuestions: questions.count))
                 .font(.scoreReviewCaption)
                 .foregroundColor(.white)
@@ -185,8 +163,7 @@ struct NavigationToQuestions: View {
             Spacer()
             
         }
-        
-    }    
+    }
 }
 
 struct NavigationToQuestions_Previews: PreviewProvider {
@@ -208,20 +185,20 @@ struct NavigationToQuestions_Previews: PreviewProvider {
                                     code: "```swift\nvar quote = \"I think therefore I am.\"\nlet second-quote = \"If you build it, they will come.\"",
                                     answer: 1),
                                  CourseQuestion(
-                                     question: "\n2. Coucou 2 eme question",
-                                     choices: [
-                                         CourseQuestionChoice(
-                                             id: 1,
-                                             choice: "Oui",
-                                             quote: "C'est faux"
-                                         ),
-                                         CourseQuestionChoice(
-                                             id: 2,
-                                             choice: "Non",
-                                             quote: "Cool c'est ca")
-                                     ],
-                                     code: "```swift\nvar quote = \"I think therefore I am.\"\nlet second-quote = \"If you build it, they will come.\"",
-                                     answer: 1)], courseTitle: "Introduction au langage Swift")
+                                    question: "\n2. Coucou 2 eme question",
+                                    choices: [
+                                        CourseQuestionChoice(
+                                            id: 1,
+                                            choice: "Oui",
+                                            quote: "C'est faux"
+                                        ),
+                                        CourseQuestionChoice(
+                                            id: 2,
+                                            choice: "Non",
+                                            quote: "Cool c'est ca")
+                                    ],
+                                    code: "```swift\nvar quote = \"I think therefore I am.\"\nlet second-quote = \"If you build it, they will come.\"",
+                                    answer: 1)], courseTitle: "Introduction au langage Swift")
     }
 }
 
@@ -244,9 +221,7 @@ struct CheckboxToggleStyle: ToggleStyle {
                         configuration.isOn.toggle()
                     }
                 }
- 
             configuration.label
- 
         }
     }
 }

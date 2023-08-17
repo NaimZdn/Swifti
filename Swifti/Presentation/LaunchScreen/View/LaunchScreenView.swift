@@ -8,19 +8,18 @@
 import SwiftUI
 
 struct LaunchScreenView: View {
-       var body: some View {
-           VStack {
-               Spacer()
-               Image("logo")
-                   .foregroundColor(.primaryColor)
-               
-               Spacer()
-               
-           }
-           .frame(maxWidth: .infinity)
-           .background(Color.background)
-           
-       }
+    var body: some View {
+        VStack {
+            Spacer()
+            
+            Image("logo")
+                .foregroundColor(.primaryColor)
+            
+            Spacer()
+        }
+        .frame(maxWidth: .infinity)
+        .background(Color.background)
+    }
 }
 
 struct LaunchScreenView_Previews: PreviewProvider {

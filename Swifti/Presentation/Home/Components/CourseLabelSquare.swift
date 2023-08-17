@@ -32,7 +32,7 @@ struct CourseLabelSquare: View {
                     Text(coursesViewModel.courses[index].title)
                         .font(.courseLabelCaption)
                         .foregroundColor(.white)
-                        .multilineTextAlignment(.leading)  
+                        .multilineTextAlignment(.leading)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -41,7 +41,6 @@ struct CourseLabelSquare: View {
             .background(Color.labelBackground, in: RoundedRectangle(cornerRadius: 25, style: .continuous))
             
         }
-        
     }
 }
 

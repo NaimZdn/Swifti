@@ -13,6 +13,7 @@ struct NavigationToCourse: View {
     
     @ObservedObject var viewModel: CourseViewModel
     var index: Int
+    
     @State private var presentAlert = false
     @State private var questionsNavigation = false
     
@@ -77,7 +78,7 @@ struct NavigationToCourse: View {
                         }
                         
                         if let firstTextBox = section.firstTextBox {
-                           CourseTextBox(text: firstTextBox)
+                            CourseTextBox(text: firstTextBox)
                                 .padding(.top, 20)
                         }
                         
@@ -153,7 +154,7 @@ struct NavigationToCourse: View {
                 .frame(minWidth: 40, minHeight: 40)
                 .background(Color.optionsBackground, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
             }
-            .padding(.top, 5)
+                .padding(.top, 5)
             
         )
         .padding([.top, .horizontal], 20)

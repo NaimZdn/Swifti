@@ -48,4 +48,3 @@ enum GradientCourse: String, CaseIterable  {
         }
     }
 }
-

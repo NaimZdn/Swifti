@@ -19,7 +19,7 @@ struct OptionButton: View {
                 .resizable()
                 .foregroundColor(.white)
                 .frame(width: 25, height: 25)
-                
+            
         }
         .frame(minWidth: 40, minHeight: 40)
         .background(Color.optionsBackground, in: RoundedRectangle(cornerRadius: 10, style: .continuous))

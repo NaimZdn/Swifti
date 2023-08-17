@@ -66,7 +66,7 @@ extension Font {
     }
     
     // MARK: - Default
-      
+    
     static var defaultPlaceholder = fontLight(14)
     static var defaultLabelCaption = fontRegular(15)
     static var defaultBody = fontRegular(17)

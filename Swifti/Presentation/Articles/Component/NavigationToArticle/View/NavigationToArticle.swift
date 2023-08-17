@@ -19,7 +19,7 @@ struct NavigationToArticle: View {
         self.articlesViewModel = articlesViewModel
         self._index = State(initialValue: index)
     }
-
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 15) {
@@ -69,11 +69,11 @@ struct NavigationToArticle: View {
                     .foregroundColor(.white)
                 
                 if let image = articlesViewModel.articles[index].image {
-                        Image(image)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(maxWidth: .infinity, minHeight: 170)
-                            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    Image(image)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(maxWidth: .infinity, minHeight: 170)
+                        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                 }
                 
                 ForEach(articlesViewModel.articles[index].sections, id: \.self) { section in
@@ -88,15 +88,15 @@ struct NavigationToArticle: View {
                             .foregroundColor(.white)
                         
                         if let image = section.image {
-                                Image(image)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(maxWidth: .infinity, minHeight: 170)
-                                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-                                    .padding(.top, 15)
+                            Image(image)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(maxWidth: .infinity, minHeight: 170)
+                                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                                .padding(.top, 15)
                         }
                         
-                    
+                        
                         
                         if section.isCode == true {
                             let parserResult: ParserResult = {
@@ -130,7 +130,7 @@ struct NavigationToArticle: View {
                                 .foregroundColor(.white)
                         }
                     }
-                    .padding(.bottom, 30)   
+                    .padding(.bottom, 30)
                 }
                 
                 Text(try! AttributedString(markdown: articlesViewModel.articles[index].outro, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))

@@ -53,7 +53,7 @@ class DataController: ObservableObject {
             print("Erreur lors de l'enregistrement du nom de l'utilisateur : \(error.localizedDescription)")
         }
     }
-        
+    
     func addScoreToData(courseTitle: String, score: Int) {
         let context = container.viewContext
         let fetchRequest: NSFetchRequest<CourseEntity> = CourseEntity.fetchRequest()
@@ -74,8 +74,7 @@ class DataController: ObservableObject {
             print("Erreur lors de l'ajout du score : \(error.localizedDescription)")
         }
     }
-
-
+    
     func getCourseData() -> [String: Int]? {
         let fetchRequest: NSFetchRequest<CourseEntity> = CourseEntity.fetchRequest()
         do {
@@ -92,5 +91,4 @@ class DataController: ObservableObject {
         }
         return nil
     }
-
 }

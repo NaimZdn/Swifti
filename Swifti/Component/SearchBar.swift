@@ -20,7 +20,7 @@ struct SearchBar: View {
         HStack(spacing: 20) {
             Image("search")
                 .foregroundColor(.optionsIcon)
-
+            
             TextField("", text: $searchText, prompt: Text(placeholder).foregroundColor(.placeholder).font(.defaultPlaceholder))
                 .font(.defaultBody)
                 .foregroundColor(.white)

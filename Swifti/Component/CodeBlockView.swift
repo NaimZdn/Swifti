@@ -62,11 +62,11 @@ struct CodeBlockView_Previews: PreviewProvider {
     static var markdownString = """
     ```swift
     // Code difficile à maintenir
-
+    
     var i = 1
-
+    
     // Code maintenable
-
+    
     var counter = 1
     ```
     """

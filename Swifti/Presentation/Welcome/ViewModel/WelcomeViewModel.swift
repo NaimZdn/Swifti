@@ -10,7 +10,7 @@ import CoreData
 
 class WelcomeViewModel: ObservableObject {
     @Published var isUserRegistered = false
-
+    
     func addUserAndRedirectToHome(name: String) {
         DataController.shared.addUserNameToData(name: name)
         isUserRegistered = true

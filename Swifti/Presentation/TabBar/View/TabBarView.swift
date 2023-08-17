@@ -9,10 +9,11 @@ import SwiftUI
 
 struct TabBarView: View {
     @EnvironmentObject private var appSettings: AppSettings
-    @State private var currentTab: TabBar = .home
     
     @ObservedObject var coursesViewModel: CourseViewModel
     @ObservedObject var articlesViewModel: ArticlesViewModel
+    
+    @State private var currentTab: TabBar = .home
     
     init(coursesViewModel: CourseViewModel, articlesViewModel: ArticlesViewModel) {
         self.articlesViewModel = articlesViewModel

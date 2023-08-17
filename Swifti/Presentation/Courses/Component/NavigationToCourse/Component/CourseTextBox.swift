@@ -37,5 +37,4 @@ struct CourseTextBox_Previews: PreviewProvider {
             .padding(30)
             .background(Color.background)
     }
-    
 }

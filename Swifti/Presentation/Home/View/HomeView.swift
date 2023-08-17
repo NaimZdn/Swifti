@@ -10,14 +10,14 @@ import SwiftUI
 struct HomeView: View {
     @ObservedObject var courseViewModel: CourseViewModel
     @ObservedObject var articlesViewModel: ArticlesViewModel
+    @ObservedObject private var viewModel = HomeViewModel()
+    
     @Binding var currentTab: TabBar
     
-    @ObservedObject private var viewModel = HomeViewModel()
     @State private var searchText = ""
     @State private var isArticlesLoading = true
     @State private var visibleArticlesIndices: [Int] = []
     @State private var visibleCoursesIndices: [Int] = []
-
     
     var body: some View {
         
@@ -28,7 +28,6 @@ struct HomeView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack(alignment: .leading) {
-                
                 VStack(alignment: .leading, spacing: 5) {
                     Text(viewModel.getCurrentDate())
                         .font(.defaultBody)
@@ -65,16 +64,14 @@ struct HomeView: View {
                             }
                             .buttonStyle(.plain)
                         }
-                        
                         if Array(courseViewModel.courses.enumerated().filter { searchText.isEmpty || $0.element.title.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespaces))}).isEmpty {
                             
                             VStack {
                                 Text("Aucun cours n'a été trouvé")
                                     .font(.defaultTitle4)
                                     .foregroundColor(.white)
-        
+                                
                             }
-                            
                         } else {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 10) {

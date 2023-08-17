@@ -11,14 +11,15 @@ struct WelcomeView: View {
     @ObservedObject private var viewModel = WelcomeViewModel()
     @ObservedObject var courseViewModel: CourseViewModel
     @ObservedObject var articlesViewModel: ArticlesViewModel
-    @StateObject var appSettings: AppSettings
     
-    let dataController: DataController
+    @StateObject var appSettings: AppSettings
     
     @State private var currentTab: TabBar = .home
     @State private var userName = ""
     @State private var charactersLimit = 10
     @State private var isButtonVisible = false
+    
+    let dataController: DataController
     
     var counterColor: Color {
         let number = charactersLimit / 5
@@ -73,13 +74,11 @@ struct WelcomeView: View {
                     Text("\(userName.count)/\(charactersLimit)")
                         .font(.defaultLabelCaption)
                         .foregroundColor(counterColor)
-                    
                 }
                 Spacer()
-     
             }
             .navigationDestination(isPresented: $viewModel.isUserRegistered, destination: {
-                    TabBarView(coursesViewModel: courseViewModel, articlesViewModel: articlesViewModel)
+                TabBarView(coursesViewModel: courseViewModel, articlesViewModel: articlesViewModel)
                     .environment(\.managedObjectContext, dataController.container.viewContext)
                     .environmentObject(appSettings)
             })

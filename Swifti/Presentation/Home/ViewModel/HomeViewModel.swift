@@ -16,14 +16,14 @@ class HomeViewModel: ObservableObject {
     @Published var userName = ""
     
     init() {
-           dataController = DataController.shared
-           context = dataController.container.viewContext
-           transformData()
-       }
+        dataController = DataController.shared
+        context = dataController.container.viewContext
+        transformData()
+    }
     
     private func transformData() {
         userName = dataController.getUserName() ?? ""
-
+        
     }
     
     func getCurrentDate() -> String {

@@ -27,7 +27,7 @@ struct CircularProgressBar: View {
     }
     
     @State private var animatingProgress: Float = 0.0
-
+    
     private func animateProgress() {
         withAnimation(.easeInOut(duration: 1.0)) {
             animatingProgress = progress
