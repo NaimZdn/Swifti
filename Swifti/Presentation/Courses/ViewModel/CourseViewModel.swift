@@ -67,4 +67,29 @@ class CourseViewModel: ObservableObject {
     func getLabelColor(subject: String) -> LinearGradient {
         gradients.first { $0.rawValue == subject }?.gradient ?? Color.gradientBlue
     }
+    
+    func progressBar(score: Int, numberOfQuestions: Int) -> Binding<Float> {
+        let progress = Float(score) / Float(numberOfQuestions)
+        return Binding(
+            get: { progress },
+            set: { _ in }
+        )
+    }
+    
+    func getScoreText(score: Int, totalQuestions: Int) -> String {
+        let percentage = Double(score) / Double(totalQuestions) * 100
+
+        if percentage <= 25 {
+            return "Votre score est de \(score), essayez de relire attentivement le cours pour être bien sûr de comprendre tous les concepts qui y sont présentés. Vous allez y arriver ! 😁"
+        } else if percentage <= 50 {
+            return "Bravo ! Votre score est de \(score), continuez à étudier pour améliorer vos résultats. Vous progressez ! 👍"
+        } else if percentage <= 75 {
+            return "Félicitations ! Votre score est de \(score), vous avez une bonne maîtrise du contenu. Continuez comme ça ! 🎉"
+        } else if percentage < 100 {
+            return "Excellent travail ! Votre score est de \(score), vous êtes très proche de la perfection. Continuez à vous entraîner ! 🚀"
+        } else {
+            return "Félicitations ! C'est un sans faute ! 🎉 Votre score est de \(score). Vous maîtrisez parfaitement le contenu du cours. Bravo ! 🥳"
+        }
+    }
+
 }

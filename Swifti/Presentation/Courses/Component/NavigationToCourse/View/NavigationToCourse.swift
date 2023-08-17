@@ -13,8 +13,21 @@ struct NavigationToCourse: View {
     
     @ObservedObject var viewModel: CourseViewModel
     var index: Int
+    @State private var presentAlert = false
+    @State private var questionsNavigation = false
     
     var body: some View {
+        let alert = Alert(
+            title: Text("Attention !"),
+            message: Text("Si vous continuez, votre dernier score sera supprimé. Êtes vous sûr ?"),
+            primaryButton: .default(Text("Oui")) {
+                questionsNavigation = true
+            },
+            secondaryButton: .destructive(Text("Non")) {
+                // Handle other action.
+            }
+        )
+        
         ScrollView {
             VStack(alignment: .leading, spacing: 30) {
                 VStack(alignment: .leading, spacing: 5) {
@@ -122,12 +135,15 @@ struct NavigationToCourse: View {
                 }
             }
         }
+        .alert(isPresented: $presentAlert) {
+            alert
+        }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
             leading: OptionButton(icon: "carret-left", action: {
                 self.presentationMode.wrappedValue.dismiss()
             }).padding(.top, 5),
-            trailing:  NavigationLink(destination: NavigationToQuestions(coursesViewModel: viewModel, questions: viewModel.courses[index].questions, courseTitle: viewModel.courses[index].title)) {
+            trailing: NavigationLink(destination: NavigationToQuestions(coursesViewModel: viewModel, questions: viewModel.courses[index].questions, courseTitle: viewModel.courses[index].title)) {
                 VStack {
                     Image("carret-right")
                         .resizable()
@@ -136,17 +152,19 @@ struct NavigationToCourse: View {
                 }
                 .frame(minWidth: 40, minHeight: 40)
                 .background(Color.optionsBackground, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
-            }).padding(.top, 5)
-        
-            .padding([.top, .horizontal], 20)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.background)
-        
+            }
+            .padding(.top, 5)
+            
+        )
+        .padding([.top, .horizontal], 20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.background)
     }
 }
 
 struct NavigationToCourse_Previews: PreviewProvider {
     static var previews: some View {
         NavigationToCourse(viewModel: CourseViewModel(), index: 1)
+            .preferredColorScheme(.dark)
     }
 }

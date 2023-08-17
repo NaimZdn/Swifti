@@ -19,6 +19,8 @@ struct CourseLabelSquare: View {
                 HStack {
                     CourseIcon(icon: coursesViewModel.courses[index].icon)
                     Spacer()
+                    CircularProgressBar(progress: coursesViewModel.progressBar(score: coursesViewModel.coursesScore[coursesViewModel.courses[index].title] ?? 0, numberOfQuestions: coursesViewModel.courses[index].questions.count), score: coursesViewModel.coursesScore[coursesViewModel.courses[index].title] ?? 0, numberOfquestions: coursesViewModel.courses[index].questions.count)
+                        .frame(width: 40, height: 40)
                     
                 }
                 VStack(alignment: .leading) {

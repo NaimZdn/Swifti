@@ -22,6 +22,7 @@ struct NavigationToQuestions: View {
     @State private var answerValidated = false
     @State private var score = 0
     @State private var currentQuestionIndex = 0
+    @State private var showScore = false
     
     init(coursesViewModel: CourseViewModel, questions: [CourseQuestion], courseTitle: String) {
         self.coursesViewModel = coursesViewModel
@@ -43,7 +44,7 @@ struct NavigationToQuestions: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 30) {
-            if currentQuestionIndex < questions.count {
+            if !showScore {
                 let question = questions[currentQuestionIndex]
                 
                 Text(try! AttributedString(markdown: question.question, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
@@ -113,6 +114,9 @@ struct NavigationToQuestions: View {
                         if let selectedChoiceID = selectedChoiceID,
                            selectedChoiceID == question.answer {
                             score += 1
+                            checkedChoices = Array(repeating: Array(repeating: false, count: questions[currentQuestionIndex].choices.count), count: questions.count)
+                            
+                            coursesViewModel.addScoreToData(courseTitle: courseTitle, score: score)
                             answerValidated = true
                         } else {
                             answerValidated = true
@@ -124,12 +128,35 @@ struct NavigationToQuestions: View {
                         if currentQuestionIndex < questions.count - 1 {
                             currentQuestionIndex += 1
                             answerValidated = false
-                            checkedChoices = Array(repeating: Array(repeating: false, count: questions[currentQuestionIndex].choices.count), count: questions.count)
-                            
-                            coursesViewModel.addScoreToData(courseTitle: courseTitle, score: score)
+                            print("Suivant")
+                        } else {
+                            showScore = true
                         }
                     }
                 }
+            } else {
+                    scoreReview
+//                    Spacer()
+//                    if score 1..3 {
+//                        Text("Votre score est de \(score), essayez de relire attentivement le cours pour être bien sûr de comprendre tous les concepts qui y sont présentés. Vous allez y arriver ! 😁")
+//                            .font(.defaultBody)
+//                            .foregroundColor(.white)
+//                    } else if score 4..6 {
+//                        Text("Votre score est de \(score), je vous conseil une petite relecture du cours afin de revoir tous les concepts qui y sont présentés. Vous allez y arriver ! 😁")
+//                            .font(.defaultBody)
+//                            .foregroundColor(.white)
+//                    } else if score = questions.count {
+//                        Text("Félicitations, c'est un sans faute ! 🎉 Votre score est de \(score). Vous pouvez directement passez aux autre cours. N'oubliez pas d'essayer de mettre en pratique ce que vous avez appris 😁")
+//                            .font(.defaultBody)
+//                            .foregroundColor(.white)
+//                    } else if score 7..9 {
+//                        Text("C'est un super résultat 🎉 Votre score est de \(score). Vous avez de solides bases pour passer au prochains cours, cependant, je vous conseil tout de même de relire celui-ci à tête reposé 😁")
+//                            .font(.defaultBody)
+//                            .foregroundColor(.white)
+//                    }
+//                    Spacer()
+//
+//
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -142,6 +169,24 @@ struct NavigationToQuestions: View {
             .background(Color.background)
         
     }
+    
+    var scoreReview: some View {
+        VStack(spacing: 60) {
+            Spacer()
+            CircularProgressBar(progress: coursesViewModel.progressBar(score: score, numberOfQuestions: questions.count),
+                                score: score,
+                                numberOfquestions: questions.count, iconFontSize: 100, counterFont: .scoreReviewCounter, firstLineWidth: 25, secondLineWidth: 20)
+            .frame(maxWidth: .infinity, maxHeight: 230)
+
+            Text(coursesViewModel.getScoreText(score: score, totalQuestions: questions.count))
+                .font(.scoreReviewCaption)
+                .foregroundColor(.white)
+            
+            Spacer()
+            
+        }
+        
+    }    
 }
 
 struct NavigationToQuestions_Previews: PreviewProvider {

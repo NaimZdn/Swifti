@@ -14,6 +14,8 @@ struct CourseLabelRectangle: View {
     var title: String
     var index: Int
     
+    @State private var progressValue: Float = 8/10
+    
     var body: some View {
         NavigationLink {
             NavigationToCourse(viewModel: coursesViewModel, index: index)
@@ -30,6 +32,10 @@ struct CourseLabelRectangle: View {
                         .font(.courseLabelCaption)
                         .foregroundColor(.white)
                 }
+                Spacer()
+                CircularProgressBar(progress: coursesViewModel.progressBar(score: coursesViewModel.coursesScore[title] ?? 0, numberOfQuestions: coursesViewModel.courses[index].questions.count), score: coursesViewModel.coursesScore[title] ?? 0, numberOfquestions: coursesViewModel.courses[index].questions.count)
+                    .frame(width: 40, height: 40)
+    
             }
             .padding(20)
             .frame(maxWidth: .infinity, maxHeight: 80, alignment: .leading)
