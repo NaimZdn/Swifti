@@ -11,11 +11,13 @@ import Markdown
 struct CourseTextBox: View {
     var text: String
     
+    @State private var presentAlert = true
+    
     var body: some View {
         HStack(alignment: .top, spacing: 15) {
             Text("💡")
                 .font(.defaultTitle)
-    
+            
             Text(try! AttributedString(markdown: text, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
                 .font(.defaultBody)
                 .foregroundColor(.white)
