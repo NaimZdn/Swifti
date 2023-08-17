@@ -83,12 +83,18 @@ extension Font {
     static var courseLabelCaption = fontLight(13)
     static var courseLabelTitle = fontMedium(17)
     
+    // MARK: - Score Review
+    
+    static var scoreReviewCaption = fontSemiBold(20)
+    static var scoreReviewCounter = fontBold(60)
+    
+    
     // MARK: - Articles Label
     
     static var articlesLabelCaption = fontLight(12)
     static var articlesLabelTitle = fontMedium(14)
     
-    // MARK: - Articles Label
+    // MARK: - Settings Label
     
     static var settingsLabelText = fontLight(14)
     
