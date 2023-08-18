@@ -41,6 +41,7 @@ struct SearchBar: View {
         .frame(height: 50)
         .padding(.horizontal, 20)
         .background(Color.labelBackground, in: RoundedRectangle(cornerRadius: 30, style: .continuous))
+        .accessibilityAddTraits(.isSearchField)
     }
 }
 

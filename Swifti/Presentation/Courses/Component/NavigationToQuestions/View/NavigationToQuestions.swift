@@ -47,11 +47,12 @@ struct NavigationToQuestions: View {
         VStack(alignment: .leading, spacing: 30) {
             if !showScore {
                 let question = questions[currentQuestionIndex]
-                
-                Text(try! AttributedString(markdown: question.question, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
-                    .font(.defaultTitle3)
-                    .foregroundColor(.white)
-                
+
+                    Text(try! AttributedString(markdown: question.question, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
+                        .font(.defaultTitle3)
+                        .foregroundColor(.white)
+                        .fixedSize(horizontal: false, vertical: true)
+
                 if let code = question.code {
                     let parserResult: ParserResult = {
                         let document = Document(parsing: code)
@@ -71,6 +72,8 @@ struct NavigationToQuestions: View {
                             }
                             .toggleStyle(CheckboxToggleStyle())
                             .disabled(answerValidated)
+                            .accessibilityAddTraits(.isButton)
+                            .accessibilityLabel("Checkbox")
                             
                             Group {
                                 Text(try! AttributedString(markdown: question.choices[choiceIndex].choice, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
@@ -199,29 +202,5 @@ struct NavigationToQuestions_Previews: PreviewProvider {
                                     ],
                                     code: "```swift\nvar quote = \"I think therefore I am.\"\nlet second-quote = \"If you build it, they will come.\"",
                                     answer: 1)], courseTitle: "Introduction au langage Swift")
-    }
-}
-
-struct CheckboxToggleStyle: ToggleStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        HStack {
-            RoundedRectangle(cornerRadius: 5, style: .continuous)
-                .stroke(lineWidth: 2)
-                .frame(width: 20, height: 20)
-                .foregroundColor(.white)
-                .overlay {
-                    if configuration.isOn {
-                        RoundedRectangle(cornerRadius: 2, style: .continuous)
-                            .foregroundColor(.primaryColor)
-                            .padding(3.5)
-                    }
-                }
-                .onTapGesture {
-                    withAnimation(.spring()) {
-                        configuration.isOn.toggle()
-                    }
-                }
-            configuration.label
-        }
     }
 }

@@ -36,6 +36,8 @@ struct InformationLabel: View {
                 }
         }
         .frame(maxHeight: 30, alignment: .leading)
+        .accessibilityAddTraits(.isSummaryElement)
+        .accessibilityLabel(subject)
     }
 }
 

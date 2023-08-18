@@ -28,6 +28,8 @@ struct FiltersLabel: View {
             .buttonStyle(.plain)
 
         }
+        .accessibilityAddTraits(.isButton)
+        .accessibilityLabel(label)
     }
 }
 

@@ -34,14 +34,16 @@ struct CourseView: View {
                         OptionButton(icon: "filter") {
                             isFilterViewPresented = true
                         }
-                    }
-                    SearchBar(searchText: $searchText, placeholder: "Rechercher un cours")
-                    
                         .sheet(isPresented: $isFilterViewPresented) {
                             FiltersView(viewModel: filtersViewModel, filtersArticles: [], filtersCourses: FiltersCourses.allCases)
                                 .presentationDetents([.medium])
                                 .presentationDragIndicator(.visible)
                         }
+                        .accessibilityLabel("Filtres")
+                        .accessibilityHint("Cliquez pour affiner votre recherche")
+                    }
+                    
+                    SearchBar(searchText: $searchText, placeholder: "Rechercher un cours")
                 }
                 .padding(.bottom, 10)
                 

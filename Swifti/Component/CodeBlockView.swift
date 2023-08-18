@@ -9,8 +9,9 @@ import SwiftUI
 import Markdown
 
 struct CodeBlockView: View {
-    let parserResult: ParserResult
     @State var isCopied = false
+    
+    let parserResult: ParserResult
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -41,7 +42,9 @@ struct CodeBlockView: View {
                             .foregroundColor(.white)
                             .font(.articlesLabelCaption)
                     }
-                } 
+                }
+                .accessibilityAddTraits(.isButton)
+                .accessibilityLabel("Copiez le code")
             }
             .padding(.bottom, 10)
             .frame(maxHeight: 20)

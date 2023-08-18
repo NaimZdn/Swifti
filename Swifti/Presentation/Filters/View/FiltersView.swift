@@ -31,6 +31,9 @@ struct FiltersView: View {
                 OptionButton(icon: "xmark") {
                     presentationMode.wrappedValue.dismiss()
                 }
+                .accessibilityAddTraits(.isButton)
+                .accessibilityLabel("Fermer")
+                .accessibilityHint("Cliquer pour fermer la fenêtre")
             }
             VStack(alignment: .leading) {
                 Text("Sujets")

@@ -55,6 +55,7 @@ struct CircularProgressBar: View {
                     animateProgress()
                 }
         }
+        .accessibilityLabel("Votre score")
     }
 }
 

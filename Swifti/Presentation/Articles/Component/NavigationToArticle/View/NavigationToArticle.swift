@@ -49,6 +49,8 @@ struct NavigationToArticle: View {
                         }
                         .padding(.horizontal, 20)
                     }
+                    .accessibilityAddTraits(.isImage)
+                    .accessibilityLabel("Illustration de l'article")
                 
                 VStack(alignment: .leading, spacing: 10) {
                     Text(articlesViewModel.articles[index].title)
@@ -62,6 +64,7 @@ struct NavigationToArticle: View {
                         .font(.defaultPlaceholder)
                         .foregroundColor(.placeholder)
                 }
+                .accessibilityAddTraits(.isHeader)
                 
                 Text(try! AttributedString(markdown: articlesViewModel.articles[index].intro, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
                     .tint(Color.primaryColor)

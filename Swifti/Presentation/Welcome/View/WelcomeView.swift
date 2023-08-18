@@ -29,7 +29,7 @@ struct WelcomeView: View {
             return .orange
         } else if userName.count <= orangeInterval && userName.count != 0 && userName.count != charactersLimit {
             return.green
-        } else if userName.count == charactersLimit{
+        } else if userName.count == charactersLimit {
             return .red
         } else {
             return .white
@@ -42,6 +42,8 @@ struct WelcomeView: View {
                 Image("swifti-illustration")
                     .resizable()
                     .frame(width: 273, height: 282)
+                    .padding(.top, 50)
+                    .accessibilityLabel("Swifti illustration")
                 
                 VStack(alignment: .leading, spacing: 5) {
                     Text("Hello 👋")
@@ -70,6 +72,7 @@ struct WelcomeView: View {
                                 userName = ""
                             }
                         }
+                        .accessibilityLabel("Entrez votre nom")
                     
                     Text("\(userName.count)/\(charactersLimit)")
                         .font(.defaultLabelCaption)

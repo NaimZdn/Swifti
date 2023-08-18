@@ -41,6 +41,7 @@ struct HomeView: View {
                 .padding(.horizontal, 20)
                 .padding(.top, 20)
                 .padding(.bottom, 25)
+                .accessibilityAddTraits(.isHeader)
                 
                 SearchBar(searchText: $searchText, placeholder: "Recherchez un cours")
                     .padding(.horizontal, 20)

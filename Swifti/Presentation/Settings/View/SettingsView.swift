@@ -47,14 +47,17 @@ struct SettingsView: View {
                         NavigationLink(destination: AboutUsView()) {
                             SettingsLabel(appSettings: appSettings, text: label[2].rawValue, icon: label[2].icon, isNavigation: true, isLink: false, notificationToggle: false)
                         }
+                        .accessibilityLabel("Navigation vers à propos de nous")
                         
                         NavigationLink(destination: PrivacyPolicyView()) {
                             SettingsLabel(appSettings: appSettings, text: label[3].rawValue, icon: label[3].icon, isNavigation: true, isLink: false, notificationToggle: false)
                         }
+                        .accessibilityLabel("Navigation vers les politiques de confidentialités")
                         
                         NavigationLink(destination: TermsOfServiceView()) {
                             SettingsLabel(appSettings: appSettings, text: label[4].rawValue, icon: label[4].icon, isNavigation: true, isLink: false, notificationToggle: false)
                         }
+                        .accessibilityLabel("Navigation vers les conditions d'utilisations")
                     }
                     Spacer()
                 }

@@ -41,6 +41,9 @@ struct ArticlesView: View {
                                 .presentationDragIndicator(.visible)
                         }
                     }
+                    .accessibilityLabel("Filtres")
+                    .accessibilityHint("Cliquez pour affiner votre recherche")
+                    
                     SearchBar(searchText: $searchText, placeholder: "Recherchez un article ")
                         .padding(.bottom, 10)
                     

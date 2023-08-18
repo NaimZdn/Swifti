@@ -45,12 +45,13 @@ struct NavigationToCourse: View {
                         .foregroundColor(.placeholder)
                     
                 }
+                .accessibilityAddTraits(.isHeader)
+                
                 Text(try! AttributedString(markdown: viewModel.courses[index].intro, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
                     .font(.defaultBody)
                     .foregroundColor(.white)
                 
                 ForEach(viewModel.courses[index].sections, id: \.self) { section in
-                    
                     VStack(alignment: .leading, spacing: 10) {
                         Text(try! AttributedString(markdown: section.title, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
                             .font(.defaultTitle3)

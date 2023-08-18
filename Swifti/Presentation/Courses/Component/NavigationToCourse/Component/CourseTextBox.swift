@@ -27,6 +27,7 @@ struct CourseTextBox: View {
         .padding(.horizontal, 20)
         .padding(.vertical, 15)
         .background(Color.yellow.opacity(0.15), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+        .accessibilityLabel("Conclusion / Astuce")
         
     }
 }

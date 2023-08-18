@@ -39,6 +39,9 @@ struct CourseLabelSquare: View {
             .padding(15)
             .frame(width: 150, height: 150)
             .background(Color.labelBackground, in: RoundedRectangle(cornerRadius: 25, style: .continuous))
+            .accessibilityAddTraits(.isButton)
+            .accessibilityLabel("Cours")
+            .accessibilityHint("Cliquez pour aller vers le cours sélectionné")
             
         }
     }

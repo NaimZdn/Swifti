@@ -52,6 +52,9 @@ struct ArticlesLabel: View {
             .padding(10)
             .frame(maxWidth: .infinity, maxHeight: 120)
             .background(Color.labelBackground, in: RoundedRectangle(cornerRadius: 15, style: .continuous))
+            .accessibilityAddTraits(.isButton)
+            .accessibilityLabel("Article")
+            .accessibilityHint("Cliquez pour aller vers l'article sélectionné")
         }
     }
 }

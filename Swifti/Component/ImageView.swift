@@ -18,6 +18,7 @@ struct ImageView: View {
         } placeholder: {
             ProgressView()
         }
+        .accessibilityAddTraits(.isImage)
     }
 }
 

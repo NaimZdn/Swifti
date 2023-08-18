@@ -27,16 +27,24 @@ struct TabBarView: View {
                 TabView(selection: $currentTab) {
                     HomeView(courseViewModel: coursesViewModel, articlesViewModel: articlesViewModel, currentTab: $currentTab)
                         .tag(TabBar.home)
+                        .accessibilityAddTraits(.isButton)
+                        .accessibilityLabel("Home View")
                     
                     CourseView(courseViewModel: coursesViewModel)
                         .tag(TabBar.courses)
+                        .accessibilityAddTraits(.isButton)
+                        .accessibilityLabel("Courses View")
                     
                     ArticlesView(articlesViewModel: articlesViewModel)
                         .tag(TabBar.articles)
+                        .accessibilityAddTraits(.isButton)
+                        .accessibilityLabel("Articles View")
                     
                     SettingsView()
                         .environmentObject(appSettings)
                         .tag(TabBar.settings)
+                        .accessibilityAddTraits(.isButton)
+                        .accessibilityLabel("Settings View")
                 }
                 CustomTabBar(selectedTab: $currentTab)
             }

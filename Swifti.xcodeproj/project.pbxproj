@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		081C2A622A8F713F0045D57E /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C2A612A8F713F0045D57E /* CheckboxToggleStyle.swift */; };
 		084F17F62A6FEF1F00BC25CC /* TechnosLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F17F52A6FEF1F00BC25CC /* TechnosLabel.swift */; };
 		084F17F92A6FEFF400BC25CC /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F17F82A6FEFF400BC25CC /* LinkButton.swift */; };
 		084F17FB2A6FF02F00BC25CC /* SafariRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F17FA2A6FF02F00BC25CC /* SafariRepresentable.swift */; };
@@ -100,6 +101,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		081C2A612A8F713F0045D57E /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 		084F17F52A6FEF1F00BC25CC /* TechnosLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnosLabel.swift; sourceTree = "<group>"; };
 		084F17F82A6FEFF400BC25CC /* LinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
 		084F17FA2A6FF02F00BC25CC /* SafariRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariRepresentable.swift; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 				084F17FA2A6FF02F00BC25CC /* SafariRepresentable.swift */,
 				0874AFF92A6DD97B00879D8F /* SearchBar.swift */,
 				084F18012A70022B00BC25CC /* OptionButton.swift */,
+				081C2A612A8F713F0045D57E /* CheckboxToggleStyle.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -612,8 +615,8 @@
 		08CD23002A798BFD007A0334 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
-				08B759922A7DAB690035FF9C /* ViewModel */,
 				08CD23032A798C1F007A0334 /* View */,
+				08B759922A7DAB690035FF9C /* ViewModel */,
 				08CD23012A798C10007A0334 /* Component */,
 			);
 			path = Filters;
@@ -920,6 +923,7 @@
 				0874AFEB2A6D3E3500879D8F /* ValidateButton.swift in Sources */,
 				08CD23052A798C2D007A0334 /* FiltersView.swift in Sources */,
 				0874AFF82A6D65E900879D8F /* WelcomeViewModel.swift in Sources */,
+				081C2A622A8F713F0045D57E /* CheckboxToggleStyle.swift in Sources */,
 				08ACFFBB2A8BCA9200097511 /* CircularProgressBar.swift in Sources */,
 				0874B0152A6EF90600879D8F /* SettingsLabel.swift in Sources */,
 				08CD22FF2A794E7E007A0334 /* CodeBlockView.swift in Sources */,

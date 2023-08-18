@@ -40,6 +40,9 @@ struct CourseLabelRectangle: View {
             .padding(20)
             .frame(maxWidth: .infinity, maxHeight: 80, alignment: .leading)
             .background(Color.labelBackground, in: RoundedRectangle(cornerRadius: 15, style: .continuous))
+            .accessibilityAddTraits(.isButton)
+            .accessibilityLabel("Cours")
+            .accessibilityHint("Cliquez pour aller vers le cours sélectionné")
         }
     }
 }
