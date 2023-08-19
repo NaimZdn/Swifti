@@ -31,7 +31,13 @@ class HomeViewModel: ObservableObject {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "fr_FR")
         dateFormatter.setLocalizedDateFormatFromTemplate("EEEE d MMMM")
-        return dateFormatter.string(from: currentDate).replacingOccurrences(of: dateFormatter.weekdaySymbols[0], with: dateFormatter.weekdaySymbols[0].capitalized)
         
+        var dateString = dateFormatter.string(from: currentDate)
+        
+        if let firstLetter = dateString.first {
+            dateString = dateString.replacingCharacters(in: dateString.startIndex...dateString.startIndex, with: String(firstLetter).capitalized)
+        }
+        
+        return dateString
     }
 }
