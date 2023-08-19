@@ -1,0 +1,21 @@
+{
+    "articles" : [
+        {
+            "title": "5 points à retenir de la WWDC23",
+            "cover": "https://mrmacintosh.com/wp-content/uploads/2023/03/Screen-Shot-2023-03-29-at-12.04.33-PM-1024x560.png",
+            "subject": "Nouveautés",
+            "published" : "28 juillet 2023",
+            "intro" : "Lorem ipsum",
+            
+            "sections": [
+                {
+                    "title" : "1. Apple Vision Pro",
+                    "text" : "Lorem ipsum",
+                    "image" : "vision-pro",
+                },
+            ],
+            "outro" : "Lorem ipsum",
+        },
+    ]
+}
+

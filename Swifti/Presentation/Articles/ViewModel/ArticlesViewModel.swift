@@ -32,6 +32,6 @@ class ArticlesViewModel: ObservableObject {
     }
     
     func getLabelColor(subject: String) -> LinearGradient {
-        gradients.first { $0.rawValue == subject }?.gradient ?? Color.gradientBlue
+        gradients.first { $0.rawValue == subject }!.gradient
     }
 }
