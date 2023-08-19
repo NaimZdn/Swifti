@@ -12,22 +12,21 @@ class FiltersViewModel: ObservableObject {
     @Published var selectedFilters: Set<String> = []
     
     func getFilteredArticles(articles: [ArticleContent]) -> [ArticleContent] {
-        if selectedFilters.isEmpty {
+        guard !selectedFilters.isEmpty else {
             return articles
-        } else {
-            return articles.filter { article in
-                selectedFilters.contains(article.subject)
-            }
+        }
+        return articles.filter { article in
+            selectedFilters.contains(article.subject)
         }
     }
     
     func getFilteredCourses(courses: [CourseContent]) -> [CourseContent] {
-        if selectedFilters.isEmpty {
+        guard !selectedFilters.isEmpty else {
             return courses
-        } else {
-            return courses.filter { course in
-                selectedFilters.contains(course.techno)
-            }
+        }
+        
+        return courses.filter { course in
+            selectedFilters.contains(course.techno)
         }
     }
     
