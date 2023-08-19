@@ -1,0 +1,60 @@
+{
+    "courses" : [
+        {
+            "title" : "Introduction au langage",
+            "icon" : "swift",
+            "techno" : "Swift",
+            "difficulty" : "Facile",
+            "update" : "2 août 2023",
+            "intro" : "Lorem ipsum",
+            "sections": [
+                {
+                    "title" : "Pourquoi apprendre Swift ?",
+                    "isSubsection" : true,
+                    "subsections" : [
+                        {
+                            "subtitle" : "1. Le type safety",
+                            "firstText" : "Lorem ipsum",
+                            
+                        },
+                        {
+                            "subtitle" : "2. Facilité d'apprentissage",
+                            "firstText" : "Lorem ipsum",
+                            
+                        },
+                    ],
+                },
+            ],
+            "outro" : "Lorem ipsum",
+            "questions" : [
+                {
+                    "question" : "\n1. En quelle année la première version de Swift a vu le jour ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "2012",
+                            "quote" : "Lorem ipsum",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "2013",
+                            "quote" : "Lorem ipsum",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "2014",
+                            "quote" : "Lorem ipsum",
+                        },
+                        {
+                            "id" : 4,
+                            "choice" : "2015",
+                            "quote" : "Lorem ipsum",
+                        },
+                    ],
+                    "answer" : 3,
+                },
+            ],
+        },
+    ]
+}
+

@@ -29,7 +29,7 @@ class CourseViewModel: ObservableObject {
         
         do {
             let results = try dataController.container.viewContext.fetch(fetchRequest)
-            coursesScore = Dictionary(uniqueKeysWithValues: results.map { ($0.title ?? "", Int($0.score)) })
+            coursesScore = Dictionary(uniqueKeysWithValues: results.map { ($0.title!, Int($0.score)) })
             print("Fonction getScore \(coursesScore)")
         } catch {
             print("Une erreur est survenue lors de la récupération des scores : \(error)")
@@ -39,9 +39,7 @@ class CourseViewModel: ObservableObject {
     func addScoreToData(courseTitle: String, score: Int) {
         dataController.addScoreToData(courseTitle: courseTitle, score: score)
         coursesScore[courseTitle] = score
-        print("Ce que nous renvoie le ViewModel \(coursesScore)")
     }
-    
     
     func loadJSONData() {
         if let path = Bundle.main.path(forResource: "Courses", ofType: "json") {
@@ -57,7 +55,7 @@ class CourseViewModel: ObservableObject {
     }
     
     func getLabelColor(subject: String) -> LinearGradient {
-        gradients.first { $0.rawValue == subject }?.gradient ?? Color.gradientBlue
+        gradients.first { $0.rawValue == subject }!.gradient
     }
     
     func progressBar(score: Int, numberOfQuestions: Int) -> Binding<Float> {
@@ -79,8 +77,7 @@ class CourseViewModel: ObservableObject {
             return "Félicitations ! Votre score est de \(score), vous avez une bonne maîtrise du contenu. Continuez comme ça ! 🎉"
         } else if percentage < 100 {
             return "Excellent travail ! Votre score est de \(score), vous êtes très proche de la perfection. Continuez à vous entraîner ! 🚀"
-        } else {
-            return "Félicitations ! C'est un sans faute ! 🎉 Votre score est de \(score). Vous maîtrisez parfaitement le contenu du cours. Bravo ! 🥳"
         }
+        return "Félicitations ! C'est un sans faute ! 🎉 Votre score est de \(score). Vous maîtrisez parfaitement le contenu du cours. Bravo ! 🥳"
     }
 }
