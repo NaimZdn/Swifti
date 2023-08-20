@@ -1,0 +1,546 @@
+{
+    "courses" : [
+        {
+            "title" : "Introduction au langage",
+            "icon" : "swift",
+            "techno" : "Swift",
+            "difficulty" : "Facile",
+            "update" : "2 août 2023",
+            "intro" : "Bienvenue dans le premier cours de cette application. Comme vous le savez déjà cette dernière a pour but de vous apprendre et vous donner l’envie d’apprendre la programmation en Swift. Avant d’entrer dans le vif du sujet, **je vais vous expliquer ce qu’est Swift** (Attention petit cours d’histoire, ne vous endormez pas 😁).",
+            "sections": [
+                {
+                    "title" : "Qu'est ce que Swift ?",
+                    "isFirstText" : true,
+                    "firstText" : "Swift est un **langage de programmation créé par Apple en 2014**. Ce dernier succède à l’Objective-C, aussi créé par Apple reprenant certaines bases d’autres langages de programmation tel que le C. Il a été principalement conçu pour le développement natif iOS et macOS, mais également, pour celui d’iPadOS, tvOS, watchOS et plus récemment visionOS.\n\nComme plusieurs autres langages de programmation, Swift suit le **paradigme de la programmation orienté objet.**",
+                },
+                {
+                    "title" : "Qu'est ce que la POO",
+                    "isFirstText" : true,
+                    "firstText" : "Comme précisé plus haut, la POO est un paradigme de programmation utilisé par Swift et d’autres langages tels que C, Java ou encore Kotlin. C’est une approche qui **permet d’organiser et de structurer le code de manière plus intuitive en utilisant des “objets”.**\nVoici comment je pourrais vous définir **les concepts de la POO :**\n\n• **Objet** : c’est une entité qui combine des données *(propriétés)* et des actions *(méthodes ou fonctions)* associées à ces données.\n***Ex** : Un objet “**`Car`**” peut avoir des propriétés quel que “**`color`**” ou “**`brand`**” ainsi que des méthodes pour démarrer, accélérer ou freiner.*\n\n• **Class** : une `class` est un modèle ou un plan pour créer des objets. C’est comme un moule qui définit la structure et le comportement des objets qui seront créés à partir de cette class. Vous allez voir qu’en Swift les objets peuvent être définis par une `class` comme on vient de le voir ou une structure (`struct`), mais nous y reviendront dans un cours dédié.\n***Ex :** Si nous créons une class **“`Audi`**”, nous définirions certaines propriétés et méthodes propres à la marque Audi, telles que le “**`logo`**” ou la “**`brand`**”.\n\n• **Instance** : lorsque nous créons un objet à partir d’une class, on dit que l’on obtient une “***instance***” de la class. Chaque instance est un objet distinct avec ses propres données et comportements, mais basé sur le modèle défini par la class.\n***Ex** : Nous pourrions créer plusieurs instances de la class “**`Audi`**” comme la “**`AudiRS6`**” ou la “**`AudiQ5`**”, qui auraient des propriétés et méthodes spécifiques à chaque modèle.*\n\n• **Héritage** : le concept d’héritage permet de créer de nouvelles class en se basant sur des class existantes. Une nouvelle class hérite des propriétés et des méthodes de la class parente, ce qui facilite la réutilisation du code et la création de hiérarchies de class.\n***Ex** : Plutôt que de créer plusieurs instances de la class “**`Audi`**”, nous pourrions créer une nouvelle class “**`AudiA3`**”, qui hérite des propriétés communes à toutes les voitures de la marque Audi.*\n\n• **Polymorphisme** : il permet à différentes class de fournir une interface commune pour des actions similaires. Cela signifie qu’un même nom de méthode peut avoir des implémentations différentes selon la class à laquelle il appartient.\n***Ex** : *Reprenons notre class AudiA3 qui hérite de la class **`Audi`**, imaginons que la class Audi a une propriété “**`gearBox`**” qui est sur “`manual`” par défaut et que notre AudiA3 est en automatique, à ce moment la le polymorphisme nous permet de redéfinir la propriété de la class parente (**`Audi`**) dans notre class **`AudiA3`***.*\n\nLa POO est une notion importante en programmation, apprendre le Swift ne pourra que vous aider à comprendre plus facilement d’autres langages et vous rendre plus polyvalent !\nCependant, vous vous doutez bien que ce n’est pas la seule raison d’apprendre le Swift.",
+                },
+                {
+                    "title" : "Pourquoi apprendre Swift ?",
+                    "isSubsection" : true,
+                    "subsections" : [
+                        {
+                            "subtitle" : "1. Le type safety",
+                            "firstText" : "Le ***type safety*** (sécurité des types), est l’un des principaux piliers de Swift. Ce concept garantit que le code écrit est cohérent et sûr en termes de types de données. Nous y reviendront lorsque l’on abordera le cours sur les propriétés, mais retenez qu’il est très difficile de faire des erreurs de type en Swift.",
+                            
+                        },
+                        {
+                            "subtitle" : "2. Facilité d'apprentissage",
+                            "firstText" : "Personnellement, je trouve que **Swift** est un langage **facile à apprendre de par sa syntaxe clair**. Pour info, j’avais commencé le développement avec du JavaScript, je peux vous dire que je ne fais plus de cauchemar à cause d’un oubli de virgule. De plus, vous pouvez vous exercer facilement avec le **Playground sur Xcode** ou l’application directement disponible sur l’iPad, c’est l’idéal pour tester de petits algorithmes ou apprendre certaines notions. C’est d’ailleurs dans le playground que vous pourrez **mettre en pratique plus facilement les enseignements que vous tirerez des cours.**",
+                            
+                        },
+                        {
+                            "subtitle" : "3. Sécurité et performance",
+                            "firstText" : "Swift est un langage de programmation sûr qui prend en charge la sécurité des types et la détection des erreurs à la compilation, réduisant ainsi le risque de bugs et les problèmes liés aux types de données. De plus, il est **conçu pour être performant avec des temps d’exécution rapide.**",
+                            
+                        },
+                        {
+                            "subtitle" : "4. Évolution et mise à jour",
+                            "firstText" : "C’est un langage relativement récent, ce qui signifie qu’il est en constante évolution. Chaque année, lors de la **WWDC Apple annonce des nouveautés** sur le langage et les frameworks qui l’entourent. De plus, c’est un **langage open-source**, ce qui signifie que le langage est accessible à tous, vous pouvez le consulter et y contribuer via la résolution d’issues sur Github (un logiciel de versionning du code, j’y reviendrais aussi dans un cours dédié).",
+                            
+                        },
+                        {
+                            "subtitle" : "5. Évolution et mise à jour",
+                            "firstText" : "Avant de se lancer dans la programmation en Swift, ou dans le monde de la programmation en général, je pense, qu’il faut que vous ayez certaines appétences pour la résolution de problème tel que des puzzle, des casse-tête ou autre. De plus, **la patience est une qualité essentielle**, car vous serez probablement confronté à de nombreux bugs lors de l'élaboration de votre application. Je ne vais pas entrer dans les clichés en vous disant qu’il faut être très bon en maths ou être bilingue. Alors, oui, être bon en maths peut aider de par la logique mathématique que vous pouvez avoir, être très bon en anglais pour permettra de trouver et de lire de la documentation plus facilement, mais, **ces skills s’apprennent au fil du temps**, ne vous en faites pas.\n\nConcernant le marché de l’emploi, je tiens tout de même à vous préciser que **la réalité du marché actuelle ne sera pas celle de demain,** il m’est donc impossible de vous promettre un travail à la fin de votre apprentissage. De plus, le parcours professionnel et l’entré dans celui-ci est propre à chacun, en ce sens, **je ne peux vous promettre quoi que ce soit.** Cependant, si vous avez soif d’apprendre, si vous réalisez des projets sérieux avec un code de plus en plus clairs et des technologies en vogue, je suis convaincu que vous aurez de **belles opportunités en tant que développeur iOS.**\n\nRetenez simplement que comme dans tous les domaines, **l'intérêt que vous portez à la matière sera la clé de votre progression**. L'apprentissage de Swift vous ouvrira les portes de l'univers riches d’Apple et vous permettra de **créer des applications innovantes** pour les millions d'utilisateurs de leurs produits. Ainsi, si vous êtes passionné par la technologie et que vous avez soif d'apprendre, Swift est sans aucun doute un langage qui vous permettra de relever des défis passionnants et de réaliser vos projets les plus ambitieux.",
+                        },
+                    ],
+                },
+            ],
+            "outro" : "Il existe encore énormément de raison d’apprendre le Swift, mais vous n’avez pas envie que je vous Spoil non ? 🤫 J’espère que ce petit cours d’histoire ne vous a pas trop ennuyé. Pour en avoir le coeur net, je vous propose un petit QCM, vous pourrez y accéder en cliquant sur la flèche en haut à droite. Bon courage, si vous n’y arrivez pas ce n’est pas grave, l’importance, c’est d’essayer, vous allez voir qu’en programmation réussir du premier coup n’est qu’un fantasme.",
+            "questions" : [
+                {
+                    "question" : "\n1. En quelle année la première version de Swift a vu le jour ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "2012",
+                            "quote" : "Eh non 😕 La première version de Swift a été lancé le 2 juin 2014, bien après la \"fin du monde\".",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "2013",
+                            "quote" : "Eh non 😕 La première version de Swift a été lancé le 2 juin 2014.",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "2014",
+                            "quote" : "Bien joué 🎉 Effectivement la première version de Swift a été lancé le 2 juin 2014.",
+                        },
+                        {
+                            "id" : 4,
+                            "choice" : "2015",
+                            "quote" : "Eh non 😕 La première version de Swift a été lancé le 2 juin 2014.",
+                        },
+                    ],
+                    "answer" : 3,
+                },
+                {
+                    "question" : "\n2. Pourquoi Swift est-il considéré comme un langage évolutif ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "Il a été créé par Apple.",
+                            "quote" : "Malheureusement, ce n'est pas la bonne réponse même si, en un sens, c'est la politique d'Apple qui fait que le langage est en constante évolution 😎. En effet, les plus grosses mise à jour découle de la WWDC qui a lieu chaque année 🍏.",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "Il est facile à apprendre.",
+                            "quote" : "C'est vrai qu'il est plus facile que d'autres langages, néanmoins, ce n'est pas la bonne réponse. Les plus grosses mise à jour découle de la WWDC 🍏.",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "Il est en constante évolution avec des mises à jour régulières annoncées lors de la WWDC.",
+                            "quote" : "Bien joué 🎉 Effectivement la WWDC, qui se déroule chaque année, est la première raison de sa constante évolution !",
+                        },
+                        {
+                            "id" : 4,
+                            "choice" : "Il est open-source.",
+                            "quote" : "C'est vrai que Swift est un langage évolutif aussi grâce au fait qu'il soit open-source, cependant les grosses nouveautés ne sont pas liées à cela. Les plus grosses mise à jour découle de la WWDC 🍏.",
+                        },
+                    ],
+                    "answer" : 3,
+                },
+                {
+                    "question" : "\n3. Quel paradigme de programmation est principalement suivi par Swift ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "La programmation orientée objet.",
+                            "quote" : "Bien joué 🎉 Effectivement Swift est un langage qui suit le paradigme de la programmation orienté objet *(POO).*",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "La programmation impérative.",
+                            "quote" : "Malheureusement, ce n'est pas la bonne réponse, pour info, la programmation impérative est le paradigme de programmation le plus ancien 🤓.",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "La programmation procédurale.",
+                            "quote" : "Ce n'est pas la bonne réponse, mais, sachez que la programmation procédurale est le paradigme qu'utilisent des langages tels que le C 🤓.",
+                        },
+                        {
+                            "id" : 4,
+                            "choice" : "La programmation fonctionnelle.",
+                            "quote" : "Eh non ! La programmation fonctionnelle est un paradigme de programmation utilisé en Java et Kotlin même si ces derniers sont compatibles avec la POO 🤓.",
+                        },
+                    ],
+                    "answer" : 1,
+                },
+                {
+                    "question" : "\n4. Laquelle de ces affirmations est fausse ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "Swift nous permet seulement de créer des applications natives pour les OS d’Apple.",
+                            "quote" : "Mauvaise réponse, avec Swift nous pouvons facilement coder des applications compatibles avec macOS, watchOS ou encore visionOS 😁.",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "Swift est un langage qui suit le paradigme de la programmation orienté objet (POO).",
+                            "quote" : "Eh non ! Cette affirmation est correcte.",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "Swift reprend certaines bases d’autres langages tel que le C.",
+                            "quote" : "Cette affirmation est correct, en effet, Swift ce base sur d'autres langage tel que le C.",
+                        },
+                        {
+                            "id" : 4,
+                            "choice" : "Swift succède au C.",
+                            "quote" : "Bonne réponse 🎉 Il est vrai que Swift reprend certaines bases de C, mais, il succède directement à l'Objective-C.",
+                        },
+                    ],
+                    "answer" : 4,
+                },
+                {
+                    "question" : "\n5. Comment appelle-t-on un objet créé à partir d’une `class` ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "Propriété.",
+                            "quote" : "Eh non, les propriétés sont les variables et les constantes déclarées dans la `class`, nous verrons ceci dans le prochain cours 😄. La bonne réponse était une instance.",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "Instance.",
+                            "quote" : "Bravo 🎉 En effet, un objet crée à partir d'une `class` est une instance de celle-ci.",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "Objet associé.",
+                            "quote" : "C'est une mauvaise réponse. On appelle cela une Instance de `class`",
+                        },
+                        {
+                            "id" : 4,
+                            "choice" : "Méthode.",
+                            "quote" : "Eh non 😕 Les méthodes sont les fonctions de la `class`. La bonne réponse était une instance.",
+                        },
+                    ],
+                    "answer" : 2,
+                },
+                {
+                    "question" : "\n6. Qu'est-ce que l'héritage en programmation orientée objet ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "Une mesure pour créer de nouvelles classes à partir de zéro.",
+                            "quote" : "Eh non 😕, c'est tout le contraire, l'héritage nous permet de créer une nouvelle `class` basée sur une `class` existante.",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "Un moyen de déclarer des propriétés en Swift.",
+                            "quote" : "C'est une mauvaise réponse 😕 En Swift nous utilisons deux mots-clés spécifiques pour déclarer des propriétés, je vous explique cela dans le prochain cours. L'héritage nous permet de créer une nouvelle `class` basée sur une `class` existante.",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "Un concept permettant de créer de nouvelles classes basées sur des classes existantes, en héritant de leurs propriétés et méthodes.",
+                            "quote" : "Félicitations 🎊 L'héritage est une force considérable de Swift.",
+                        },
+                        {
+                            "id" : 4,
+                            "choice" : "Une méthode pour accéder aux propriétés d'une instance.",
+                            "quote" : "Dommage 😕 L'héritage nous permet de créer une nouvelle `class` basée sur une `class` existante.",
+                        },
+                    ],
+                    "answer" : 3,
+                },
+                {
+                    "question" : "\n7. Qu'est-ce que le type-safety en Swift ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "Une mesure de sécurité pour les objets.",
+                            "quote" : "Eh non 😕 Le type-safety est un concept garantissant que le code écrit est cohérent et sûr en termes de types de données.",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "Un moyen de vérifier la sécurité du réseau.",
+                            "quote" : "C'est une mauvaise réponse 😕 Le type-safety est un concept garantissant que le code écrit est cohérent et sûr en termes de types de données.",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "Une protection contre les erreurs de syntaxes.",
+                            "quote" : "Dommage 😕 Le type-safety est un concept garantissant que le code écrit est cohérent et sûr en termes de types de données.",
+                        },
+                        {
+                            "id" : 4,
+                            "choice" : "Un concept garantissant que le code écrit est cohérent et sûr en termes de types de données.",
+                            "quote" : "Bravo 🎊 Vous allez voir dans les prochains cours la puissance de ce concept.",
+                        },
+                    ],
+                    "answer" : 4,
+                },
+                {
+                    "question" : "\n8. Qu'est-ce que le polymorphisme en programmation orientée objet ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "La possibilité de modifier une variable après sa déclaration.",
+                            "quote" : "Eh non 😕 Le polymorphisme correspond à la capacité des classes à fournir une interface commune pour des actions similaires, avec des implémentations différentes selon la `class`.",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "La capacité des classes à fournir une interface commune pour des actions similaires, avec des implémentations différentes selon la class.",
+                            "quote" : "Félicitations 🥳 En effet, grace au polymorphisme de la POO il est possible de définir des actions différents selon la `class`.",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "Un moyen d'effectuer des opérations mathématiques complexes.",
+                            "quote" : "Dommage 😕 Le polymorphisme correspond à la capacité des classes à fournir une interface commune pour des actions similaires, avec des implémentations différentes selon la `class`.",
+                        },
+                        {
+                            "id" : 4,
+                            "choice" : "La méthode pour rendre une class publique.",
+                            "quote" : "C'est une mauvaise réponse 😕 Cette notion se nomme le contrôle d'accès et fera l'objet d'un de vos prochains cours. Le polymorphisme correspond à la capacité des classes à fournir une interface commune pour des actions similaires, avec des implémentations différentes selon la class.",
+                        },
+                    ],
+                    "answer" : 2,
+                },
+            ],
+        },
+        {
+            "title" : "Les propriétés : les bases",
+            "icon" : "swift",
+            "techno" : "Swift",
+            "difficulty" : "Facile",
+            "update" : "4 août 2023",
+            "intro" : "C’est parti ! Plongez dans le monde de la programmation Swift avec ce premier cours consacrer aux **notions de bases liés aux propriétés**. Avant de vous définir ce qu’est une propriété, je tenais à vous avertir sur le fait que **l’intégralité du code sera écrit en Anglais** étant donné que c’est la langue universel. Je vous recommande donc vivement de **prendre l’habitude de coder en anglais**, vous verrez aussi que la grande majorité des documentations sont en anglais.\n\nPassons maintenant aux propriétés, lorsque l’on va créer un programme nous allons avoir besoin de **stocker des données**. Swift met à notre disposition deux façons de le faire, j’ai nommé **les variables et les constantes.**",
+            "sections": [
+                {
+                    "title" : "Comment créer des variables et des constantes",
+                    "subsections" : [
+                        {
+                            "subtitle": "Les variables",
+                            "firstText": "Une variable est un emplacement nommé en mémoire permettant de **stocker une valeur pouvant changer** au cours de l’exécution du programme.\n\nEn Swift une variable s’écrit de cette façon :",
+                            "firstCode": "```swift\nvar greetings = \"Hello, playground\"",
+                            "secondText": "Il y a **4 parties** que nous devons obligatoirement avoir pour **construire une variable :**\n\n• Le mot-clé **`var`** qui signifie que nous déclarons une nouvelle variable ;\n\n• Le nom que nous donnons à notre variable **`greetings`**. Nous pouvons donner le nom que l’on souhaite ;\n\n• Le signe **`=`** qui va nous permettre d’assigner une valeur à notre variable ;\n\n• La valeur que l’on assigne à notre variable, ici une chaîne de caractère **\"`Hello, playground`\"**.\n\nEn Swift, nous n’avons pas besoin d’ajouter un **\";\"** à la fin de chaque ligne, quel soulagement 😮‍💨.\n\nLorsque l’on crée une variable nous pouvons changer sa valeur :",
+                            "secondCode": "```swift\nvar name = \"Mickey\"\nname = \"Dumbo\"\nname = \"Pluto\"",
+                            "thirdText": "Nous pouvons changer la valeur de la variable autant de fois qu’on le souhaite, cependant, **cela écrasera notre valeur précédente.**\nSi vous ne souhaitez pas écraser une valeur stockée par inadvertance, vous pouvez créer une constante."
+                        },
+                        {
+                            "subtitle" : "Les constantes",
+                            "firstText" : "Une constante, tout comme une variable est également un emplacement nommé en mémoire, cependant, contrairement à la variable, sa valeur est fixée une fois qu’elle lui est attribuée et **ne peut pas être modifiée par la suite.**\n\nLe processus de création d’une constante est quasiment le même qu’une variable, seul le mot-clé nous permettant de la déclarer va changer :",
+                            "firstCode" : "```swift\nlet name = \"Donald\"",
+                            "secondText" : "Une constante, tout comme une variable est également un emplacement nommé en mémoire, cependant, contrairement à la variable, sa valeur est fixée une fois qu’elle lui est attribué et **ne peut pas être modifiée par la suite.**\n\nSuper, nous avons vu comment créer des propriétés afin de stocker nos données, nous allons maintenant voir comment afficher leur contenu dans notre console.",
+                        },
+                    ],
+                },
+                {
+                    "title" : "Comment afficher le contenu d’une variable/constante ?",
+                    "firstText" : "En Swift, pour afficher quelque chose tel qu’une variable ou encore une constante, dans notre console, nous devons utiliser la méthode **`print()`**. C’est très utile pour **connaître ce qui se trouve à l’intérieur de nos propriétés** et ça l’est encore plus pour dénicher les éventuels bug dans nos applications.\n\nNous pouvons par exemple afficher dans la console chacune des valeurs de notre variable :",
+                    "firstCode" : "```swift\nvar characterName = \"Valeera\"\nprint(characterName) // Valeera\n\ncharacterName = \"Garrosh\"\nprint(characterName) // Garrosh\n\ncharacterName = \"Jeena\"\nprint(characterName) // Jeena",
+                    "secondText" : "Vous pouvez remarquer la façon dont j’ai nommé ma variable. En effet, j’ai écrit le premier mot en minuscule et le second avec la première lettre en majuscule. C’est tout simplement car j’ai suivi une **convention de nommage : *camelCase***. Cette dernière est devenue un standard en développement, la suivre rendra votre code beaucoup plus clair pour d’autres développeurs et donc, beaucoup plus maintenable.",
+                    "firstTextBox" : "Sachez qu’il est toujours **préférable d’utiliser des constantes que des variables** afin d’optimiser davantage notre code. De plus, si vous souhaitez modifier une constante Swift et Xcode vous préviendront.",
+                },
+            ],
+            "questions" : [
+                {
+                    "question" : "\n1. Qu'est-ce qu'une variable en Swift ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "Un emplacement nommé en mémoire pour stocker une valeur qui ne peut pas être modifiée.",
+                            "quote" : "Eh non 😕 C'est l'inverse, une variable est un emplacement nommé en mémoire pour stocker une valeur qui peut être modifiée au cours de l'exécution du programme.",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "Un emplacement nommé en mémoire pour stocker une valeur qui peut être modifiée au cours de l'exécution du programme.",
+                            "quote" : "Bingo 🎉 En effet, nous pouvons facilement redéfinir la valeur d'une variable.",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "Une méthode pour afficher des données dans la console.",
+                            "quote" : "Dommage 😕 Une variable est un emplacement nommé en mémoire pour stocker une valeur qui peut être modifiée au cours de l'exécution du programme.",
+                        },
+                        {
+                            "id" : 4,
+                            "choice" : "Une manière de stocker des constantes.",
+                            "quote" : "C'est une mauvaise réponse 😕 Les constantes est les variables nous permettent de stocker une valeur mais d'une façon totalement différente.",
+                        },
+                    ],
+                    "answer" : 2,
+                },
+                {
+                    "question" : "\n2. Comment déclare-t-on une variable en Swift ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "Avec le mot-clé **`let`**.",
+                            "quote" : "Eh non 😕 C'est en Javascript que l'on utilise `let` pour déclarer une variable.",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "Avec le mot-clé **`const`**.",
+                            "quote" : "Dommage 😕 En Javascript nous utilisons `const` pour déclarer une constante.",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "Avec le mot-clé **`variable`**.",
+                            "quote" : "Mauvaise réponse 😕 En Swift nous utilison le mot-clé **`var`** pour déclarer une variable.",
+                        },
+                        {
+                            "id" : 4,
+                            "choice" : "Avec le mot-clé **`var`**.",
+                            "quote" : "C'est une bonne réponse 🎉 Pour déclarer une variable on utilise bien le mot-clé **`var`**",
+                        },
+                    ],
+                    "answer" : 4,
+                },
+                {
+                    "question" : "\n3. Comment déclare-t-on une constante en Swift ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "Avec le mot-clé **`var`**.",
+                            "quote" : "Eh non 😕 Le mot-clé `var` est utilisé pour les variables, on utilise **`let`** pour déclarer une constante.",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "Avec le mot-clé **`let`**.",
+                            "quote" : "Félicitations 🎉 Si vous venez du Javascript cela peut porter à confusion étant donné que le mot-clé **`let`** nous permet de déclarer une variable dans celui-ci.",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "Avec le mot-clé **`const`**.",
+                            "quote" : "Mauvaise réponse 😕 Le mot-clé **`const`** n'existe pas en Swift, il vient du Javascript et nous permet de déclarer une constante.",
+                        },
+                        {
+                            "id" : 4,
+                            "choice" : "Avec le mot-clé **`constant`**.",
+                            "quote" : "Dommage 😕 Pour déclarer une variable constante on utilise le mot-clé **`let`**.",
+                        },
+                    ],
+                    "answer" : 2,
+                },
+                {
+                    "question" : "\n4. Qu'est-ce qui différencie une variable d'une constante en Swift ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "Une variable peut être modifiée après sa création, tandis qu'une constante ne peut pas être modifiée.",
+                            "quote" : "Félicitations 🎉 En effet, une variable peut être modifiée après sa création contrairement à une constante.",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "Une variable ne peut pas être modifiée après sa création, tandis qu'une constante peut l'être.",
+                            "quote" : "Eh non 😕 C'est l'inverse, une variable peut être modifiée après sa création contrairement à une constante.",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "Une variable ne peut stocker que des valeurs numériques, tandis qu'une constante ne peut stocker que des chaînes de caractères.",
+                            "quote" : "Dommage 😕 Nous pouvons stocker tout type de données dans une variable comme dans une constante.",
+                        },
+                        {
+                            "id" : 4,
+                            "choice" : "Une variable ne peut stocker que des chaînes de caractères, tandis qu'une constante ne peut stocker que des valeurs numériques.",
+                            "quote" : "Mauvaise réponse 😕 Nous pouvons stocker tout type de données dans une variable comme dans une constante.",
+                        },
+                    ],
+                    "answer" : 1,
+                },
+                {
+                    "question" : "\n5. Comment affiche-t-on le contenu d'une variable ou d'une constante dans la console en Swift ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "Avec la fonction **`console.log()`**.",
+                            "quote" : "Eh non  😕 La fonction **`console.log()`** nous permet bien d'afficher le contenu dans la console, cependant, cette fonction est uilisée en JS. En Swift nous utilisons **`print().`**",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "Avec la fonction **`display()`**.",
+                            "quote" : "Dommage 😕 Pour afficher le contenu d'une variable ou d'une constante dans la console on utilise la fonction **`print()`**",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "Avec la méthode **`print()`**.",
+                            "quote" : "Félicitations 🎉 Ce sera surement la méthode que vous écrirez le plus dans votre vie de développeur.",
+                        },
+                        {
+                            "id" : 4,
+                            "choice" : "Avec la méthode **`log()`**.",
+                            "quote" : "Mauvaise réponse 😕 Pour afficher le contenu d'une variable ou d'une constante dans la console on utilise la fonction **`print()`**",
+                        },
+                    ],
+                    "answer" : 3,
+                },
+                {
+                    "question" : "\n6. Quelle est la convention de nommage généralement utilisée pour les propriétés en Swift ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "Snake_Case",
+                            "quote" : "Eh non  😕 Le Snake_Case est très utilisé pour écrire des constantes en Ruby et Python. En Swift, nous utilisons le camelCase",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "kebab-case",
+                            "quote" : "Dommage 😕 Le kebab-case est utilisé pour les URL. Pour les propriétés nous utilisons généralement du camelCase",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "camelCase",
+                            "quote" : "Félicitations 🎉 En effet, pour écrire des propriétés en Swift nous utilisons le camelCase.",
+                        },
+                        {
+                            "id" : 4,
+                            "choice" : "PascalCase",
+                            "quote" : "Mauvaise réponse 😕 Cette convention est utilisée en Swift mais principalement pour le nommage de nos `class`, `struct`... Nous utilisons le camelCase pour les propriétés",
+                        },
+                    ],
+                    "answer" : 3,
+                },
+                {
+                    "question" : "\n7. Qu’est ce qui sera affiché dans la console ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "1",
+                            "quote" : "Eh non  😕 Ici counter est une variable, nous pouvons donc redéfinir sa valeur. La console affichera donc 2",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "2",
+                            "quote" : "Excellent 🎉 En effet, nous avons redéfinis la valeur de counter à 2. La console affichera donc 2.",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "counter = 2",
+                            "quote" : "Dommage 😕 Nous allons afficher la valeur de counter, seulement le chiffre 2 sera affiché dans la console.",
+                        },
+                    ],
+                    "code" : "```swift\nvar counter = 1\ncounter = 2\nprint(counter)",
+                    "answer" : 2,
+                },
+                {
+                    "question" : "\n8. Qu’est ce qui sera affiché dans la console ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "Rien du tout le code ne peut pas Build",
+                            "quote" : "C'est une bonne réponse 🎊 Nous essayons de redéfinit la valeur du constante, le code refusera de Build grâce au type-safety.",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "Swifti",
+                            "quote" : "Eh non 😕 Ici nous essayons de redéfinit la valeur du constante, le code refusera de Build grâce au type-safety.",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "Peter Parker",
+                            "quote" : "Dommage 😕 Ici nous essayons de redéfinit la valeur du constante, le code refusera de Build grâce au type-safety.",
+                        },
+                    ],
+                    "code" : "```swift\nlet name = \"Swifti\"\nname = \"Peter Parker\"",
+                    "answer" : 1,
+                },
+                {
+                    "question" : "\n9. Ce code est-il correct",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "Oui",
+                            "quote" : "C'est exact 🎊 Le code est correct même si la convention de nommage n'est pas respectée.",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "Non",
+                            "quote" : "Dommage 😕 Le code est correct même si la convention de nommage n'est pas respectée.",
+                        },
+                    ],
+                    "code" : "```swift\nvar quote = \"I think therefore I am.\"\nlet second-quote = \"If you build it, they will come.\"",
+                    "answer" : 1,
+                },
+                {
+                    "question" : "\n10. Pourquoi est-il préférable d'utiliser des constantes plutôt que des variables en Swift ?",
+                    "choices" : [
+                        {
+                            "id" : 1,
+                            "choice" : "Les constantes sont plus faciles à déclarer que les variables.",
+                            "quote" : "Dommage 😕 Les deux sont très simples à déclarer, cependant les constantes optimisent davantage le code en permettant de détecter plus facilement les erreurs, car ces dernières sont immuables.",
+                        },
+                        {
+                            "id" : 2,
+                            "choice" : "Les constantes prennent moins de mémoire que les variables.",
+                            "quote" : "Mauvaise réponse 😕 Les constantes optimisent davantage le code en permettant de détecter plus facilement les erreurs, car ces dernières sont immuables.",
+                        },
+                        {
+                            "id" : 3,
+                            "choice" : "Les constantes optimisent davantage le code en permettant de détecter plus facilement les erreurs.",
+                            "quote" : "Félicitations 🥳 En effet, les constantes optimisent davantage le code en permettant de détecter plus facilement les erreurs. car ces dernières sont immuables. ",
+                        },
+                        {
+                            "id" : 4,
+                            "choice" : "Les constantes ne sont pas préférables aux variables ; elles ont des utilisations différentes.",
+                            "quote" : "Eh non 😕 Les constantes optimisent davantage le code en permettant de détecter plus facilement les erreurs car ces dernières sont immuables.",
+                        },
+                    ],
+                    "answer" : 3,
+                },
+            ],
+        },
+    ]
+}

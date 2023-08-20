@@ -101,6 +101,5 @@ iOSInjectionProject/
 # Ignore articles and courses
 
 Swifti/Presentation/Articles/Articles.json
-Swifti/Presentation/Courses/Courses.json
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode
