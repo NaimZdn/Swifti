@@ -30,7 +30,6 @@ class CourseViewModel: ObservableObject {
         do {
             let results = try dataController.container.viewContext.fetch(fetchRequest)
             coursesScore = Dictionary(uniqueKeysWithValues: results.map { ($0.title!, Int($0.score)) })
-            print("Fonction getScore \(coursesScore)")
         } catch {
             print("Une erreur est survenue lors de la récupération des scores : \(error)")
         }

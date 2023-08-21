@@ -84,7 +84,6 @@ class DataController: ObservableObject {
             for courseEntity in courseEntities {
                 scoreDictionary[courseEntity.title ?? ""] = Int(courseEntity.score)
             }
-            //print(scoreDictionary)
             return scoreDictionary
         } catch {
             print("Erreur lors de la récupération des données de cours : \(error)")

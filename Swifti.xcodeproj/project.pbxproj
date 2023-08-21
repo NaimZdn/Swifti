@@ -16,6 +16,9 @@
 		081C2A7F2A90D0060045D57E /* CoursesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 081C2A7E2A90D0060045D57E /* CoursesData.json */; };
 		081C2A812A90D2C50045D57E /* ArticlesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 081C2A802A90D2C50045D57E /* ArticlesData.json */; };
 		081C2A832A90D2DB0045D57E /* ArticlesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C2A822A90D2DB0045D57E /* ArticlesTests.swift */; };
+		081C2A852A9258350045D57E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 081C2A842A9258340045D57E /* GoogleService-Info.plist */; };
+		081C2A882A9259200045D57E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 081C2A872A9259200045D57E /* FirebaseAnalytics */; };
+		081C2A8A2A9374610045D57E /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 081C2A892A9374610045D57E /* FirebasePerformance */; };
 		084F17F62A6FEF1F00BC25CC /* TechnosLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F17F52A6FEF1F00BC25CC /* TechnosLabel.swift */; };
 		084F17F92A6FEFF400BC25CC /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F17F82A6FEFF400BC25CC /* LinkButton.swift */; };
 		084F17FB2A6FF02F00BC25CC /* SafariRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F17FA2A6FF02F00BC25CC /* SafariRepresentable.swift */; };
@@ -115,6 +118,7 @@
 		081C2A7E2A90D0060045D57E /* CoursesData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CoursesData.json; sourceTree = "<group>"; };
 		081C2A802A90D2C50045D57E /* ArticlesData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ArticlesData.json; sourceTree = "<group>"; };
 		081C2A822A90D2DB0045D57E /* ArticlesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTests.swift; sourceTree = "<group>"; };
+		081C2A842A9258340045D57E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		084F17F52A6FEF1F00BC25CC /* TechnosLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnosLabel.swift; sourceTree = "<group>"; };
 		084F17F82A6FEFF400BC25CC /* LinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
 		084F17FA2A6FF02F00BC25CC /* SafariRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariRepresentable.swift; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 			files = (
 				08A9027E2A7D61C500EAEF09 /* Markdown in Frameworks */,
 				084F18002A7001C800BC25CC /* WrappingHStack in Frameworks */,
+				081C2A8A2A9374610045D57E /* FirebasePerformance in Frameworks */,
+				081C2A882A9259200045D57E /* FirebaseAnalytics in Frameworks */,
 				08CD22F52A794890007A0334 /* Highlightr in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -755,6 +761,7 @@
 				0874AFD92A6C8C6B00879D8F /* Fonts */,
 				08FDF3692A6C3F6C00BB8987 /* Assets.xcassets */,
 				08FDF3652A6C3F6800BB8987 /* SwiftiApp.swift */,
+				081C2A842A9258340045D57E /* GoogleService-Info.plist */,
 				0874AFE42A6C8E1E00879D8F /* Info.plist */,
 			);
 			path = Application;
@@ -812,6 +819,8 @@
 				084F17FF2A7001C800BC25CC /* WrappingHStack */,
 				08CD22F42A794890007A0334 /* Highlightr */,
 				08A9027D2A7D61C500EAEF09 /* Markdown */,
+				081C2A872A9259200045D57E /* FirebaseAnalytics */,
+				081C2A892A9374610045D57E /* FirebasePerformance */,
 			);
 			productName = Swifti;
 			productReference = 08FDF3622A6C3F6800BB8987 /* Swifti.app */;
@@ -893,6 +902,7 @@
 				084F17FE2A7001C800BC25CC /* XCRemoteSwiftPackageReference "WrappingHStack" */,
 				08CD22F32A794890007A0334 /* XCRemoteSwiftPackageReference "Highlightr" */,
 				08A9027C2A7D61C500EAEF09 /* XCRemoteSwiftPackageReference "swift-markdown" */,
+				081C2A862A92591F0045D57E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 08FDF3632A6C3F6800BB8987 /* Products */;
 			projectDirPath = "";
@@ -915,6 +925,7 @@
 				084F18162A7164E000BC25CC /* Articles.json in Resources */,
 				084F18332A72BB4A00BC25CC /* Courses.json in Resources */,
 				08CD22D82A77C4F8007A0334 /* Poppins-Medium.ttf in Resources */,
+				081C2A852A9258350045D57E /* GoogleService-Info.plist in Resources */,
 				08CD22D62A77C4ED007A0334 /* Poppins-Italic.ttf in Resources */,
 				08CD22DE2A77C51C007A0334 /* Poppins-SemiBold.ttf in Resources */,
 				08CD22E02A77C527007A0334 /* Poppins-Bold.ttf in Resources */,
@@ -1350,6 +1361,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		081C2A862A92591F0045D57E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		084F17FE2A7001C800BC25CC /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dkk/WrappingHStack";
@@ -1381,6 +1400,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 08A9027C2A7D61C500EAEF09 /* XCRemoteSwiftPackageReference "swift-markdown" */;
 			productName = Markdown;
+		};
+		081C2A872A9259200045D57E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 081C2A862A92591F0045D57E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		081C2A892A9374610045D57E /* FirebasePerformance */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 081C2A862A92591F0045D57E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebasePerformance;
 		};
 		084F17FF2A7001C800BC25CC /* WrappingHStack */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -131,7 +131,6 @@ struct NavigationToQuestions: View {
                         if currentQuestionIndex < questions.count - 1 {
                             currentQuestionIndex += 1
                             answerValidated = false
-                            print("Suivant")
                         } else {
                             showScore = true
                         }
