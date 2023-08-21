@@ -1,4 +1,4 @@
-![logo](https://github.com/NaimZdn/Reciplease/blob/main/README%20Assets/banner_swifti.svg)
+![logo](https://github.com/NaimZdn/Swifti/blob/main/README%20Assets/banner_swifti.svg)
 
 <p align="center">
     <img src="https://img.shields.io/badge/-Swift-f05138?style=flat&labelColor=f05138&logo=swift&logoColor=white"/>
@@ -7,7 +7,6 @@
     <img src="https://img.shields.io/badge/-Firebase-FFCB2B?style=flat&labelColor=FFCB2B&logo=firebase&logoColor=black"/>
     <img src="https://img.shields.io/badge/-Bitrise-683D87?style=flat&labelColor=683D87&logo=bitrise&logoColor=white"/>
     <img src="https://img.shields.io/badge/-MVVM+Clean-41454A?style=flat"/>
-
     <img src="https://img.shields.io/badge/-iOS-000000?style=flat&labelColor=000000&logo=apple&logoColor=white"/>
     <img src="https://img.shields.io/badge/-Figma-F24E1E?style=flat&labelColor=F24E1E&logo=figma&logoColor=white"/>
 </p>

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		081C2A622A8F713F0045D57E /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C2A612A8F713F0045D57E /* CheckboxToggleStyle.swift */; };
 		081C2A6C2A8F9C750045D57E /* HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C2A6B2A8F9C750045D57E /* HomeTests.swift */; };
-		081C2A712A8F9FAC0045D57E /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = 081C2A702A8F9FAC0045D57E /* Markdown */; };
 		081C2A772A8FDF660045D57E /* FiltersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C2A762A8FDF660045D57E /* FiltersTests.swift */; };
 		081C2A792A8FE5F70045D57E /* WelcomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C2A782A8FE5F70045D57E /* WelcomeTests.swift */; };
 		081C2A7B2A8FEC260045D57E /* CoursesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C2A7A2A8FEC260045D57E /* CoursesTests.swift */; };
@@ -19,7 +18,6 @@
 		081C2A852A9258350045D57E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 081C2A842A9258340045D57E /* GoogleService-Info.plist */; };
 		081C2A882A9259200045D57E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 081C2A872A9259200045D57E /* FirebaseAnalytics */; };
 		081C2A8A2A9374610045D57E /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 081C2A892A9374610045D57E /* FirebasePerformance */; };
-		081C2A8E2A93AFE70045D57E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 081C2A8D2A93AFE70045D57E /* FirebaseAnalytics */; };
 		084F17F62A6FEF1F00BC25CC /* TechnosLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F17F52A6FEF1F00BC25CC /* TechnosLabel.swift */; };
 		084F17F92A6FEFF400BC25CC /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F17F82A6FEFF400BC25CC /* LinkButton.swift */; };
 		084F17FB2A6FF02F00BC25CC /* SafariRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F17FA2A6FF02F00BC25CC /* SafariRepresentable.swift */; };
@@ -203,8 +201,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				081C2A712A8F9FAC0045D57E /* Markdown in Frameworks */,
-				081C2A8E2A93AFE70045D57E /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -827,8 +823,6 @@
 			);
 			name = SwiftiTests;
 			packageProductDependencies = (
-				081C2A702A8F9FAC0045D57E /* Markdown */,
-				081C2A8D2A93AFE70045D57E /* FirebaseAnalytics */,
 			);
 			productName = SwiftiTests;
 			productReference = 08FDF3772A6C3F6D00BB8987 /* SwiftiTests.xctest */;
@@ -1200,7 +1194,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swifti.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Swifti";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swifti.app/Swifti";
 			};
 			name = Debug;
 		};
@@ -1226,7 +1220,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swifti.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Swifti";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swifti.app/Swifti";
 			};
 			name = Release;
 		};
@@ -1298,11 +1292,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		081C2A702A8F9FAC0045D57E /* Markdown */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 08A9027C2A7D61C500EAEF09 /* XCRemoteSwiftPackageReference "swift-markdown" */;
-			productName = Markdown;
-		};
 		081C2A872A9259200045D57E /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 081C2A862A92591F0045D57E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -1312,11 +1301,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 081C2A862A92591F0045D57E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebasePerformance;
-		};
-		081C2A8D2A93AFE70045D57E /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 081C2A862A92591F0045D57E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
 		};
 		084F17FF2A7001C800BC25CC /* WrappingHStack */ = {
 			isa = XCSwiftPackageProductDependency;
