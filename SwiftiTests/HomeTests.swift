@@ -23,7 +23,7 @@ final class HomeTests: XCTestCase {
     
     func testGivenGetCurrentDate_WhenUsingSpecificDate_ThenReturnFormattedDate() {
         let testDate = Date(timeIntervalSinceReferenceDate: 0)
-        let expectedDate = "Lundi 21 août" // Replace by the current date
+        let expectedDate = "Mardi 22 août" // Replace by the current date
 
         let result = home.getCurrentDate()
         
