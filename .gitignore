@@ -98,8 +98,14 @@ iOSInjectionProject/
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+# Ignore GoogleService-Info
+
+Swifti/Application/GoogleService-Info.plist
+
 # Ignore articles and courses
 
 Swifti/Presentation/Articles/Articles.json
+Swifti/Presentation/Articles/Courses.json
+
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode
