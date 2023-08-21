@@ -19,6 +19,7 @@
 		081C2A852A9258350045D57E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 081C2A842A9258340045D57E /* GoogleService-Info.plist */; };
 		081C2A882A9259200045D57E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 081C2A872A9259200045D57E /* FirebaseAnalytics */; };
 		081C2A8A2A9374610045D57E /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 081C2A892A9374610045D57E /* FirebasePerformance */; };
+		081C2A8E2A93AFE70045D57E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 081C2A8D2A93AFE70045D57E /* FirebaseAnalytics */; };
 		084F17F62A6FEF1F00BC25CC /* TechnosLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F17F52A6FEF1F00BC25CC /* TechnosLabel.swift */; };
 		084F17F92A6FEFF400BC25CC /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F17F82A6FEFF400BC25CC /* LinkButton.swift */; };
 		084F17FB2A6FF02F00BC25CC /* SafariRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F17FA2A6FF02F00BC25CC /* SafariRepresentable.swift */; };
@@ -211,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				081C2A712A8F9FAC0045D57E /* Markdown in Frameworks */,
+				081C2A8E2A93AFE70045D57E /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,6 +844,7 @@
 			name = SwiftiTests;
 			packageProductDependencies = (
 				081C2A702A8F9FAC0045D57E /* Markdown */,
+				081C2A8D2A93AFE70045D57E /* FirebaseAnalytics */,
 			);
 			productName = SwiftiTests;
 			productReference = 08FDF3772A6C3F6D00BB8987 /* SwiftiTests.xctest */;
@@ -1412,6 +1415,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 081C2A862A92591F0045D57E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebasePerformance;
+		};
+		081C2A8D2A93AFE70045D57E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 081C2A862A92591F0045D57E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
 		};
 		084F17FF2A7001C800BC25CC /* WrappingHStack */ = {
 			isa = XCSwiftPackageProductDependency;
