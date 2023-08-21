@@ -36,6 +36,7 @@ struct SettingsLabel: View {
             Text(text)
                 .font(.settingsLabelText)
                 .foregroundColor(.white)
+                .multilineTextAlignment(.leading)
             
             Spacer()
             

@@ -36,9 +36,14 @@ struct ArticlesView: View {
                             isFilterViewPresented = true
                         }
                         .sheet(isPresented: $isFilterViewPresented) {
-                            FiltersView(viewModel: filtersViewModel, filtersArticles: FiltersArticles.allCases, filtersCourses: [])
-                                .presentationDetents([.medium])
-                                .presentationDragIndicator(.visible)
+                            if #available(iOS 16.0, *) {
+                                FiltersView(viewModel: filtersViewModel, filtersArticles: FiltersArticles.allCases, filtersCourses: [])
+                                    .presentationDetents([.medium])
+                                    .presentationDragIndicator(.visible)
+                            } else {
+                                FiltersView(viewModel: filtersViewModel, filtersArticles: FiltersArticles.allCases, filtersCourses: [])
+                                
+                            }
                         }
                     }
                     .accessibilityLabel("Filtres")

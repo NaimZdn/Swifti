@@ -62,53 +62,56 @@ struct NavigationToQuestions: View {
                     CodeBlockView(parserResult: parserResult)
                 }
                 
-                VStack(alignment: .leading) {
-                    ForEach(question.choices.indices, id: \.self) { choiceIndex in
-                        HStack(alignment: .top) {
-                            Toggle(isOn: Binding(
-                                get: { self.checkedChoices[currentQuestionIndex][choiceIndex] },
-                                set: { newValue in self.toggleChoice(currentQuestionIndex, choiceIndex) }
-                            )) {
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        ForEach(question.choices.indices, id: \.self) { choiceIndex in
+                            HStack(alignment: .top) {
+                                Toggle(isOn: Binding(
+                                    get: { self.checkedChoices[currentQuestionIndex][choiceIndex] },
+                                    set: { newValue in self.toggleChoice(currentQuestionIndex, choiceIndex) }
+                                )) {
+                                }
+                                .toggleStyle(CheckboxToggleStyle())
+                                .disabled(answerValidated)
+                                .accessibilityAddTraits(.isButton)
+                                .accessibilityLabel("Checkbox")
+                                
+                                Group {
+                                    Text(try! AttributedString(markdown: question.choices[choiceIndex].choice, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
+                                        .font(.defaultBody)
+                                        .foregroundColor(.white)
+                                        .padding(.leading, 5)
+                                }
+                                .fixedSize(horizontal: false, vertical: true)
                             }
-                            .toggleStyle(CheckboxToggleStyle())
-                            .disabled(answerValidated)
-                            .accessibilityAddTraits(.isButton)
-                            .accessibilityLabel("Checkbox")
-                            
-                            Group {
-                                Text(try! AttributedString(markdown: question.choices[choiceIndex].choice, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
-                                    .font(.defaultBody)
+                            .padding([.horizontal, .vertical], 3)
+                        }
+                        
+                        if answerValidated {
+                            HStack(alignment: .top, spacing: 15) {
+                                Image(systemName: selectedChoiceID == question.answer ? "checkmark.circle.fill" : "xmark.circle.fill")
+                                    .font(.system(size: 20))
+                                    .foregroundColor(selectedChoiceID == question.answer ? .green : .red)
+                                
+                                Text(try! AttributedString(markdown: selectedChoiceQuote ?? "", options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
+                                    .font(.defaultItalic)
                                     .foregroundColor(.white)
-                                    .padding(.leading, 5)
+                                
                             }
-                            .fixedSize(horizontal: false, vertical: true)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 15)
+                            .background(
+                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                    .fill(
+                                        selectedChoiceID == question.answer
+                                        ? Color.green
+                                        : Color.red
+                                    ).opacity(0.2)
+                            )
+                            .padding(.top, 30)
                         }
                     }
-                }
-                .padding(.bottom, 30)
-                
-                if answerValidated {
-                    HStack(alignment: .top, spacing: 15) {
-                        Image(systemName: selectedChoiceID == question.answer ? "checkmark.circle.fill" : "xmark.circle.fill")
-                            .font(.system(size: 20))
-                            .foregroundColor(selectedChoiceID == question.answer ? .green : .red)
-                        
-                        Text(try! AttributedString(markdown: selectedChoiceQuote ?? "", options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
-                            .font(.defaultItalic)
-                            .foregroundColor(.white)
-                        
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 15)
-                    .background(
-                        RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .fill(
-                                selectedChoiceID == question.answer
-                                ? Color.green
-                                : Color.red
-                            ).opacity(0.2)
-                    )
                 }
                 Spacer()
                 
@@ -117,8 +120,7 @@ struct NavigationToQuestions: View {
                         if let selectedChoiceID = selectedChoiceID,
                            selectedChoiceID == question.answer {
                             score += 1
-                            checkedChoices = Array(repeating: Array(repeating: false, count: questions[currentQuestionIndex].choices.count), count: questions.count)
-                            
+
                             coursesViewModel.addScoreToData(courseTitle: courseTitle, score: score)
                             answerValidated = true
                         } else {
@@ -127,7 +129,7 @@ struct NavigationToQuestions: View {
                     }
                     .disabled(checkedChoices[currentQuestionIndex].contains(true) ? false : true)
                 } else {
-                    ValidateButton(caption: "Question suivante") {
+                    ValidateButton(caption:  currentQuestionIndex < questions.count - 1 ? "Question suivante" : "Voir le score") {
                         if currentQuestionIndex < questions.count - 1 {
                             currentQuestionIndex += 1
                             answerValidated = false
@@ -145,7 +147,7 @@ struct NavigationToQuestions: View {
             leading: OptionButton(icon: "carret-left", action: {
                 self.presentationMode.wrappedValue.dismiss()
             }).padding(.top, 5))
-        .padding([.top, .horizontal], 20)
+        .padding([.bottom, .horizontal], 20)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color.background)
     }

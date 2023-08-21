@@ -35,9 +35,13 @@ struct CourseView: View {
                             isFilterViewPresented = true
                         }
                         .sheet(isPresented: $isFilterViewPresented) {
-                            FiltersView(viewModel: filtersViewModel, filtersArticles: [], filtersCourses: FiltersCourses.allCases)
-                                .presentationDetents([.medium])
-                                .presentationDragIndicator(.visible)
+                            if #available(iOS 16.0, *) {
+                                FiltersView(viewModel: filtersViewModel, filtersArticles: [], filtersCourses: FiltersCourses.allCases)
+                                    .presentationDetents([.medium])
+                                    .presentationDragIndicator(.visible)
+                            } else {
+                                FiltersView(viewModel: filtersViewModel, filtersArticles: [], filtersCourses: FiltersCourses.allCases)
+                            }
                         }
                         .accessibilityLabel("Filtres")
                         .accessibilityHint("Cliquez pour affiner votre recherche")

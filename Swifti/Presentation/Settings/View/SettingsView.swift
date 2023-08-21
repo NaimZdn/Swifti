@@ -15,7 +15,6 @@ struct SettingsView: View {
     @State private var label = Label.allCases
     
     var body: some View {
-       
             ZStack(alignment: .topTrailing) {
                 Image("blobs")
                     .resizable()
@@ -27,41 +26,43 @@ struct SettingsView: View {
                         .font(.defaultTitle)
                         .foregroundColor(.white)
 
-                    VStack(alignment: .leading) {
-                        Text("Réglages de l'application")
-                            .font(.defaultBody)
-                            .foregroundColor(.white)
+                    ScrollView {
+                        VStack(alignment: .leading) {
+                            Text("Réglages de l'application")
+                                .font(.defaultBody)
+                                .foregroundColor(.white)
+                            
+                            SettingsLabel(appSettings: appSettings, text: label[0].rawValue, icon: label[0].icon, isNavigation: false, isLink: false, notificationToggle: true)
+                            
+                        }
+                        .padding(.bottom, 15)
                         
-                        SettingsLabel(appSettings: appSettings, text: label[0].rawValue, icon: label[0].icon, isNavigation: false, isLink: false, notificationToggle: true)
-                    
+                        VStack(alignment: .leading) {
+                            Text("Mentions légales")
+                                .font(.defaultBody)
+                                .foregroundColor(.white)
+                            
+                            SettingsLabel(appSettings: appSettings, text: label[1].rawValue, icon: label[1].icon, isNavigation: false, isLink: true, notificationToggle: false)
+                            
+                            NavigationLink(destination: AboutUsView()) {
+                                SettingsLabel(appSettings: appSettings, text: label[2].rawValue, icon: label[2].icon, isNavigation: true, isLink: false, notificationToggle: false)
+                            }
+                            .accessibilityLabel("Navigation vers à propos de nous")
+                            
+                            NavigationLink(destination: PrivacyPolicyView()) {
+                                SettingsLabel(appSettings: appSettings, text: label[3].rawValue, icon: label[3].icon, isNavigation: true, isLink: false, notificationToggle: false)
+                            }
+                            .accessibilityLabel("Navigation vers les politiques de confidentialités")
+                            
+                            NavigationLink(destination: TermsOfServiceView()) {
+                                SettingsLabel(appSettings: appSettings, text: label[4].rawValue, icon: label[4].icon, isNavigation: true, isLink: false, notificationToggle: false)
+                            }
+                            .accessibilityLabel("Navigation vers les conditions d'utilisations")
+                        }
+                        
                     }
-                    .padding(.bottom, 15)
-                    
-                    VStack(alignment: .leading) {
-                        Text("Mentions légales")
-                            .font(.defaultBody)
-                            .foregroundColor(.white)
-
-                        SettingsLabel(appSettings: appSettings, text: label[1].rawValue, icon: label[1].icon, isNavigation: false, isLink: true, notificationToggle: false)
-                        
-                        NavigationLink(destination: AboutUsView()) {
-                            SettingsLabel(appSettings: appSettings, text: label[2].rawValue, icon: label[2].icon, isNavigation: true, isLink: false, notificationToggle: false)
-                        }
-                        .accessibilityLabel("Navigation vers à propos de nous")
-                        
-                        NavigationLink(destination: PrivacyPolicyView()) {
-                            SettingsLabel(appSettings: appSettings, text: label[3].rawValue, icon: label[3].icon, isNavigation: true, isLink: false, notificationToggle: false)
-                        }
-                        .accessibilityLabel("Navigation vers les politiques de confidentialités")
-                        
-                        NavigationLink(destination: TermsOfServiceView()) {
-                            SettingsLabel(appSettings: appSettings, text: label[4].rawValue, icon: label[4].icon, isNavigation: true, isLink: false, notificationToggle: false)
-                        }
-                        .accessibilityLabel("Navigation vers les conditions d'utilisations")
-                    }
-                    Spacer()
                 }
-                .padding(20)
+                .padding([.top, .horizontal], 20)
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
             .background(Color.background)
