@@ -18,11 +18,12 @@ jobs:
     - name: Checkout repository
         uses: actions/checkout@v3
             
-    # Because the GoogleService-Info.plist file contains sensitive information, to ensure security, we have stored it as a secret and regenerated it during the process.
+    # Because the GoogleService-Info.plist file contains sensitive information, to ensure security,
+    # we have stored it as a secret and regenerated it during the process.
     - name: Set up GoogleService-Info.plist
-        env:
+      env:
         GOOGLE_SERVICE_INFO: ${{ secrets.GOOGLE_SERVICE_INFO }}
-        run: echo "$GOOGLE_SERVICE_INFO" > Swifti/Application/GoogleService-Info.plist
+      run: echo "$GOOGLE_SERVICE_INFO" > Amigo/Amigo/Ressources/GoogleService-Info.plist
     
     # We build the app, to ensure it's working.
     - name: Build Swifti
