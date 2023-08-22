@@ -41,6 +41,8 @@
 		084F18372A72BD3800BC25CC /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F18362A72BD3800BC25CC /* CourseViewModel.swift */; };
 		084F183C2A72C09600BC25CC /* NavigationToCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F183B2A72C09600BC25CC /* NavigationToCourse.swift */; };
 		0852FAB22A95547500C81F8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0852FAB12A95547500C81F8F /* GoogleService-Info.plist */; };
+		0852FAB32A95660700C81F8F /* GoogleService-Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 0852FAB12A95547500C81F8F /* GoogleService-Info.plist */; };
+		0852FAB42A95661C00C81F8F /* GoogleService-Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 0852FAB12A95547500C81F8F /* GoogleService-Info.plist */; };
 		0874AFE82A6D37B700879D8F /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFE72A6D37B700879D8F /* WelcomeView.swift */; };
 		0874AFEB2A6D3E3500879D8F /* ValidateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFEA2A6D3E3500879D8F /* ValidateButton.swift */; };
 		0874AFED2A6D468500879D8F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFEC2A6D468500879D8F /* DataController.swift */; };
@@ -908,6 +910,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0852FAB32A95660700C81F8F /* GoogleService-Info.plist in Sources */,
 				081EBE902A94F6120008727B /* WelcomeTests.swift in Sources */,
 				081EBE862A94F5E30008727B /* ArticlesTests.swift in Sources */,
 				081EBE8E2A94F6120008727B /* FiltersTests.swift in Sources */,
@@ -920,6 +923,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0852FAB42A95661C00C81F8F /* GoogleService-Info.plist in Sources */,
 				0874AFFF2A6E91EE00879D8F /* CourseIcon.swift in Sources */,
 				084F18282A728BF900BC25CC /* NavigationToArticleButton.swift in Sources */,
 				084F17F62A6FEF1F00BC25CC /* TechnosLabel.swift in Sources */,
