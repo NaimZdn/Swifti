@@ -24,4 +24,4 @@ jobs:
 
     # Unit Testing
     - name: Run Unit Tests
-      run: xcodebuild -resolvePackageDependencies test -scheme SwiftiTests -project Swifti.xcodeproj -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 12 Pro Max" build
+      run: xcodebuild test -scheme Swifti -project Swifti.xcodeproj -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 12 Pro Max" build
