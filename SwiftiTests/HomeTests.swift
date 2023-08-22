@@ -21,10 +21,19 @@ final class HomeTests: XCTestCase {
     }
     
     func testGivenGetCurrentDate_WhenUsingSpecificDate_ThenReturnFormattedDate() {
-        let expectedDate = "Mercredi 23 août" // Replace by the current date
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "fr_FR")
+        dateFormatter.setLocalizedDateFormatFromTemplate("EEEE d MMMM")
+        
+        var dateString = dateFormatter.string(from: currentDate)
+        
+        if let firstLetter = dateString.first {
+            dateString = dateString.replacingCharacters(in: dateString.startIndex...dateString.startIndex, with: String(firstLetter).capitalized)
+        }
 
         let result = home.getCurrentDate()
         
-        XCTAssertEqual(result, expectedDate)
+        XCTAssertEqual(result, dateString)
     }
 }
