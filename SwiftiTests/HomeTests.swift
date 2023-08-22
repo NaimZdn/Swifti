@@ -10,7 +10,6 @@ import CoreData
 @testable import Swifti
 
 final class HomeTests: XCTestCase {
-    
     var home: HomeViewModel!
     var dataController: DataController!
     var context: NSManagedObjectContext!

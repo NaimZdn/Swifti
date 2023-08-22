@@ -10,7 +10,6 @@ import CoreData
 @testable import Swifti
 
 final class WelcomeTests: XCTestCase {
-
     var welcome: WelcomeViewModel!
     
     override func setUp() {
