@@ -40,7 +40,7 @@
 		084F18352A72BCFF00BC25CC /* Course+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F18342A72BCFF00BC25CC /* Course+Decodable.swift */; };
 		084F18372A72BD3800BC25CC /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F18362A72BD3800BC25CC /* CourseViewModel.swift */; };
 		084F183C2A72C09600BC25CC /* NavigationToCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F183B2A72C09600BC25CC /* NavigationToCourse.swift */; };
-		0852FAB02A954A0400C81F8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0852FAAF2A954A0400C81F8F /* GoogleService-Info.plist */; };
+		0852FAB22A95547500C81F8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0852FAB12A95547500C81F8F /* GoogleService-Info.plist */; };
 		0874AFE82A6D37B700879D8F /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFE72A6D37B700879D8F /* WelcomeView.swift */; };
 		0874AFEB2A6D3E3500879D8F /* ValidateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFEA2A6D3E3500879D8F /* ValidateButton.swift */; };
 		0874AFED2A6D468500879D8F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFEC2A6D468500879D8F /* DataController.swift */; };
@@ -133,7 +133,7 @@
 		084F18342A72BCFF00BC25CC /* Course+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course+Decodable.swift"; sourceTree = "<group>"; };
 		084F18362A72BD3800BC25CC /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
 		084F183B2A72C09600BC25CC /* NavigationToCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationToCourse.swift; sourceTree = "<group>"; };
-		0852FAAF2A954A0400C81F8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0852FAB12A95547500C81F8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0874AFE42A6C8E1E00879D8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0874AFE72A6D37B700879D8F /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		0874AFEA2A6D3E3500879D8F /* ValidateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateButton.swift; sourceTree = "<group>"; };
@@ -742,8 +742,8 @@
 			children = (
 				0874AFD92A6C8C6B00879D8F /* Fonts */,
 				08FDF3692A6C3F6C00BB8987 /* Assets.xcassets */,
+				0852FAB12A95547500C81F8F /* GoogleService-Info.plist */,
 				08FDF3652A6C3F6800BB8987 /* SwiftiApp.swift */,
-				0852FAAF2A954A0400C81F8F /* GoogleService-Info.plist */,
 				0874AFE42A6C8E1E00879D8F /* Info.plist */,
 			);
 			path = Application;
@@ -886,7 +886,6 @@
 			files = (
 				089140682A93D44500E1141C /* banner_swifti.svg in Resources */,
 				08CD22DA2A77C500007A0334 /* Poppins-Light.ttf in Resources */,
-				0852FAB02A954A0400C81F8F /* GoogleService-Info.plist in Resources */,
 				08FDF36D2A6C3F6C00BB8987 /* Preview Assets.xcassets in Resources */,
 				084F18162A7164E000BC25CC /* Articles.json in Resources */,
 				084F18332A72BB4A00BC25CC /* Courses.json in Resources */,
@@ -898,6 +897,7 @@
 				08CD22E22A77C6DA007A0334 /* Poppins-BoldItalic.ttf in Resources */,
 				08FDF36A2A6C3F6C00BB8987 /* Assets.xcassets in Resources */,
 				08CD22DC2A77C510007A0334 /* Poppins-Regular.ttf in Resources */,
+				0852FAB22A95547500C81F8F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
