@@ -4,31 +4,31 @@
 name: App Control
 
 on:
-    workflow_dispatch: # This enables us to manually trigger the workflow.
-    push:
-    branches:
-        - main
+  workflow_dispatch: # This enables us to manually trigger the workflow.
+  push:
+   branches:
+     - main
 
 jobs:
-    build_test:
+  build_test:
     runs-on: macos-latest
-    
+
     steps:
     # Perform a repository checkout to utilize it within the virtual machine.
     - name: Checkout repository
-        uses: actions/checkout@v3
-            
+      uses: actions/checkout@v3
+
     # Because the GoogleService-Info.plist file contains sensitive information, to ensure security,
     # we have stored it as a secret and regenerated it during the process.
     - name: Set up GoogleService-Info.plist
       env:
         GOOGLE_SERVICE_INFO: ${{ secrets.GOOGLE_SERVICE_INFO }}
-      run: echo "$GOOGLE_SERVICE_INFO" > Amigo/Amigo/Ressources/GoogleService-Info.plist
-    
+      run: echo "$GOOGLE_SERVICE_INFO" > Swifti/Application/GoogleService-Info.plist
+
     # We build the app, to ensure it's working.
-    - name: Build Swifti
-        run: xcodebuild -scheme Swifti -project Swifti.xcodeproj -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 12 Pro Max" build
-    
+    - name: Build Amigo
+      run: xcodebuild -scheme Swifti -project Swifti.xcodeproj -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 12 Pro Max" build
+
     # Unit Testing
     - name: Run Unit Tests
-        run: xcodebuild test -scheme Swifti -project Swifti.xcodeproj -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 12 Pro Max" build
+      run: xcodebuild test -scheme Swifti -project Swifti.xcodeproj -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 12 Pro Max" build
