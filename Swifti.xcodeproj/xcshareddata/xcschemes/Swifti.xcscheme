@@ -20,21 +20,34 @@
                ReferencedContainer = "container:Swifti.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "081EBE782A94F5860008727B"
+               BuildableName = "SwiftiTests.xctest"
+               BlueprintName = "SwiftiTests"
+               ReferencedContainer = "container:Swifti.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldUseLaunchSchemeArgsEnv = "NO"
       codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "08FDF3762A6C3F6D00BB8987"
+               BlueprintIdentifier = "081EBE782A94F5860008727B"
                BuildableName = "SwiftiTests.xctest"
                BlueprintName = "SwiftiTests"
                ReferencedContainer = "container:Swifti.xcodeproj">
