@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		081C2A622A8F713F0045D57E /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081C2A612A8F713F0045D57E /* CheckboxToggleStyle.swift */; };
-		081C2A852A9258350045D57E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 081C2A842A9258340045D57E /* GoogleService-Info.plist */; };
 		081C2A882A9259200045D57E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 081C2A872A9259200045D57E /* FirebaseAnalytics */; };
 		081C2A8A2A9374610045D57E /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 081C2A892A9374610045D57E /* FirebasePerformance */; };
 		081EBE842A94F5DB0008727B /* ArticlesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 081EBE832A94F5DB0008727B /* ArticlesData.json */; };
@@ -41,6 +40,7 @@
 		084F18352A72BCFF00BC25CC /* Course+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F18342A72BCFF00BC25CC /* Course+Decodable.swift */; };
 		084F18372A72BD3800BC25CC /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F18362A72BD3800BC25CC /* CourseViewModel.swift */; };
 		084F183C2A72C09600BC25CC /* NavigationToCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F183B2A72C09600BC25CC /* NavigationToCourse.swift */; };
+		0852FAB02A954A0400C81F8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0852FAAF2A954A0400C81F8F /* GoogleService-Info.plist */; };
 		0874AFE82A6D37B700879D8F /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFE72A6D37B700879D8F /* WelcomeView.swift */; };
 		0874AFEB2A6D3E3500879D8F /* ValidateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFEA2A6D3E3500879D8F /* ValidateButton.swift */; };
 		0874AFED2A6D468500879D8F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0874AFEC2A6D468500879D8F /* DataController.swift */; };
@@ -103,7 +103,6 @@
 
 /* Begin PBXFileReference section */
 		081C2A612A8F713F0045D57E /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
-		081C2A842A9258340045D57E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		081EBE792A94F5860008727B /* SwiftiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		081EBE832A94F5DB0008727B /* ArticlesData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ArticlesData.json; sourceTree = "<group>"; };
 		081EBE852A94F5E30008727B /* ArticlesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTests.swift; sourceTree = "<group>"; };
@@ -134,6 +133,7 @@
 		084F18342A72BCFF00BC25CC /* Course+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course+Decodable.swift"; sourceTree = "<group>"; };
 		084F18362A72BD3800BC25CC /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
 		084F183B2A72C09600BC25CC /* NavigationToCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationToCourse.swift; sourceTree = "<group>"; };
+		0852FAAF2A954A0400C81F8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0874AFE42A6C8E1E00879D8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0874AFE72A6D37B700879D8F /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		0874AFEA2A6D3E3500879D8F /* ValidateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateButton.swift; sourceTree = "<group>"; };
@@ -743,7 +743,7 @@
 				0874AFD92A6C8C6B00879D8F /* Fonts */,
 				08FDF3692A6C3F6C00BB8987 /* Assets.xcassets */,
 				08FDF3652A6C3F6800BB8987 /* SwiftiApp.swift */,
-				081C2A842A9258340045D57E /* GoogleService-Info.plist */,
+				0852FAAF2A954A0400C81F8F /* GoogleService-Info.plist */,
 				0874AFE42A6C8E1E00879D8F /* Info.plist */,
 			);
 			path = Application;
@@ -886,12 +886,12 @@
 			files = (
 				089140682A93D44500E1141C /* banner_swifti.svg in Resources */,
 				08CD22DA2A77C500007A0334 /* Poppins-Light.ttf in Resources */,
+				0852FAB02A954A0400C81F8F /* GoogleService-Info.plist in Resources */,
 				08FDF36D2A6C3F6C00BB8987 /* Preview Assets.xcassets in Resources */,
 				084F18162A7164E000BC25CC /* Articles.json in Resources */,
 				084F18332A72BB4A00BC25CC /* Courses.json in Resources */,
 				089140652A93C9A300E1141C /* README.md in Resources */,
 				08CD22D82A77C4F8007A0334 /* Poppins-Medium.ttf in Resources */,
-				081C2A852A9258350045D57E /* GoogleService-Info.plist in Resources */,
 				08CD22D62A77C4ED007A0334 /* Poppins-Italic.ttf in Resources */,
 				08CD22DE2A77C51C007A0334 /* Poppins-SemiBold.ttf in Resources */,
 				08CD22E02A77C527007A0334 /* Poppins-Bold.ttf in Resources */,

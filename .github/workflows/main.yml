@@ -26,7 +26,7 @@ jobs:
       run: echo "$GOOGLE_SERVICE_INFO" > Swifti/Application/GoogleService-Info.plist
 
     # We build the app, to ensure it's working.
-    - name: Build Amigo
+    - name: Build Swifti
       run: xcodebuild -scheme Swifti -project Swifti.xcodeproj -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 12 Pro Max" build
 
     # Unit Testing
