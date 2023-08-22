@@ -1,0 +1,27 @@
+# This workflow will build and test a Swift project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
+
+name: App Control
+
+on:
+  workflow_dispatch: # This enables us to manually trigger the workflow.
+  push:
+   branches:
+     - main
+
+jobs:
+  build_test:
+    runs-on: macos-latest
+
+    steps:
+    # Perform a repository checkout to utilize it within the virtual machine.
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # We build the app, to ensure it's working.
+    - name: Build Swifti
+      run: xcodebuild -scheme Swifti -project Swifti.xcodeproj -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 12 Pro Max" build
+
+    # Unit Testing
+    - name: Run Unit Tests
+      run: xcodebuild -resolvePackageDependencies test -scheme Swifti -project Swifti.xcodeproj -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 12 Pro Max" build
