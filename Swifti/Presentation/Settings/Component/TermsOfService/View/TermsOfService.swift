@@ -22,7 +22,7 @@ struct TermsOfServiceView: View {
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)              .accessibilityAddTraits(.isHeader)
                 
-                Text("Last updated : \(lastUpdated)")
+                Text("Dernière mise à jour : \(lastUpdated)")
                     .font(.defaultLabelCaption)
                     .foregroundColor(.placeholder)
                     .padding(.bottom, 10)

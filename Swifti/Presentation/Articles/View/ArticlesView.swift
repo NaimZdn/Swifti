@@ -111,9 +111,10 @@ struct ArticlesView: View {
                     
                 }
             }
-            .padding(.top, 20)
+            .padding(.top, 65)
         }
         .background(Color.background)
+        .edgesIgnoringSafeArea(.top)
     }
 }
 

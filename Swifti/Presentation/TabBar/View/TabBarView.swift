@@ -31,24 +31,29 @@ struct TabBarView: View {
                         .accessibilityLabel("Home View")
                     
                     CourseView(courseViewModel: coursesViewModel)
+                        .edgesIgnoringSafeArea(.top)
                         .tag(TabBar.courses)
                         .accessibilityAddTraits(.isButton)
                         .accessibilityLabel("Courses View")
                     
                     ArticlesView(articlesViewModel: articlesViewModel)
+                        .edgesIgnoringSafeArea(.top)
                         .tag(TabBar.articles)
                         .accessibilityAddTraits(.isButton)
                         .accessibilityLabel("Articles View")
                     
                     SettingsView()
+                        .edgesIgnoringSafeArea([.top, .bottom])
                         .environmentObject(appSettings)
                         .tag(TabBar.settings)
                         .accessibilityAddTraits(.isButton)
                         .accessibilityLabel("Settings View")
                 }
                 CustomTabBar(selectedTab: $currentTab)
+                    .navigationBarHidden(true)
             }
         }
+        .navigationBarHidden(true)
         .navigationBarBackButtonHidden()
     }
 }

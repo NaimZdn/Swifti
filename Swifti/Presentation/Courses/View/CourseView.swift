@@ -95,10 +95,12 @@ struct CourseView: View {
                     Spacer()
                 }
             }
-            .padding(20)
+            .padding(.horizontal)
+            .padding(.top, 65)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .background(Color.background)
+        .edgesIgnoringSafeArea(.top)
     }
 }
 

@@ -62,11 +62,12 @@ struct SettingsView: View {
                         
                     }
                 }
-                .padding([.top, .horizontal], 20)
+                .padding(.horizontal, 20)
+                .padding(.top, 65)
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
             .background(Color.background)
-        
+            .edgesIgnoringSafeArea(.top)
     }
 }
 

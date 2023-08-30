@@ -24,6 +24,7 @@ struct NavigationToQuestions: View {
     @State private var score = 0
     @State private var currentQuestionIndex = 0
     @State private var showScore = false
+    @State private var topPadding = false
     
     init(coursesViewModel: CourseViewModel, questions: [CourseQuestion], courseTitle: String) {
         self.coursesViewModel = coursesViewModel
@@ -44,6 +45,7 @@ struct NavigationToQuestions: View {
     }
     
     var body: some View {
+        if #available(iOS 16.0, *) {
         VStack(alignment: .leading, spacing: 30) {
             if !showScore {
                 let question = questions[currentQuestionIndex]
@@ -150,6 +152,116 @@ struct NavigationToQuestions: View {
         .padding([.bottom, .horizontal], 20)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color.background)
+        
+        } else {
+            VStack(alignment: .leading, spacing: 30) {
+                if !showScore {
+                    let question = questions[currentQuestionIndex]
+
+                        Text(try! AttributedString(markdown: question.question, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
+                            .font(.defaultTitle3)
+                            .foregroundColor(.white)
+                            .fixedSize(horizontal: false, vertical: true)
+
+                    if let code = question.code {
+                        let parserResult: ParserResult = {
+                            let document = Document(parsing: code)
+                            var parser = MarkdownAttributedStringParser()
+                            return parser.parserResults(from: document)[0]
+                        }()
+                        CodeBlockView(parserResult: parserResult)
+                    }
+                    
+                    ScrollView {
+                        VStack(alignment: .leading) {
+                            ForEach(question.choices.indices, id: \.self) { choiceIndex in
+                                HStack(alignment: .top) {
+                                    Toggle(isOn: Binding(
+                                        get: { self.checkedChoices[currentQuestionIndex][choiceIndex] },
+                                        set: { newValue in self.toggleChoice(currentQuestionIndex, choiceIndex) }
+                                    )) {
+                                    }
+                                    .toggleStyle(CheckboxToggleStyle())
+                                    .disabled(answerValidated)
+                                    .accessibilityAddTraits(.isButton)
+                                    .accessibilityLabel("Checkbox")
+                                    
+                                    Group {
+                                        Text(try! AttributedString(markdown: question.choices[choiceIndex].choice, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
+                                            .font(.defaultBody)
+                                            .foregroundColor(.white)
+                                            .padding(.leading, 5)
+                                    }
+                                    .fixedSize(horizontal: false, vertical: true)
+                                }
+                                .padding([.horizontal, .vertical], 3)
+                            }
+                            
+                            if answerValidated {
+                                HStack(alignment: .top, spacing: 15) {
+                                    Image(systemName: selectedChoiceID == question.answer ? "checkmark.circle.fill" : "xmark.circle.fill")
+                                        .font(.system(size: 20))
+                                        .foregroundColor(selectedChoiceID == question.answer ? .green : .red)
+                                    
+                                    Text(try! AttributedString(markdown: selectedChoiceQuote ?? "", options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace)))
+                                        .font(.defaultItalic)
+                                        .foregroundColor(.white)
+                                    
+                                }
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 15)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .fill(
+                                            selectedChoiceID == question.answer
+                                            ? Color.green
+                                            : Color.red
+                                        ).opacity(0.2)
+                                )
+                                .padding(.top, 30)
+                            }
+                        }
+                    }
+                    Spacer()
+                    
+                    if !answerValidated {
+                        ValidateButton(caption: "Valider") {
+                            if let selectedChoiceID = selectedChoiceID,
+                               selectedChoiceID == question.answer {
+                                score += 1
+
+                                coursesViewModel.addScoreToData(courseTitle: courseTitle, score: score)
+                                answerValidated = true
+                            } else {
+                                answerValidated = true
+                            }
+                        }
+                        .disabled(checkedChoices[currentQuestionIndex].contains(true) ? false : true)
+                    } else {
+                        ValidateButton(caption:  currentQuestionIndex < questions.count - 1 ? "Question suivante" : "Voir le score") {
+                            if currentQuestionIndex < questions.count - 1 {
+                                currentQuestionIndex += 1
+                                answerValidated = false
+                            } else {
+                                showScore = true
+                            }
+                        }
+                    }
+                } else {
+                    scoreReview
+                }
+            }
+            .padding(.top, -60)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(
+                leading: OptionButton(icon: "carret-left", action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }).padding(.top, 5))
+            .padding([.bottom, .horizontal], 20)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color.background)
+        }
     }
     
     var scoreReview: some View {
