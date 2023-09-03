@@ -11,8 +11,10 @@
     <img src="https://img.shields.io/badge/-Figma-F24E1E?style=flat&labelColor=F24E1E&logo=figma&logoColor=white"/>
 </p>
 
-<h2> App Design </h2>
-
 <h2> Before Launch </h2>
 
 If you want to add Firebase to this project, you need to the GoogleService-Info.plist with the one provided by Firebase.
+
+<h2> App Design </h2>
+
+<img src="https://github.com/NaimZdn/Swifti/blob/main/README%20Assets/presentation_swifti.jpg"/>
