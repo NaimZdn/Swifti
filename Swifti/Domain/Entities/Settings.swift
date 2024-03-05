@@ -5,8 +5,6 @@
 //  Created by Zidouni on 24/07/2023.
 //
 
-import Foundation
-
 enum Label: String, CaseIterable {
     case notification = "Activer les notifications"
     case rate = "Noter l'application"
